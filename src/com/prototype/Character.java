@@ -75,14 +75,17 @@ public abstract class Character {
         int damage = Math.max(0,rand.nextInt(a.getDamage()));
         int monsDamage = Math.max(0,rand.nextInt(b.getDamage()));
         int health = b.getHealth() - damage;
-        int yourHP = a.getHealth() - monsDamage;
-            System.out.println("you hit a " + damage);
-            System.out.println(b.getName() + " hp is now:" + health);
-            System.out.println(b.getName() + " did " + monsDamage);
-            System.out.println("your health is now: " + yourHP);
-
+        b.setHealth(health);
+        System.out.println("you hit a " + damage);
+        System.out.println(b.getName() + " hp is now:" + health);
+            if(!b.isAlive()){
+                System.out.println("You killed :" + b.getName());
+            }
+            else {
+            int yourHP = a.getHealth() - monsDamage;
             a.setHealth(yourHP);
-            b.setHealth(health);
+            System.out.println(b.getName() + " did " + monsDamage);
+            System.out.println("your health is now: " + yourHP);}
     }
 
 
@@ -104,26 +107,3 @@ public abstract class Character {
     }
 }
 
-    class Enemy extends Player {
-
-        public Enemy(String name, int health, int defence, int damage, boolean isAlive) {
-
-            super(name, health, defence, damage, isAlive);
-
-        }
-
-        public void attack(Enemy a, Player b) {
-            Random rand = new Random();
-            int damage = rand.nextInt(getDamage());
-            int health = b.getHealth() - damage;
-            System.out.println("Enemy hit a " + damage);
-            System.out.println("your hp is now:" + health);
-            b.setHealth(health);
-
-        }
-
-        public void fight(Enemy a, Player b) {
-
-
-        }
-    }
