@@ -12,6 +12,8 @@ Player player1 = new Player("bob", 100, 5,30, true);
 System.out.println("fight test");
 
   //player1.attack(player1, wolf);
+        //player1.attack(player1, wolf);
+       // player1.attack(player1, wolf);
   //wolf.attack(player1, wolf);
 
  player1.fight(player1, wolf);
