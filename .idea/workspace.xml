@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3335d5e-1775-4b57-b8d5-152d8305edf0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/prototype/Maps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/prototype/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/prototype/Character.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/prototype/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/prototype/Main.java" afterDir="false" />
     </list>
@@ -18,27 +21,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/prototype/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/prototype/Character.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="97" column="17" lean-forward="true" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
-              <folding>
-                <element signature="e#857#858#0" expanded="true" />
-                <element signature="e#886#887#0" expanded="true" />
-                <element signature="e#947#948#0" expanded="true" />
-                <element signature="e#1006#1007#0" expanded="true" />
-                <element signature="e#1037#1038#0" expanded="true" />
-                <element signature="e#1064#1065#0" expanded="true" />
-                <element signature="e#1095#1096#0" expanded="true" />
-                <element signature="e#1128#1129#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="238">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -50,32 +34,77 @@
               <ID>JAVA</ID>
               <OriginalElement>com.prototype</OriginalElement>
               <nodes>
-                <node x="8.0" y="0.0">com.prototype.Character</node>
-                <node x="18.0" y="422.0">com.prototype.Main</node>
-                <node x="0.0" y="299.0">com.prototype.Player</node>
+                <node x="346.0" y="0.0">com.prototype.Character</node>
+                <node x="230.125" y="488.0">com.prototype.Main</node>
+                <node x="338.0" y="332.0">com.prototype.Player</node>
+                <node x="0.0" y="299.0">com.prototype.Maps</node>
               </nodes>
               <notes />
               <edges>
                 <edge source="com.prototype.Main" target="com.prototype.Player">
-                  <point x="41.75" y="-25.5" />
-                  <point x="143.25" y="397.0" />
-                  <point x="152.25" y="397.0" />
-                  <point x="50.75" y="36.5" />
+                  <point x="20.875" y="-25.5" />
+                  <point x="334.5" y="458.0" />
+                  <point x="388.75" y="458.0" />
+                  <point x="-50.75" y="36.5" />
+                </edge>
+                <edge source="com.prototype.Main" target="com.prototype.Maps">
+                  <point x="-62.625" y="-25.5" />
+                  <point x="251.0" y="468.0" />
+                  <point x="79.5" y="468.0" />
+                  <point x="-79.5" y="69.5" />
                 </edge>
                 <edge source="com.prototype.Player" target="com.prototype.Character">
-                  <point x="-50.75" y="-36.5" />
-                  <point x="50.75" y="274.0" />
-                  <point x="54.75" y="274.0" />
-                  <point x="-46.75" y="124.5" />
+                  <point x="50.75" y="-36.5" />
+                  <point x="490.25" y="274.0" />
+                  <point x="486.25" y="274.0" />
+                  <point x="46.75" y="124.5" />
                 </edge>
               </edges>
               <settings layout="Hierarchic Group" zoom="1.0" x="-320.0" y="212.0" />
-              <SelectedNodes />
+              <SelectedNodes>
+                <node>com.prototype.Player</node>
+              </SelectedNodes>
               <Categories>
                 <Category>Methods</Category>
               </Categories>
               <SCOPE>All</SCOPE>
               <VISIBILITY>private</VISIBILITY>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/prototype/Maps.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="490">
+              <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#675#676#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/prototype/Character.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="771">
+              <caret line="106" column="5" lean-forward="true" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+              <folding>
+                <element signature="e#571#572#0" expanded="true" />
+                <element signature="e#609#610#0" expanded="true" />
+                <element signature="e#857#858#0" expanded="true" />
+                <element signature="e#886#887#0" expanded="true" />
+                <element signature="e#917#918#0" expanded="true" />
+                <element signature="e#947#948#0" expanded="true" />
+                <element signature="e#977#978#0" expanded="true" />
+                <element signature="e#1006#1007#0" expanded="true" />
+                <element signature="e#1037#1038#0" expanded="true" />
+                <element signature="e#1064#1065#0" expanded="true" />
+                <element signature="e#1095#1096#0" expanded="true" />
+                <element signature="e#1128#1129#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,12 +126,13 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/prototype/Character.java" />
         <option value="$PROJECT_DIR$/src/com/prototype/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/prototype/Maps.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="546" />
-    <option name="y" value="192" />
+    <option name="x" value="118" />
+    <option name="y" value="402" />
     <option name="width" value="2022" />
     <option name="height" value="1678" />
   </component>
@@ -125,6 +155,12 @@
               <item name="Prototype01" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Prototype01" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Prototype01" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="prototype" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -135,10 +171,11 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557724732835" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557746352633" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../okDevious" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -185,12 +222,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557704301701</updated>
-      <workItem from="1557704304190" duration="20628000" />
+      <workItem from="1557704304190" duration="35414000" />
     </task>
+    <task id="LOCAL-00001" summary="not broken yet">
+      <created>1557724984503</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1557724984504</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20628000" />
+    <option name="totallyTimeSpent" value="35414000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1513" height="983" extended-state="6" />
@@ -201,18 +246,18 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1628866" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.1628866" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" weight="0.32863188" />
+      <window_info anchor="bottom" id="Messages" weight="0.3282532" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" weight="0.32863188" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32863188" />
+      <window_info anchor="bottom" id="Terminal" weight="0.3282532" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32942554" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39976552" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -232,26 +277,27 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.24948454" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.1628866" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="1" weight="0.32863188" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.3282532" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="bottom" id="Run" order="7" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="Messages" order="5" weight="0.32863188" />
+      <window_info anchor="bottom" id="Message" order="6" />
+      <window_info anchor="bottom" id="Find" order="7" />
+      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.32942554" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="12" />
       <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="right" id="Theme Preview" order="1" />
-      <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Maven" order="4" />
-      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Database" order="1" />
+      <window_info anchor="right" id="Theme Preview" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Maven" order="5" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
@@ -259,6 +305,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="not broken yet" />
+    <option name="LAST_COMMIT_MESSAGE" value="not broken yet" />
   </component>
   <component name="editorHistoryManager">
     <entry file="uml://JAVA/">
@@ -298,27 +348,36 @@
           <ID>JAVA</ID>
           <OriginalElement>com.prototype</OriginalElement>
           <nodes>
-            <node x="8.0" y="0.0">com.prototype.Character</node>
-            <node x="18.0" y="422.0">com.prototype.Main</node>
-            <node x="0.0" y="299.0">com.prototype.Player</node>
+            <node x="346.0" y="0.0">com.prototype.Character</node>
+            <node x="230.125" y="488.0">com.prototype.Main</node>
+            <node x="338.0" y="332.0">com.prototype.Player</node>
+            <node x="0.0" y="299.0">com.prototype.Maps</node>
           </nodes>
           <notes />
           <edges>
             <edge source="com.prototype.Main" target="com.prototype.Player">
-              <point x="41.75" y="-25.5" />
-              <point x="143.25" y="397.0" />
-              <point x="152.25" y="397.0" />
-              <point x="50.75" y="36.5" />
+              <point x="20.875" y="-25.5" />
+              <point x="334.5" y="458.0" />
+              <point x="388.75" y="458.0" />
+              <point x="-50.75" y="36.5" />
+            </edge>
+            <edge source="com.prototype.Main" target="com.prototype.Maps">
+              <point x="-62.625" y="-25.5" />
+              <point x="251.0" y="468.0" />
+              <point x="79.5" y="468.0" />
+              <point x="-79.5" y="69.5" />
             </edge>
             <edge source="com.prototype.Player" target="com.prototype.Character">
-              <point x="-50.75" y="-36.5" />
-              <point x="50.75" y="274.0" />
-              <point x="54.75" y="274.0" />
-              <point x="-46.75" y="124.5" />
+              <point x="50.75" y="-36.5" />
+              <point x="490.25" y="274.0" />
+              <point x="486.25" y="274.0" />
+              <point x="46.75" y="124.5" />
             </edge>
           </edges>
           <settings layout="Hierarchic Group" zoom="1.0" x="-320.0" y="212.0" />
-          <SelectedNodes />
+          <SelectedNodes>
+            <node>com.prototype.Player</node>
+          </SelectedNodes>
           <Categories>
             <Category>Methods</Category>
           </Categories>
@@ -329,24 +388,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/prototype/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/prototype/Character.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="97" column="17" lean-forward="true" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
+        <state relative-caret-position="771">
+          <caret line="106" column="5" lean-forward="true" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
           <folding>
+            <element signature="e#571#572#0" expanded="true" />
+            <element signature="e#609#610#0" expanded="true" />
             <element signature="e#857#858#0" expanded="true" />
             <element signature="e#886#887#0" expanded="true" />
+            <element signature="e#917#918#0" expanded="true" />
             <element signature="e#947#948#0" expanded="true" />
+            <element signature="e#977#978#0" expanded="true" />
             <element signature="e#1006#1007#0" expanded="true" />
             <element signature="e#1037#1038#0" expanded="true" />
             <element signature="e#1064#1065#0" expanded="true" />
             <element signature="e#1095#1096#0" expanded="true" />
             <element signature="e#1128#1129#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/prototype/Maps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#675#676#0" expanded="true" />
           </folding>
         </state>
       </provider>
