@@ -68,18 +68,20 @@ public abstract class Character {
 
         public void attack(Player a, Player b) {
             Random rand = new Random();
-            int damage = Math.max(0, rand.nextInt(a.getDamage()));
-            int monsDamage = Math.max(0, rand.nextInt(b.getDamage()));
+            int damage = Math.max(0,rand.nextInt(a.getDamage()) - a.getDefence());
+            int monsDamage = Math.max(0,rand.nextInt(b.getDamage()) - b.getDefence());
             int health = b.getHealth() - damage;
-            int yourHP = a.getHealth() - monsDamage;
-
+            b.setHealth(health);
             System.out.println("you hit a " + damage);
             System.out.println(b.getName() + " hp is now:" + health);
-            System.out.println(b.getName() + " did " + monsDamage);
-            System.out.println("your health is now: " + yourHP);
-
-            a.setHealth(yourHP);
-            b.setHealth(health);
+            if(!b.isAlive()){
+                System.out.println("You killed: " + b.getName());
+            }
+            else {
+                int yourHP = a.getHealth() - monsDamage;
+                a.setHealth(yourHP);
+                System.out.println(b.getName() + " did " + monsDamage);
+                System.out.println("your health is now: " + yourHP);}
         }
 
 
@@ -95,5 +97,9 @@ public abstract class Character {
                     attack(a, b);
                 }
             } while (a.isAlive() && b.isAlive());
+                if(!a.isAlive()){
+                    System.out.println("you died bitch!");
+                }
+
         }
     }
