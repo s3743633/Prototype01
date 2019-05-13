@@ -2,6 +2,7 @@ package com.prototype;
 
 import java.util.*;
 
+
 public abstract class Character {
     private String name;
     public int health;
@@ -59,6 +60,7 @@ public abstract class Character {
 
 
     class Player extends Character {
+        Weapon rustysword = new Weapon("Rusty Sword", 0, 5, 1, false);
 
         public Player(String name, int health, int defence, int damage, boolean isAlive) {
 
@@ -68,8 +70,8 @@ public abstract class Character {
 
         public void attack(Player a, Player b) {
             Random rand = new Random();
-            int damage = Math.max(0,rand.nextInt(a.getDamage()) - a.getDefence());
-            int monsDamage = Math.max(0,rand.nextInt(b.getDamage()) - b.getDefence());
+            int damage = Math.max(0,rand.nextInt(a.getDamage()) - b.getDefence());
+            int monsDamage = Math.max(0,rand.nextInt(b.getDamage()) - a.getDefence());
             int health = Math.max(0,b.getHealth() - damage);
             b.setHealth(health);
             System.out.println("you hit a " + damage);
@@ -84,22 +86,46 @@ public abstract class Character {
                 System.out.println("your health is now: " + yourHP);}
         }
 
+        public static int inventory(){
+            ArrayList<String> weapon = new ArrayList<String>();
+            ArrayList<String> armour = new ArrayList<String>();
+            int numOfPotions = 3;
 
-        public void fight(Player a, Player b) {
+            weapon.set(0, "Rusty Sword");
+            weapon.set(1, "Bronze Sword");
+            weapon.set(2, "Steel Sword");
+            weapon.set(3, "Mithril Sword");
+            weapon.set(4, "Adamant Sword");
+
+        }
+        public void fight(Player a, Player b, Inventory c) {
             Scanner input = new Scanner(System.in);
 
             do{
                 System.out.println("what do you want to do?");
-                System.out.println("attack or runaway?");
+                System.out.println("attack, heal or runaway?");
                 String choice = input.nextLine();
 
                 if (choice.equalsIgnoreCase("attack")) {
                     attack(a, b);
                 }
-            } while (a.isAlive() && b.isAlive());
+
+                else if (choice.equalsIgnoreCase("heal")) {
+                    int potionHealAmount = 20;
+                    int potAmount = inventory();
+                    int yourHP = Math.min(100,a.getHealth() + potionHealAmount);
+
+                    a.setHealth(yourHP);
+                    System.out.println("You healed yourself with 20 lifepoints!");
+                    System.out.println("your health is now: " + yourHP);}
+
+                }
+             while (a.isAlive() && b.isAlive());
                 if(!a.isAlive()){
                     System.out.println("you died bitch!");
                 }
+
+
 
         }
     }
