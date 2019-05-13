@@ -8,14 +8,16 @@ public abstract class Character {
     private int defence;
     private int damage;
     private boolean isAlive;
+    public int questID;
 
 
-    public Character(String name, int health, int defence, int damage, boolean isAlive) {
+    public Character(String name, int health, int defence, int damage, boolean isAlive, int questID) {
         this.name = name;
         this.health = health;
         this.defence = defence;
         this.damage = damage;
         this.isAlive = isAlive;
+        this.questID = questID;
     }
 
     public void setDamage(int damage) {
@@ -60,17 +62,17 @@ public abstract class Character {
 
     class Player extends Character {
 
-        public Player(String name, int health, int defence, int damage, boolean isAlive) {
+        public Player(String name, int health, int defence, int damage, boolean isAlive, int questID) {
 
-            super(name, health, defence, damage, isAlive);
+            super(name, health, defence, damage, isAlive, questID);
 
         }
 
         public void attack(Player a, Player b) {
             Random rand = new Random();
-            int damage = Math.max(0,rand.nextInt(a.getDamage()) - a.getDefence());
-            int monsDamage = Math.max(0,rand.nextInt(b.getDamage()) - b.getDefence());
-            int health = b.getHealth() - damage;
+            int damage = Math.max(0,rand.nextInt(a.getDamage()) - b.getDefence());
+            int monsDamage = Math.max(0,rand.nextInt(b.getDamage()) - a.getDefence());
+            int health = Math.max(0,b.getHealth() - damage);
             b.setHealth(health);
             System.out.println("you hit a " + damage);
             System.out.println(b.getName() + " hp is now:" + health);
@@ -78,7 +80,7 @@ public abstract class Character {
                 System.out.println("You killed: " + b.getName());
             }
             else {
-                int yourHP = a.getHealth() - monsDamage;
+                int yourHP = Math.max(0,a.getHealth() - monsDamage);
                 a.setHealth(yourHP);
                 System.out.println(b.getName() + " did " + monsDamage);
                 System.out.println("your health is now: " + yourHP);}
@@ -98,7 +100,7 @@ public abstract class Character {
                 }
             } while (a.isAlive() && b.isAlive());
                 if(!a.isAlive()){
-                    System.out.println("you died bitch!");
+                    System.out.println("RIP Game Over!");
                 }
 
         }
