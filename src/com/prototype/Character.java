@@ -112,17 +112,14 @@ public abstract class Character {
         }
 
         public void menu(Player a){
-            boolean isValid = false;
             Scanner input = new Scanner(System.in);
             System.out.println("Equip item");
             System.out.println("Use Potion");
             System.out.println("Check Status");
             String menu = input.nextLine();
 
-            while(!isValid){
                 if (menu.equalsIgnoreCase("equip item")){
                     System.out.println("what do you want to equip?");
-                    isValid = true;
 
                 }else if(menu.equalsIgnoreCase("use potion")){
                     System.out.println("You have "+ numOfPotions + "potion(s) left.");
@@ -130,19 +127,21 @@ public abstract class Character {
                     System.out.println("\tYes");
                     System.out.println("\tNo");
                     String choice = input.nextLine();
+                    boolean potmenu = false
+                            while (!potmenu)
                         if (choice.equalsIgnoreCase("Yes")) {
                             if (numOfPotions >= 1){
                                     int yourHP = Math.min(100, a.getHealth() + potHealAmount);
                                     a.setHealth(yourHP);
                                     numOfPotions--;
                                     System.out.println("Your current HP is now: " + a.getHealth());
-                                    isValid = true;
+
                             } else if (numOfPotions == 0){
                                         System.out.println("Sorry, you are out of potions!");
-                                        isValid = true;
+
                             }
                         } else if(choice.equalsIgnoreCase("No")){
-                                    isValid = true;
+
                         } else { System.out.println("Invalid input");
                         }
 
@@ -153,9 +152,7 @@ public abstract class Character {
                     System.out.println("Health = " + a.getHealth());
                     System.out.println("Damage = " + a.getDamage());
                     System.out.println("Defence = " + a.getDefence());
-                    isValid = true;
                 }else
                     System.out.println("Invalid input, try again");
             }
         }
-    }

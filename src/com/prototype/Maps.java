@@ -12,7 +12,7 @@ public class Maps {
     private int questID;
     private Scanner input = new Scanner(System.in);
     public boolean isvalid;
-    private Player player1 = new Player("", 100, 5, 100, true, 0);
+    private Player player1 = new Player("", 40, 5, 100, true, 0);
 
     public Maps(boolean iscomplete, String name, int questID) {
         this.iscomplete = iscomplete;
