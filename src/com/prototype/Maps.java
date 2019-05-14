@@ -101,13 +101,9 @@ public class Maps {
 
     private Boolean mapA3() {
         System.out.println("Shipwreck Debris");
+        Player slime = new Player("slime", 20, 0, 5, true, 0);
+        player1.fight(player1, slime);
 
-        while (!iscomplete) {
-            System.out.println("As you explore the area, you are attacked by a shiny blue slime!");
-            Player slime = new Player("slime", 20, 0, 5, true, 0);
-            player1.fight(player1, slime);
-            iscomplete = true;
-        }
 
         isvalid = false;
         while (!isvalid) {
