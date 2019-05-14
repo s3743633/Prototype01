@@ -111,29 +111,36 @@ public abstract class Character {
                     System.out.println("Would you like to use a potion?");
                     System.out.println("\tYes");
                     System.out.println("\tNo");
-                    String yn = input.nextLine();
-                        if (yn.equalsIgnoreCase("Yes")) {
-                            if (numOfPotions >= 1) {
-                                int yourHP = Math.min(100, a.getHealth() + potHealAmount);
-                                a.setHealth(yourHP);
-                                numOfPotions--;
-                                System.out.println("Your HP is now: " + a.getHealth());
+                    choice = input.nextLine();
+                    int loop =0;
+                        while (loop==0) {
+                            if (choice.equalsIgnoreCase("Yes")) {
+                                if (numOfPotions >= 1) {
+                                    int yourHP = Math.min(100, a.getHealth() + potHealAmount);
+                                    a.setHealth(yourHP);
+                                    numOfPotions--;
+                                    System.out.println("Your HP is now: " + a.getHealth());
+                                    loop = 1;
 
-                            } else if (numOfPotions == 0) {
+                                }
+
+                                } else if (numOfPotions == 0) {
                                 System.out.println("Sorry, you are out of potions!");
-
                             }
-                         else if (yn.equalsIgnoreCase("No")) {
-                            break;
+                            else if (choice.equalsIgnoreCase("no")) {
+                                loop = 1;
 
-                        } else {
-                            System.out.println("Invalid input");
+
+                            } else {
+                                System.out.println("Invalid input");
+                                loop = 1;
+                            }
                         }
                     }
 
 
                 }
-            } while (a.isAlive() && b.isAlive());
+             while (a.isAlive() && b.isAlive());
             if (!a.isAlive()) {
                 System.out.println("RIP Game Over!");
             }
