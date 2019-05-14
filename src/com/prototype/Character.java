@@ -2,21 +2,22 @@ package com.prototype;
 
 import java.util.*;
 
-
 public abstract class Character {
     private String name;
     public int health;
     private int defence;
     private int damage;
     private boolean isAlive;
+    public int questID;
 
 
-    public Character(String name, int health, int defence, int damage, boolean isAlive) {
+    public Character(String name, int health, int defence, int damage, boolean isAlive, int questID) {
         this.name = name;
         this.health = health;
         this.defence = defence;
         this.damage = damage;
         this.isAlive = isAlive;
+        this.questID = questID;
     }
 
     public void setDamage(int damage) {
@@ -60,11 +61,16 @@ public abstract class Character {
 
 
     class Player extends Character {
-        Weapon rustysword = new Weapon("Rusty Sword", 0, 5, 1, false);
 
-        public Player(String name, int health, int defence, int damage, boolean isAlive) {
+        int numOfPotions = 3;
+        int potHealAmount = 20;
+        String weapon = "";
+        String armour = "";
 
-            super(name, health, defence, damage, isAlive);
+
+        public Player(String name, int health, int defence, int damage, boolean isAlive, int questID) {
+
+            super(name, health, defence, damage, isAlive, questID);
 
         }
 
@@ -86,46 +92,70 @@ public abstract class Character {
                 System.out.println("your health is now: " + yourHP);}
         }
 
-        public static int inventory(){
-            ArrayList<String> weapon = new ArrayList<String>();
-            ArrayList<String> armour = new ArrayList<String>();
-            int numOfPotions = 3;
 
-            weapon.set(0, "Rusty Sword");
-            weapon.set(1, "Bronze Sword");
-            weapon.set(2, "Steel Sword");
-            weapon.set(3, "Mithril Sword");
-            weapon.set(4, "Adamant Sword");
-
-        }
-        public void fight(Player a, Player b, Inventory c) {
+        public void fight(Player a, Player b) {
             Scanner input = new Scanner(System.in);
 
             do{
                 System.out.println("what do you want to do?");
-                System.out.println("attack, heal or runaway?");
+                System.out.println("attack or runaway?");
                 String choice = input.nextLine();
 
                 if (choice.equalsIgnoreCase("attack")) {
                     attack(a, b);
                 }
-
-                else if (choice.equalsIgnoreCase("heal")) {
-                    int potionHealAmount = 20;
-                    int potAmount = inventory();
-                    int yourHP = Math.min(100,a.getHealth() + potionHealAmount);
-
-                    a.setHealth(yourHP);
-                    System.out.println("You healed yourself with 20 lifepoints!");
-                    System.out.println("your health is now: " + yourHP);}
-
-                }
-             while (a.isAlive() && b.isAlive());
+            } while (a.isAlive() && b.isAlive());
                 if(!a.isAlive()){
-                    System.out.println("you died bitch!");
+                    System.out.println("RIP Game Over!");
                 }
 
+        }
+
+        public void menu(Player a){
+            boolean isValid = false;
+            Scanner input = new Scanner(System.in);
+            System.out.println("Equip item");
+            System.out.println("Use Potion");
+            System.out.println("Check Status");
+            String menu = input.nextLine();
+
+            while(!isValid){
+                if (menu.equalsIgnoreCase("equip item")){
+                    System.out.println("what do you want to equip?");
+                    isValid = true;
+
+                }else if(menu.equalsIgnoreCase("use potion")){
+                    System.out.println("You have "+ numOfPotions + "potion(s) left.");
+                    System.out.println("Would you like to use a potion?");
+                    System.out.println("\tYes");
+                    System.out.println("\tNo");
+                    String choice = input.nextLine();
+                        if (choice.equalsIgnoreCase("Yes")) {
+                            if (numOfPotions >= 1){
+                                    int yourHP = Math.min(100, a.getHealth() + potHealAmount);
+                                    a.setHealth(yourHP);
+                                    numOfPotions--;
+                                    System.out.println("Your current HP is now: " + a.getHealth());
+                                    isValid = true;
+                            } else if (numOfPotions == 0){
+                                        System.out.println("Sorry, you are out of potions!");
+                                        isValid = true;
+                            }
+                        } else if(choice.equalsIgnoreCase("No")){
+                                    isValid = true;
+                        } else { System.out.println("Invalid input");
+                        }
 
 
+                }else if(menu.equalsIgnoreCase("check status")){
+                    System.out.println("Your current stats are: ");
+                    System.out.println("Name = " + a.getName());
+                    System.out.println("Health = " + a.getHealth());
+                    System.out.println("Damage = " + a.getDamage());
+                    System.out.println("Defence = " + a.getDefence());
+                    isValid = true;
+                }else
+                    System.out.println("Invalid input, try again");
+            }
         }
     }
