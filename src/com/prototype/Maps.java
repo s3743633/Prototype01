@@ -130,7 +130,7 @@ public class Maps {
     public boolean mapA4() {
 
 
-        while(!Maps.this.iscomplete){
+        if(!Maps.this.iscomplete){
         System.out.println("Shipwreck Cove");
         System.out.println("you awaken, poked by a strangers walking stick.");
         System.out.println("your body aches all over, finally opening your eyes the man says");
@@ -140,7 +140,7 @@ public class Maps {
         System.out.println(player1.getName() + " is it? Well its good that you don't have amnesia!");
         isvalid = false;
         Maps.this.iscomplete = true;
-        }
+
         while (!isvalid) {
             mapDirection("north", "", "", "");
             String choice = input.nextLine();
@@ -150,11 +150,25 @@ public class Maps {
             }else if(choice.equalsIgnoreCase("Menu")) {
                 player1.menu(player1);
             }else
-                System.out.println("Please try again");
+            {System.out.println("Please try again");}
+        }}
+         else if(Maps.this.iscomplete)   {
 
+                    mapDirection("north", "", "", "");
+                    String choice = input.nextLine();
+                    if (choice.equalsIgnoreCase("north")) {
+                        isvalid = true;
+                        mapA3();
+                    }else if(choice.equalsIgnoreCase("Menu")) {
+                        player1.menu(player1);
+                    }else
+                    {System.out.println("Please try again");}
+
+            }
+
+        return(iscomplete);
         }
-    return(iscomplete);
-    }
+
 
 
     //Maps B row
