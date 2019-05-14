@@ -104,4 +104,32 @@ public abstract class Character {
                 }
 
         }
+
+        public void menu(Player a){
+            boolean isValid = false;
+            Scanner input = new Scanner(System.in);
+            System.out.println("Equip item");
+            System.out.println("Use item");
+            System.out.println("Check Status");
+            String menu = input.nextLine();
+
+            while(!isValid){
+                if (menu.equalsIgnoreCase("equip item")){
+                    System.out.println("what do you want to equip?");
+                    isValid = true;
+                }else if(menu.equalsIgnoreCase("use item")){
+                    System.out.println("what item do you want to use?");
+                    isValid = true;
+
+                }else if(menu.equalsIgnoreCase("check status")){
+                    System.out.println("Your current stats are: ");
+                    System.out.println("Name = " + a.getName());
+                    System.out.println("Health = " + a.getHealth());
+                    System.out.println("Damage = " + a.getDamage());
+                    System.out.println("Defence = " + a.getDefence());
+                    isValid = true;
+                }else
+                    System.out.println("Invalid input, try again");
+            }
+        }
     }

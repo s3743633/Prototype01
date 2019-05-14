@@ -10,7 +10,6 @@ public class Main {
         Player player1 = new Player("bob", 100, 10, 30, true, 0);
         Maps mapa1 = new Maps(false, "beach", 0);
 
-        System.out.println("you wake up and find yourself stranded on the coast, you see that there is a path that leads north");
         mapa1.mapA4();
 
 
