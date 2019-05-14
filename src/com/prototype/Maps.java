@@ -7,32 +7,42 @@ import java.util.Scanner;
 
 public class Maps {
 
-    private boolean iscomplete;
+    private int iscomplete;
     private String name;
     private int questID;
     private Scanner input = new Scanner(System.in);
     public boolean isvalid;
-    private Player player1 = new Player("", 100, 5, 100, true, 0);
+    private Player player1 = new Player("", 40, 5, 100, true, 0);
 
-    public Maps(boolean iscomplete, String name, int questID) {
+    public Maps(int iscomplete, String name, int questID) {
         this.iscomplete = iscomplete;
         this.name = name;
         this.questID = questID;
     }
 
-
-    public String menu() {
-
-        String n;
-        n = "hello";
-        return n;
+    public void setcomplete(int complete) {
+        this.iscomplete = complete;
     }
 
-    public boolean isIscomplete() {
+    public void setQuestID(int questID) {
+        this.questID = questID;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getComplete() {
         return iscomplete;
     }
 
+    public int getQuestID() {
+        return questID;
+    }
 
+    public String setName() {
+        return name;
+    }
     public void mapDirection(String north, String east, String south, String west) {
 
 
@@ -40,22 +50,22 @@ public class Maps {
 
         System.out.println("where do you want to go?");
         if (north.equalsIgnoreCase("north")) {
-            System.out.println("go north");
+            System.out.println("\tgo north");
         }
         if (west.equalsIgnoreCase("west")) {
-            System.out.println("go west");
+            System.out.println("\tgo west");
 
         }
         if (east.equalsIgnoreCase("east")) {
-            System.out.println("go east");
+            System.out.println("\tgo east");
 
         }
         if (south.equalsIgnoreCase("south")) {
-            System.out.println("go south");
+            System.out.println("\tgo south");
 
         }
 
-            System.out.println("Menu");
+        System.out.println("\tMenu");
     }
 
 
@@ -68,14 +78,14 @@ public class Maps {
 
         mapDirection("", "west", "", "");
         String choice = input.nextLine();
-        while(!isvalid)
-        if (choice.equalsIgnoreCase("east")) {
-            isvalid = true;
-            mapB1();
-        }else if(choice.equalsIgnoreCase("Menu")) {
-            player1.menu(player1);
-        }else
-            System.out.println("Please try again");
+        while (!isvalid)
+            if (choice.equalsIgnoreCase("east")) {
+                isvalid = true;
+                mapB1();
+            } else if (choice.equalsIgnoreCase("Menu")) {
+                player1.menu(player1);
+            } else
+                System.out.println("Please try again");
 
     }
 
@@ -99,67 +109,75 @@ public class Maps {
         }
     }
 
-    private Boolean mapA3() {
+    private int mapA3() {
         System.out.println("Shipwreck Debris");
 
-        while (!iscomplete) {
+
+        if(getComplete() == 1){
             System.out.println("As you explore the area, you are attacked by a shiny blue slime!");
             Player slime = new Player("slime", 20, 0, 5, true, 0);
             player1.fight(player1, slime);
-            iscomplete = true;
+            setcomplete(2);
+
         }
 
-        isvalid = false;
-        while (!isvalid) {
-            mapDirection("", "east", "south", "");
-            String choice = input.nextLine();
-            if (choice.equalsIgnoreCase("east")) {
-                isvalid = true;
-                mapB3();
+        if (getComplete() >= 1) {
+            isvalid = false;
+            while (!isvalid) {
+                mapDirection("", "east", "south", "");
+                String choice = input.nextLine();
+                if (choice.equalsIgnoreCase("east")) {
+                    isvalid = true;
+                    mapB3();
 
-            } else if (choice.equalsIgnoreCase("south")) {
-                isvalid = true;
-                mapA4();
+                } else if (choice.equalsIgnoreCase("south")) {
+                    isvalid = true;
+                    mapA4();
 
-            } else if (choice.equalsIgnoreCase("Menu")) {
-                player1.menu(player1);
-            } else
-                System.out.println("Please try again");
+                } else if (choice.equalsIgnoreCase("Menu")) {
+                    player1.menu(player1);
+                } else
+                    System.out.println("Please try again");
 
+            }
         }
         return iscomplete;
     }
 
 
-    public boolean mapA4() {
-
-
-        while(!Maps.this.iscomplete){
-        System.out.println("Shipwreck Cove");
-        System.out.println("you awaken, poked by a strangers walking stick.");
-        System.out.println("your body aches all over, finally opening your eyes the man says");
-        System.out.println("\"You're lucky to be alive friend! Do you remember who you are?\"");
-        System.out.println("You can't quite remember your name but you tell the man its: ");
-        player1.setName(input.nextLine());
-        System.out.println(player1.getName() + " is it? Well its good that you don't have amnesia!");
+    public int mapA4() {
+        String choice;
+        System.out.println(iscomplete);
         isvalid = false;
-        Maps.this.iscomplete = true;
+
+        if(getComplete() == 0){
+            System.out.println("Shipwreck Cove");
+            System.out.println("you awaken, poked by a strangers walking stick.");
+            System.out.println("your body aches all over, finally opening your eyes the man says");
+            System.out.println("\"You're lucky to be alive friend! Do you remember who you are?\"");
+            System.out.println("You can't quite remember your name but you tell the man its: ");
+            player1.setName(input.nextLine());
+            System.out.println(player1.getName() + " is it? Well its good that you don't have amnesia!");
+            setcomplete(1);
+
         }
-        while (!isvalid) {
+
+        if (getComplete() >= 1) {
             mapDirection("north", "", "", "");
-            String choice = input.nextLine();
-            if (choice.equalsIgnoreCase("north")) {
-                isvalid = true;
-                mapA3();
-            }else if(choice.equalsIgnoreCase("Menu")) {
-                player1.menu(player1);
-            }else
-                System.out.println("Please try again");
+            choice = input.nextLine();
 
-        }
-    return(iscomplete);
+            if(choice.equalsIgnoreCase("north")) {
+                    isvalid = true;
+                    mapA3();
+                } else if (choice.equalsIgnoreCase("Menu")) {
+                    player1.menu(player1);
+                    } else
+                    System.out.println("Please try again");
+
+            }
+
+        return getComplete();
     }
-
 
     //Maps B row
 
