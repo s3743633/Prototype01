@@ -2,7 +2,7 @@ package com.prototype;
 
 import java.util.*;
 
-public abstract class Items {
+public class Items {
     private String itemName;
     public int itemDefence;
     public int itemDamage;
