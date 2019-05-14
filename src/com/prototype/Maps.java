@@ -141,13 +141,12 @@ public class Maps {
 
             }
         }
-        return iscomplete;
+        return getComplete();
     }
 
 
     public int mapA4() {
         String choice;
-        System.out.println(iscomplete);
         isvalid = false;
 
         if(getComplete() == 0){

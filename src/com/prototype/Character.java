@@ -84,6 +84,8 @@ public abstract class Character {
             System.out.println(b.getName() + " hp is now:" + health);
             if (!b.isAlive()) {
                 System.out.println("You killed: " + b.getName());
+                numOfPotions ++;
+                System.out.println("Congrats! "+b.getName() + ", dropped a potion, and you picked it up!");
             } else {
                 int yourHP = Math.max(0, a.getHealth() - monsDamage);
                 a.setHealth(yourHP);
@@ -98,13 +100,47 @@ public abstract class Character {
 
             do {
                 System.out.println("what do you want to do?");
-                System.out.println("attack or runaway?");
+                System.out.println("attack, heal or runaway?");
                 String choice = input.nextLine();
 
                 if (choice.equalsIgnoreCase("attack")) {
                     attack(a, b);
                 }
-            } while (a.isAlive() && b.isAlive());
+                else if (choice.equalsIgnoreCase("heal")){
+                    System.out.println(+ numOfPotions + " potion(s) left.");
+                    System.out.println("Would you like to use a potion?");
+                    System.out.println("\tYes");
+                    System.out.println("\tNo");
+                    choice = input.nextLine();
+                    int loop =0;
+                        while (loop==0) {
+                            if (choice.equalsIgnoreCase("Yes")) {
+                                if (numOfPotions >= 1) {
+                                    int yourHP = Math.min(100, a.getHealth() + potHealAmount);
+                                    a.setHealth(yourHP);
+                                    numOfPotions--;
+                                    System.out.println("Your HP is now: " + a.getHealth());
+                                    loop = 1;
+
+                                }
+
+                                } else if (numOfPotions == 0) {
+                                System.out.println("Sorry, you are out of potions!");
+                            }
+                            else if (choice.equalsIgnoreCase("no")) {
+                                loop = 1;
+
+
+                            } else {
+                                System.out.println("Invalid input");
+                                loop = 1;
+                            }
+                        }
+                    }
+
+
+                }
+             while (a.isAlive() && b.isAlive());
             if (!a.isAlive()) {
                 System.out.println("RIP Game Over!");
             }
