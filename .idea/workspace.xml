@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3335d5e-1775-4b57-b8d5-152d8305edf0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/prototype/Maps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/prototype/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/prototype/Character.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/prototype/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/prototype/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/prototype/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/prototype/Maps.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/prototype/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="51">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -34,29 +32,35 @@
               <ID>JAVA</ID>
               <OriginalElement>com.prototype</OriginalElement>
               <nodes>
-                <node x="346.0" y="0.0">com.prototype.Character</node>
-                <node x="230.125" y="488.0">com.prototype.Main</node>
-                <node x="338.0" y="332.0">com.prototype.Player</node>
-                <node x="0.0" y="299.0">com.prototype.Maps</node>
+                <node x="158.8083333333334" y="0.0">com.prototype.Character</node>
+                <node x="185.75416666666672" y="1051.0">com.prototype.Main</node>
+                <node x="146.8083333333334" y="299.0">com.prototype.Player</node>
+                <node x="0.0" y="444.0">com.prototype.Maps</node>
               </nodes>
               <notes />
               <edges>
                 <edge source="com.prototype.Main" target="com.prototype.Player">
-                  <point x="20.875" y="-25.5" />
-                  <point x="334.5" y="458.0" />
-                  <point x="388.75" y="458.0" />
-                  <point x="-50.75" y="36.5" />
+                  <point x="62.625" y="-25.5" />
+                  <point x="331.8791666666667" y="1031.0" />
+                  <point x="339.5" y="1031.0" />
+                  <point x="339.5" y="414.0" />
+                  <point x="329.5083333333333" y="414.0" />
+                  <point x="81.19999999999993" y="47.5" />
+                </edge>
+                <edge source="com.prototype.Maps" target="com.prototype.Player">
+                  <point x="0.0" y="-278.5" />
+                  <point x="159.0" y="424.0" />
+                  <point x="207.70833333333337" y="424.0" />
+                  <point x="-40.60000000000002" y="47.5" />
                 </edge>
                 <edge source="com.prototype.Main" target="com.prototype.Maps">
                   <point x="-62.625" y="-25.5" />
-                  <point x="251.0" y="468.0" />
-                  <point x="79.5" y="468.0" />
-                  <point x="-79.5" y="69.5" />
+                  <point x="206.62916666666672" y="1031.0" />
+                  <point x="79.5" y="1031.0" />
+                  <point x="-79.5" y="278.5" />
                 </edge>
                 <edge source="com.prototype.Player" target="com.prototype.Character">
-                  <point x="50.75" y="-36.5" />
-                  <point x="490.25" y="274.0" />
-                  <point x="486.25" y="274.0" />
+                  <point x="50.75" y="-47.5" />
                   <point x="46.75" y="124.5" />
                 </edge>
               </edges>
@@ -73,24 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/prototype/Maps.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#675#676#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/prototype/Character.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="771">
-              <caret line="106" column="5" lean-forward="true" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+            <state relative-caret-position="204">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
               <folding>
                 <element signature="e#571#572#0" expanded="true" />
                 <element signature="e#609#610#0" expanded="true" />
@@ -104,6 +95,20 @@
                 <element signature="e#1064#1065#0" expanded="true" />
                 <element signature="e#1095#1096#0" expanded="true" />
                 <element signature="e#1128#1129#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/prototype/Maps.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="422">
+              <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#642#643#0" expanded="true" />
+                <element signature="e#675#676#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -171,7 +176,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557746352633" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557795846401" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../okDevious" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -222,7 +227,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557704301701</updated>
-      <workItem from="1557704304190" duration="35414000" />
+      <workItem from="1557704304190" duration="41152000" />
     </task>
     <task id="LOCAL-00001" summary="not broken yet">
       <created>1557724984503</created>
@@ -235,7 +240,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35414000" />
+    <option name="totallyTimeSpent" value="41152000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1513" height="983" extended-state="6" />
@@ -342,61 +347,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://JAVA/com.prototype">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>com.prototype</OriginalElement>
-          <nodes>
-            <node x="346.0" y="0.0">com.prototype.Character</node>
-            <node x="230.125" y="488.0">com.prototype.Main</node>
-            <node x="338.0" y="332.0">com.prototype.Player</node>
-            <node x="0.0" y="299.0">com.prototype.Maps</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="com.prototype.Main" target="com.prototype.Player">
-              <point x="20.875" y="-25.5" />
-              <point x="334.5" y="458.0" />
-              <point x="388.75" y="458.0" />
-              <point x="-50.75" y="36.5" />
-            </edge>
-            <edge source="com.prototype.Main" target="com.prototype.Maps">
-              <point x="-62.625" y="-25.5" />
-              <point x="251.0" y="468.0" />
-              <point x="79.5" y="468.0" />
-              <point x="-79.5" y="69.5" />
-            </edge>
-            <edge source="com.prototype.Player" target="com.prototype.Character">
-              <point x="50.75" y="-36.5" />
-              <point x="490.25" y="274.0" />
-              <point x="486.25" y="274.0" />
-              <point x="46.75" y="124.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="-320.0" y="212.0" />
-          <SelectedNodes>
-            <node>com.prototype.Player</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/prototype/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/prototype/Character.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="771">
-          <caret line="106" column="5" lean-forward="true" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="e#571#572#0" expanded="true" />
             <element signature="e#609#610#0" expanded="true" />
@@ -414,14 +368,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/prototype/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/prototype/Maps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
+        <state relative-caret-position="422">
+          <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#642#643#0" expanded="true" />
             <element signature="e#675#676#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/com.prototype">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.prototype</OriginalElement>
+          <nodes>
+            <node x="158.8083333333334" y="0.0">com.prototype.Character</node>
+            <node x="185.75416666666672" y="1051.0">com.prototype.Main</node>
+            <node x="146.8083333333334" y="299.0">com.prototype.Player</node>
+            <node x="0.0" y="444.0">com.prototype.Maps</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="com.prototype.Main" target="com.prototype.Player">
+              <point x="62.625" y="-25.5" />
+              <point x="331.8791666666667" y="1031.0" />
+              <point x="339.5" y="1031.0" />
+              <point x="339.5" y="414.0" />
+              <point x="329.5083333333333" y="414.0" />
+              <point x="81.19999999999993" y="47.5" />
+            </edge>
+            <edge source="com.prototype.Maps" target="com.prototype.Player">
+              <point x="0.0" y="-278.5" />
+              <point x="159.0" y="424.0" />
+              <point x="207.70833333333337" y="424.0" />
+              <point x="-40.60000000000002" y="47.5" />
+            </edge>
+            <edge source="com.prototype.Main" target="com.prototype.Maps">
+              <point x="-62.625" y="-25.5" />
+              <point x="206.62916666666672" y="1031.0" />
+              <point x="79.5" y="1031.0" />
+              <point x="-79.5" y="278.5" />
+            </edge>
+            <edge source="com.prototype.Player" target="com.prototype.Character">
+              <point x="50.75" y="-47.5" />
+              <point x="46.75" y="124.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-320.0" y="212.0" />
+          <SelectedNodes>
+            <node>com.prototype.Player</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
