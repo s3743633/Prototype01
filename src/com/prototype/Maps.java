@@ -1,9 +1,6 @@
 package com.prototype;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Maps {
 
@@ -11,7 +8,7 @@ public class Maps {
     private String name;
     private int questID;
     private Scanner input = new Scanner(System.in);
-    private Player player1 = new Player("", 80, 5, 100, true, 0);
+    private Player player1 = new Player("", 80, 5, 100, true, 0,0);
     private List<String> inv = new ArrayList<String>();
     public String choice;
 
@@ -78,7 +75,7 @@ public class Maps {
 
         while (getComplete() == 1) {
             System.out.println("As you explore the area, you are attacked by a shiny blue slime!");
-            Player slime = new Player("slime", 20, 0, 5, true, 0);
+            Player slime = new Player("slime", 20, 0, 5, true, 0, 0);
             player1.fight(player1, slime);
             System.out.println("you found an axe!");
             inv.add("axe");
@@ -98,8 +95,6 @@ public class Maps {
                 player1.menu(player1);
             } else if (choice.equalsIgnoreCase("equip item")) {
                 equipitem();
-                //scanner here so that prompt doesnt loop.
-                input.nextLine();
             } else if (choice.equalsIgnoreCase("")) {
                 System.out.print("");
             } else System.out.println("Please try again");
@@ -138,7 +133,6 @@ public class Maps {
                 player1.menu(player1);
             } else if (choice.equalsIgnoreCase("equip item")) {
                 equipitem();
-                input.nextLine();
             }else System.out.println("Please try again");
 
         }
@@ -156,33 +150,28 @@ public class Maps {
         System.out.println("what do you want to equip?");
         System.out.println(inv);
         System.out.println("Exit");
-        choice = input.next();
+        choice = input.nextLine();
         int isEquipped = 1;
         //ifs are used here instead of a switch because it checks for 2 Strings. the while loop is used here so that the menu returns to the previous menu on return.
         while (isEquipped == 1) {
             if (choice.equalsIgnoreCase("axe") && inv.contains("axe")) {
-                player1.setDamage(110);
+                player1.setWeaponDmg(10);
                 System.out.println("Equipped successfully");
-                isEquipped = 2;
                 break;
             } else if (choice.equalsIgnoreCase("Dragon Longsword") && inv.contains("Dragon Longsword")) {
-                player1.setDamage(120);
+                player1.setWeaponDmg(20);
                 System.out.println("Equipped successfully");
-                isEquipped = 2;
                 break;
             }else if (choice.equalsIgnoreCase("exit")){
-                isEquipped = 2;
                 break;
             }else if(choice.equalsIgnoreCase("rune plate") && inv.contains("rune plate")){
                 player1.setDefence(100);
-                System.out.println("equipped succesfully");
-                isEquipped = 2;
+                System.out.println("equipped successfully");
                 break;
-            }else
+            }else{
                 System.out.println("Invalid input try again");
-                isEquipped = 1;
                 break;
-
+            }
         }
             return getComplete();
     }
