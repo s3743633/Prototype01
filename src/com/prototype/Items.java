@@ -3,18 +3,16 @@ package com.prototype;
 import java.util.*;
 
 public class Items {
-    private String itemName;
+    public String itemName;
     public int itemDefence;
     public int itemDamage;
-    public int itemAmount;
-    public boolean equipped;
+    public int itemId;
 
-    public Items(String name, int defence, int damage, int amount, boolean equipped) {
+    public Items(String name, int defence, int damage, int itemId){
         this.itemName = name;
         this.itemDefence = defence;
         this.itemDamage = damage;
-        this.itemAmount = amount;
-        this.equipped = equipped;
+        this.itemId = itemId;
     }
 
     public void setItemName(String name) {
@@ -29,62 +27,43 @@ public class Items {
         this.itemDamage = damage;
     }
 
-    public void setItemAmount(int amount) {
-        this.itemAmount = amount;
-    }
-
-    public void setEquipped(boolean equipped){this.equipped = equipped; }
+  //  public void setEquipped(boolean equipped){this.equipped = equipped; }
 
     public int getItemDamage() {
-        return itemDamage;
+        return this.itemDamage;
     }
 
     public int getItemDefence() {
-        return itemDefence;
-    }
-
-    public int getItemAmount() {
-        return itemAmount;
+        return this.itemDefence;
     }
 
     public String getItemName() {
-        return itemName;
+        return this.itemName;
     }
 
-    public boolean equipped(){
-        return equipped;
-    }
+   // public boolean equipped(){
+     //   return equipped;
+    //}
 
 
-    }
+}
 
 
 
 class Armour extends Items {
-    public Armour(String name, int defence, int damage, int amount, boolean equipped) {
+    public Armour(String name, int defence, int damage, int itemId) {
 
-        super(name, defence, damage, amount, equipped);
+        super(name, defence, damage, itemId);
 
     }
 
 }
 
 class Weapon extends Items {
-    public Weapon(String name, int defence, int damage, int amount, boolean equipped) {
+    public Weapon(String name, int defence, int damage,int itemId) {
 
-        super(name, defence, damage, amount, equipped);
-
-    }
-
-}
-
-class Potion extends Items {
-
-    public Potion(String name, int defence, int damage, int amount, boolean equipped) {
-
-        super(name, defence, damage, amount, equipped);
+        super(name, defence, damage, itemId);
 
     }
-
-
 }
+

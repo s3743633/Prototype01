@@ -1,5 +1,6 @@
 package com.prototype;
 
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
@@ -10,7 +11,10 @@ public class Main {
         Player player1 = new Player("bob", 100, 10, 30, true, 0);
         Maps mapa1 = new Maps(0, "beach", 0);
 
+
         mapa1.mapA4();
+
+
 
 
     }
