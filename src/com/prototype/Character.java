@@ -14,17 +14,16 @@ public abstract class Character {
     public int damage;
     private boolean isAlive;
     public int questID;
-    int equipId;
-    Items item = new Items("", 0, 0,1);
+    int weaponDmg;
 
-    public Character(String name, int health, int defence, int damage, boolean isAlive, int questID,int equipId) {
+    public Character(String name, int health, int defence, int damage, boolean isAlive, int questID,int weaponDmg) {
         this.name = name;
         this.health = health;
         this.defence = defence;
         this.damage = damage;
         this.isAlive = isAlive;
         this.questID = questID;
-        this.equipId = equipId;
+        this.weaponDmg= weaponDmg;
     }
 
     //getters and setters so that we can change the value of the attributes for things such as healing items, weapons
@@ -43,6 +42,10 @@ public abstract class Character {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setWeaponDmg(int weaponDmg){
+        this.weaponDmg = weaponDmg;
     }
 
     public void setAlive(boolean isAlive){this.isAlive = isAlive; }
@@ -66,6 +69,10 @@ public abstract class Character {
     public boolean isAlive(){
         return health > 0;
     }
+
+    public int getWeaponDmg(){
+        return weaponDmg;
+    }
 }
 
 //Player class is a subclass of character, inheriting its attributes.
@@ -79,7 +86,7 @@ public abstract class Character {
 
 //constructor used to create enemies, NPCs, and player character.
 
-        public Player(String name, int health, int defence, int damage, boolean isAlive, int questID) {
+        public Player(String name, int health, int defence, int damage, boolean isAlive, int questID, int weaponDmg) {
 
             super(name, health, defence, damage, isAlive, questID, 0);
 
@@ -92,8 +99,8 @@ public abstract class Character {
             Random rand = new Random();
             //generates random damage value for both player and enemy.
             //math max, makes it so the damage cant be below 0, which would be possible since defence lowers damage
-            int damage = Math.max(0, rand.nextInt(a.getDamage()) - b.getDefence());
-            int monsDamage = Math.max(0, rand.nextInt(b.getDamage()) - a.getDefence());
+            int damage = Math.max(0, rand.nextInt(a.getDamage() + a.getWeaponDmg()) - b.getDefence());
+            int monsDamage = Math.max(0, rand.nextInt(b.getDamage() + b.getWeaponDmg()) - a.getDefence());
             //sets it so health cant drop below 0
             int health = Math.max(0, b.getHealth() - damage);
             b.setHealth(health);
@@ -218,10 +225,11 @@ public abstract class Character {
 
                     } else if (menu.equalsIgnoreCase("check status")) {
                         System.out.println("Your current stats are: ");
-                        System.out.println("Name = " + a.getName());
-                        System.out.println("Health = " + a.getHealth());
-                        System.out.println("Damage = " + a.getDamage());
-                        System.out.println("Defence = " + a.getDefence());
+                        System.out.println("Name: " + a.getName());
+                        System.out.println("Health: " + a.getHealth());
+                        System.out.println("Damage: " + a.getDamage());
+                        System.out.println("Defence: " + a.getDefence());
+                        System.out.println("Weapon damage: " + a.getWeaponDmg());
 
                     } else if (menu.equalsIgnoreCase("Exit")) {
                         break;

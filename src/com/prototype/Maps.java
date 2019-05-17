@@ -18,7 +18,7 @@ public class Maps {
         this.questID = questID;
     }
 
-    public void setcomplete(int isComplete) {
+    public void setComplete(int isComplete) {
         this.isComplete = isComplete;
     }
 
@@ -79,7 +79,7 @@ public class Maps {
             player1.fight(player1, slime);
             System.out.println("you found an axe!");
             inv.add("axe");
-            setcomplete(2);
+            setComplete(2);
         }
 
         while (getComplete() >= 2) {
@@ -94,11 +94,10 @@ public class Maps {
             } else if (choice.equalsIgnoreCase("Menu")) {
                 player1.menu(player1);
             } else if (choice.equalsIgnoreCase("equip item")) {
-                equipitem();
-            } else if (choice.equalsIgnoreCase("")) {
-                System.out.print("");
-            } else System.out.println("Please try again");
-               //validation check
+                equipItem();
+            } else {
+                System.out.println("Please try again");
+            } //validation check
 
         }
         return getComplete();
@@ -118,7 +117,7 @@ public class Maps {
             player1.setName(input.nextLine());
             System.out.println(player1.getName() + " is it? Well its good that you don't have amnesia!");
             inv.add("rune plate");
-            setcomplete(1);
+            setComplete(1);
 
 
         }
@@ -132,9 +131,10 @@ public class Maps {
             } else if (choice.equalsIgnoreCase("Menu")) {
                 player1.menu(player1);
             } else if (choice.equalsIgnoreCase("equip item")) {
-                equipitem();
-            }else System.out.println("Please try again");
-
+                equipItem();
+            }else {
+                System.out.println("Please try again");
+            }
         }
 
 
@@ -146,7 +146,7 @@ public class Maps {
         return getComplete();
     }
 
-    public int equipitem() {
+    public int equipItem() {
         System.out.println("what do you want to equip?");
         System.out.println(inv);
         System.out.println("Exit");
@@ -157,20 +157,24 @@ public class Maps {
             if (choice.equalsIgnoreCase("axe") && inv.contains("axe")) {
                 player1.setWeaponDmg(10);
                 System.out.println("Equipped successfully");
-                break;
+                isEquipped = 2;
+                equipItem();
             } else if (choice.equalsIgnoreCase("Dragon Longsword") && inv.contains("Dragon Longsword")) {
                 player1.setWeaponDmg(20);
                 System.out.println("Equipped successfully");
-                break;
-            }else if (choice.equalsIgnoreCase("exit")){
-                break;
+                isEquipped = 2;
+                equipItem();
             }else if(choice.equalsIgnoreCase("rune plate") && inv.contains("rune plate")){
                 player1.setDefence(100);
-                System.out.println("equipped successfully");
+                System.out.println("Equipped successfully");
+                isEquipped = 2;
+                equipItem();
+            }else if (choice.equalsIgnoreCase("exit")){
                 break;
             }else{
                 System.out.println("Invalid input try again");
-                break;
+                isEquipped = 2;
+                equipItem();
             }
         }
             return getComplete();
