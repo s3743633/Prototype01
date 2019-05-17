@@ -11,7 +11,7 @@ public class Maps {
     private String name;
     private int questID;
     private Scanner input = new Scanner(System.in);
-    private Player player1 = new Player("", 80, 5, 100, true, 0);
+    private Player player1 = new Player("", 60, 5, 100, true, 0);
     private List<String> inv = new ArrayList<String>();
     public String choice;
 
@@ -98,11 +98,9 @@ public class Maps {
                 player1.menu(player1);
             } else if (choice.equalsIgnoreCase("equip item")) {
                 equipitem();
-                //scanner here so that prompt doesnt loop.
-                input.nextLine();
             } else if (choice.equalsIgnoreCase("")) {
                 System.out.print("");
-            } else System.out.println("Please try again");
+            } else {System.out.println("Please try again");}
                //validation check
 
         }
@@ -138,8 +136,7 @@ public class Maps {
                 player1.menu(player1);
             } else if (choice.equalsIgnoreCase("equip item")) {
                 equipitem();
-                input.nextLine();
-            }else System.out.println("Please try again");
+            }else {System.out.println("Please try again");}
 
         }
 

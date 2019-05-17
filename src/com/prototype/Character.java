@@ -179,7 +179,7 @@ public abstract class Character {
                 loop = 1;
 
                 while (loop == 1) {
-                    if (menu.equalsIgnoreCase("heal") && a.getHealth() < 100) {
+                    if (menu.equalsIgnoreCase("heal")) {
                         System.out.println("You have " + numOfPotions + " potion(s) left.");
                         System.out.println("Would you like to use a potion?");
                         System.out.println("\tYes");
@@ -187,17 +187,22 @@ public abstract class Character {
                         String choice = input.nextLine();
                         loop = 2;
 
-
                         while (loop == 2) {
                             if (choice.equalsIgnoreCase("Yes")) {
                                 if (numOfPotions >= 1) {
+                                    if (a.getHealth() < 100){
                                     int yourHP = Math.min(100, a.getHealth() + potHealAmount);
                                     a.setHealth(yourHP);
                                     numOfPotions--;
                                     System.out.println("Your current HP is now: " + a.getHealth());
                                     loop = 1;
+                                    }
+                                    else {
+                                        System.out.println("Your HP is Full!");
+                                        loop = 0;
+                                    }
 
-                                } else if (numOfPotions == 0) {
+                                } else {
                                     System.out.println("Sorry, you are out of potions!");
                                     loop = 0;
 
@@ -217,14 +222,9 @@ public abstract class Character {
                         System.out.println("Health = " + a.getHealth());
                         System.out.println("Damage = " + a.getDamage());
                         System.out.println("Defence = " + a.getDefence());
-                        loop = 0;
 
                     } else if (menu.equalsIgnoreCase("Exit")) {
                         break;
-
-                    } else if (a.getHealth() <= 100) {
-                        System.out.println("Your health is already full");
-                        loop = 1;
 
                     } else System.out.println("Invalid input, try again");
                     loop = 0;
