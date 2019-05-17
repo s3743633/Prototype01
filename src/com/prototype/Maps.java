@@ -150,37 +150,54 @@ public class Maps {
     }
 
     public int equipitem() {
-        System.out.println("what do you want to equip?");
-        System.out.println(inv);
-        System.out.println("Exit");
-        choice = input.next();
-        int isEquipped = 1;
-        //ifs are used here instead of a switch because it checks for 2 Strings. the while loop is used here so that the menu returns to the previous menu on return.
-        while (isEquipped == 1) {
-            if (choice.equalsIgnoreCase("axe") && inv.contains("axe")) {
-                player1.setDamage(110);
-                System.out.println("Equipped successfully");
-                isEquipped = 2;
-                break;
-            } else if (choice.equalsIgnoreCase("Dragon Longsword") && inv.contains("Dragon Longsword")) {
-                player1.setDamage(120);
-                System.out.println("Equipped successfully");
-                isEquipped = 2;
-                break;
-            }else if (choice.equalsIgnoreCase("exit")){
-                isEquipped = 2;
-                break;
-            }else if(choice.equalsIgnoreCase("rune plate") && inv.contains("rune plate")){
-                player1.setDefence(100);
-                System.out.println("equipped succesfully");
-                isEquipped = 2;
-                break;
-            }else
-                System.out.println("Invalid input try again");
-                isEquipped = 1;
-                break;
+        int isEquipped =0;
+        while (isEquipped == 0) {
+            System.out.println("what do you want to equip?");
+            System.out.println(inv);
+            System.out.println("Exit");
+            choice = input.nextLine();
+            isEquipped = 1;
+            //ifs are used here instead of a switch because it checks for 2 Strings. the while loop is used here so that the menu returns to the previous menu on return.
+            while (isEquipped == 1) {
+                if (choice.equalsIgnoreCase("axe")) {
+                    if(inv.contains("axe")) {
+                        player1.setDamage(110);
+                        System.out.println("Equipped successfully");
+                        isEquipped = 0;
+                    } else {
+                        isEquipped = 0;
 
+                    }
+
+
+                } else if (choice.equalsIgnoreCase("Dragon Longsword")) {
+                    if(inv.contains("Dragon Longsword")) {
+                        player1.setDamage(110);
+                        System.out.println("Equipped successfully");
+                        isEquipped = 0;
+                    } else {
+                        isEquipped = 0;
+
+                    }
+                } else if (choice.equalsIgnoreCase("rune plate")) {
+                    if(inv.contains("rune plate")) {
+                        player1.setDamage(110);
+                        System.out.println("Equipped successfully");
+                        isEquipped = 0;
+                    } else {
+                        isEquipped = 0;
+
+                    }
+
+                } else if (choice.equalsIgnoreCase("exit")) {
+                    break;
+                } else {
+
+                    System.out.println("Invalid input try again");
+                isEquipped = 0;}
+
+            }
         }
-            return getComplete();
+        return getComplete();
     }
 }
