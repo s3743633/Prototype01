@@ -9,12 +9,10 @@ public class Main {
         Maps mapa1 = new Maps(0, "beach", 0);
 
 
-        mapa1.mapA4();
+            mapa1.mapA4();
 
-
+        }
 
 
     }
 
-
-}

@@ -7,7 +7,7 @@ public class Maps {
     private String name;
     private int questID;
     private Scanner input = new Scanner(System.in);
-    private Player player1 = new Player("", 80, 5, 100, true, 0,0, 0);
+    private Player player1 = new Player("", 100, 5, 10, true, 0,0, 0);
     private List<String> inv = new ArrayList<String>();
     public String choice;
 
@@ -133,7 +133,7 @@ public class Maps {
 
         while (getComplete() == 1) {
             System.out.println("As you explore the area, you are attacked by a shiny blue slime!");
-            Player slime = new Player("slime", 20, 0, 5, true, 0, 0,0 );
+            Player slime = new Player("slime", 20, 10, 100, true, 0, 0,0 );
             player1.fight(player1, slime);
             System.out.println("you found an "+ wepName[1]);
             inv.add(wepName[1]);
@@ -141,6 +141,7 @@ public class Maps {
             setComplete(2);
         }
 
+//so that it doesnt repeat above sequence
         while (getComplete() >= 2) {
             mapDirection("", "east", "south", "");
             choice = input.nextLine();
@@ -192,6 +193,8 @@ public class Maps {
                 player1.menu(player1);
             } else if (choice.equalsIgnoreCase("Inventory")) {
                 equipItem();
+            }else if(choice.equalsIgnoreCase("::dev")){
+                devMenu();
             }else {
                 System.out.println("Please try again");
             }
@@ -203,7 +206,49 @@ public class Maps {
     public int mapB3() {
 
         return getComplete();
+
+    }
+
+        public int devMenu(){
+
+            int x;
+            System.out.println("Dev menu entered");
+
+            choice=input.nextLine();
+            if(choice.equalsIgnoreCase("::mapA3")){
+                mapA3();
+            }else if(choice.equalsIgnoreCase("::mapA4")){
+                mapA4();
+            //add maps here
+            }else if (choice.equalsIgnoreCase("::setComplete")){
+                System.out.println("set complete to?");
+                x=input.nextInt();
+                setComplete(x);
+            }else if(choice.equalsIgnoreCase("::setDamage")){
+                System.out.println("set damage to?");
+                x=input.nextInt();
+                player1.setDamage(x);
+            }else if(choice.equalsIgnoreCase("::setWepDmg")){
+                System.out.println("set weapon damage to?");
+                x=input.nextInt();
+                player1.setWeaponDmg(x);
+            }else if(choice.equalsIgnoreCase("::setHealth")){
+                System.out.println("set health to?");
+                x=input.nextInt();
+                player1.setHealth(x);
+            }else if(choice.equalsIgnoreCase("::setDef")){
+                System.out.println("set defence to?");
+                x=input.nextInt();
+                player1.setDefence(x);
+            }else if(choice.equalsIgnoreCase("::setQuestId")){
+                System.out.println("set questID to?");
+                x=input.nextInt();
+                setQuestID(x);
+            }else if(choice.equals("::resetInv")){
+                inv.clear();
+            }
+            return getComplete();
+        }
     }
 
 
-}

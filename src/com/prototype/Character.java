@@ -12,7 +12,7 @@ public abstract class Character {
     public int health;
     public int defence;
     public int damage;
-    private boolean isAlive;
+    public boolean isAlive;
     public int questID;
     int weaponDmg;
     public int gp;
@@ -110,8 +110,8 @@ public abstract class Character {
             Random rand = new Random();
             //generates random damage value for both player and enemy.
             //math max, makes it so the damage cant be below 0, which would be possible since defence lowers damage
-            int damage = Math.max(0, rand.nextInt(a.getDamage() + a.getWeaponDmg()) - b.getDefence());
-            int monsDamage = Math.max(0, rand.nextInt(b.getDamage() + b.getWeaponDmg()) - a.getDefence());
+            int damage = Math.max(0, rand.nextInt(a.getDamage() + a.getWeaponDmg()) - rand.nextInt(a.getDefence()));
+            int monsDamage = Math.max(0, rand.nextInt(b.getDamage() + b.getWeaponDmg()) - rand.nextInt(a.getDefence()));
             //sets it so health cant drop below 0
             int health = Math.max(0, b.getHealth() - damage);
             b.setHealth(health);
@@ -182,6 +182,7 @@ public abstract class Character {
              while (a.isAlive() && b.isAlive());
             if (!a.isAlive()) {
                 System.out.println("RIP Game Over!");
+                System.exit(0);
             }
 
         }
