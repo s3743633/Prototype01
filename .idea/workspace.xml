@@ -49,14 +49,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/prototype/Maps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+            <state relative-caret-position="300">
+              <caret line="77" column="31" lean-forward="true" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
               <folding>
                 <element signature="e#308#316#0" expanded="true" />
                 <element signature="e#369#377#0" expanded="true" />
-                <element signature="method#Maps#0;class#Maps#0" />
-                <element signature="method#equipItem#0;class#Maps#0" />
-                <element signature="method#inventory#0;class#Maps#0" />
                 <element signature="method#mapB3#0;class#Maps#0" />
               </folding>
             </state>
@@ -148,7 +145,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558318976573" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558321500756" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../okDevious" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -214,7 +211,7 @@
       <workItem from="1557967267701" duration="19706000" />
       <workItem from="1558061039158" duration="12053000" />
       <workItem from="1558184874870" duration="7000" />
-      <workItem from="1558310442809" duration="8796000" />
+      <workItem from="1558310442809" duration="10856000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1557722987000</created>
@@ -227,7 +224,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99009000" />
+    <option name="totallyTimeSpent" value="101069000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1513" height="983" extended-state="6" />
@@ -354,14 +351,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/prototype/Maps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+        <state relative-caret-position="300">
+          <caret line="77" column="31" lean-forward="true" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
           <folding>
             <element signature="e#308#316#0" expanded="true" />
             <element signature="e#369#377#0" expanded="true" />
-            <element signature="method#Maps#0;class#Maps#0" />
-            <element signature="method#equipItem#0;class#Maps#0" />
-            <element signature="method#inventory#0;class#Maps#0" />
             <element signature="method#mapB3#0;class#Maps#0" />
           </folding>
         </state>

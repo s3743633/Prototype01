@@ -10,9 +10,14 @@ public class Maps {
     private Scanner input = new Scanner(System.in);
     private Player player1 = new Player("", 80, 5, 100, true, 0,0);
     private List<String> inv = new ArrayList<String>();
-    private List<String> equipped = new ArrayList<String>();
     public String choice;
-    public String equippeditems[] =  new String[2];
+
+    //default items set so you can't equip null
+
+
+    public String[] equippeditems = {"pointy stick", "tattered robes"};
+
+
 
     public Maps(int isComplete, String name, int questID) {
         this.isComplete = isComplete;
@@ -57,17 +62,18 @@ public class Maps {
 
         while (isEquipped == 1) {
             if (choice.equalsIgnoreCase("axe") && inv.contains("axe")) {
-                player1.setWeaponDmg(10);
                 System.out.println("Equipped successfully");
-                isEquipped = 2;
-                inv.remove("axe");
+                player1.setWeaponDmg(10);
                 inv.add(equippeditems[0]);
                 equippeditems[0] = ("axe");
+                inv.remove("axe");
+                isEquipped = 2;
                 equipItem();
 
             } else if (choice.equalsIgnoreCase("Dragon Longsword") && inv.contains("dragon longsword")) {
-                player1.setWeaponDmg(20);
                 System.out.println("Equipped successfully");
+                player1.setWeaponDmg(20);
+                inv.add(equippeditems[0]);
                 equippeditems[0] = ("dragon longsword");
                 inv.remove("dragon longsword");
                 isEquipped = 2;
@@ -89,48 +95,7 @@ public class Maps {
             return getComplete();
     }
 
-        public void inventory(){
-            System.out.println(inv);
-            System.out.println(equipped);
-            System.out.println("equip or unequip?");
-            choice = input.nextLine();
 
-            if (choice.equalsIgnoreCase("Equip")) {
-                equipItem();
-            } else if (choice.equalsIgnoreCase("Unequip")) {
-                unequipItem();
-            }
-        }
-
-
-
-
-    public void unequipItem() {
-
-        int isEquipped = 1;
-        System.out.println("what do you want to unequip?");
-        System.out.println(Arrays.toString(equippeditems));
-        choice = input.nextLine();
-
-        while (isEquipped == 1) {
-            if (choice.equalsIgnoreCase("axe") && equipped.contains("axe")) {
-                System.out.println("unequipped axe");
-                inv.add("axe");
-                equipped.remove("axe");
-                isEquipped = 2;
-
-            } else if (choice.equalsIgnoreCase("unequip dragon longsword") && equipped.contains("dragon longsword")) {
-                System.out.println("unequipped dlong");
-                inv.add("dragon longsword");
-                equipped.remove("dragon longsword");
-                isEquipped = 2;
-            }
-                else{
-                    isEquipped = 2;
-            }
-
-        }
-    }
 
     public void mapDirection(String north, String east, String south, String west) {
 
@@ -185,7 +150,7 @@ public class Maps {
             } else if (choice.equalsIgnoreCase("Menu")) {
                 player1.menu(player1);
             } else if (choice.equalsIgnoreCase("Inventory")) {
-                inventory();
+                equipItem();
             } else {
                 System.out.println("Please try again");
             } //validation check
@@ -222,7 +187,7 @@ public class Maps {
             } else if (choice.equalsIgnoreCase("Menu")) {
                 player1.menu(player1);
             } else if (choice.equalsIgnoreCase("Inventory")) {
-                inventory();
+                equipItem();
             }else {
                 System.out.println("Please try again");
             }
