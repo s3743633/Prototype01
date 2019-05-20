@@ -3,7 +3,6 @@ package com.prototype;
 import java.util.*;
 
 public class Maps {
-
     private int isComplete;
     private String name;
     private int questID;
@@ -13,9 +12,10 @@ public class Maps {
     public String choice;
 
     //default items set so you can't equip null
-
-
     public String[] equippeditems = {"pointy stick", "tattered robes"};
+
+    public String[] weapname = {"wooden sword", "metal sword", "bronze sword"};
+    public int[] weapdmg = {10, 20, 30};
 
 
 
@@ -61,12 +61,12 @@ public class Maps {
         //ifs are used here instead of a switch because it checks for 2 Strings. the while loop is used here so that the menu returns to the previous menu on return.
 
         while (isEquipped == 1) {
-            if (choice.equalsIgnoreCase("axe") && inv.contains("axe")) {
+            if (choice.equalsIgnoreCase(weapname[0]) && inv.contains(weapname[0])) {
                 System.out.println("Equipped successfully");
-                player1.setWeaponDmg(10);
+                player1.setWeaponDmg(weapdmg[0]);
                 inv.add(equippeditems[0]);
-                equippeditems[0] = ("axe");
-                inv.remove("axe");
+                equippeditems[0] = (weapname[0]);
+                inv.remove(weapname[0]);
                 isEquipped = 2;
                 equipItem();
 
@@ -132,8 +132,8 @@ public class Maps {
             System.out.println("As you explore the area, you are attacked by a shiny blue slime!");
             Player slime = new Player("slime", 20, 0, 5, true, 0, 0);
             player1.fight(player1, slime);
-            System.out.println("you found an axe!");
-            inv.add("axe");
+            System.out.println("you found an "+ weapname[0]);
+            inv.add(weapname[0]);
             inv.add("dragon longsword");
             setComplete(2);
         }
