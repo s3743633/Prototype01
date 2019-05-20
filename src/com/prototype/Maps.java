@@ -7,16 +7,16 @@ public class Maps {
     private String name;
     private int questID;
     private Scanner input = new Scanner(System.in);
-    private Player player1 = new Player("", 80, 5, 100, true, 0,0);
+    private Player player1 = new Player("", 80, 5, 100, true, 0,0, 0);
     private List<String> inv = new ArrayList<String>();
     public String choice;
 
     //default items set so you can't equip null
-    public String[] equippeditems = {"pointy stick", "tattered robes"};
+    public String[] equippedItems = new String[2];
 
-    public String[] weapname = {"wooden sword", "metal sword", "bronze sword"};
-    public int[] weapdmg = {10, 20, 30};
-
+    public String[] wepName = {"pointy stick", "Bronze sword", "Steel Sword", "Dragon Sword"};
+    public String[] armName = {"Tattered Clothes", "Bronze Platebody", "Steel Platebody, Dragon Platebody"};
+    public int[] itemStat = {0,10, 20, 30};
 
 
     public Maps(int isComplete, String name, int questID) {
@@ -53,7 +53,7 @@ public class Maps {
         System.out.println("what do you want to equip?");
         System.out.println(inv);
         System.out.println("currently equipped items:");
-        System.out.println(Arrays.toString(equippeditems));
+        System.out.println(Arrays.toString(equippedItems));
         System.out.println("Exit");
         choice = input.nextLine();
         int isEquipped = 1;
@@ -61,29 +61,32 @@ public class Maps {
         //ifs are used here instead of a switch because it checks for 2 Strings. the while loop is used here so that the menu returns to the previous menu on return.
 
         while (isEquipped == 1) {
-            if (choice.equalsIgnoreCase(weapname[0]) && inv.contains(weapname[0])) {
+            if (choice.equalsIgnoreCase(wepName[1]) && inv.contains(wepName[1])) {
                 System.out.println("Equipped successfully");
-                player1.setWeaponDmg(weapdmg[0]);
-                inv.add(equippeditems[0]);
-                equippeditems[0] = (weapname[0]);
-                inv.remove(weapname[0]);
+                player1.setWeaponDmg(itemStat[1]);  //sets weapon damage
+                inv.add(equippedItems[0]); //adds current item to inventory
+                equippedItems[0] = (wepName[1]); //replaces equipped item 0 index
+                inv.remove(wepName[1]); //removes item from inventory
                 isEquipped = 2;
                 equipItem();
 
-            } else if (choice.equalsIgnoreCase("Dragon Longsword") && inv.contains("dragon longsword")) {
+            } else if (choice.equalsIgnoreCase(wepName[2]) && inv.contains(wepName[2])) {
                 System.out.println("Equipped successfully");
-                player1.setWeaponDmg(20);
-                inv.add(equippeditems[0]);
-                equippeditems[0] = ("dragon longsword");
-                inv.remove("dragon longsword");
+                player1.setWeaponDmg(itemStat[2]);
+                inv.add(equippedItems[0]);
+                equippedItems[0] = wepName[2];
+                inv.remove(wepName[2]);
                 isEquipped = 2;
                 equipItem();
 
-            } else if (choice.equalsIgnoreCase("rune plate") && inv.contains("rune plate")) {
-                player1.setDefence(100);
+            } else if (choice.equalsIgnoreCase(wepName[3]) && inv.contains(wepName[3])) {
                 System.out.println("Equipped successfully");
+                player1.setWeaponDmg(itemStat[3]);
+                inv.add(equippedItems[0]);
+                inv.remove(wepName[3]);
                 isEquipped = 2;
                 equipItem();
+
             } else if (choice.equalsIgnoreCase("exit")) {
                 break;
             } else {
@@ -130,21 +133,21 @@ public class Maps {
 
         while (getComplete() == 1) {
             System.out.println("As you explore the area, you are attacked by a shiny blue slime!");
-            Player slime = new Player("slime", 20, 0, 5, true, 0, 0);
+            Player slime = new Player("slime", 20, 0, 5, true, 0, 0,0 );
             player1.fight(player1, slime);
-            System.out.println("you found an "+ weapname[0]);
-            inv.add(weapname[0]);
-            inv.add("dragon longsword");
+            System.out.println("you found an "+ wepName[1]);
+            inv.add(wepName[1]);
+            inv.add(wepName[2]);
             setComplete(2);
         }
 
         while (getComplete() >= 2) {
             mapDirection("", "east", "south", "");
             choice = input.nextLine();
-            if (choice.equalsIgnoreCase("east")) {
+            if (choice.equalsIgnoreCase("east") || choice.equalsIgnoreCase("go east") || choice.equalsIgnoreCase("e")) {
                 mapB3();
 
-            } else if (choice.equalsIgnoreCase("south")) {
+            } else if (choice.equalsIgnoreCase("south") || choice.equalsIgnoreCase("go south") || choice.equalsIgnoreCase("s")) {
                 mapA4();
 
             } else if (choice.equalsIgnoreCase("Menu")) {
@@ -172,7 +175,8 @@ public class Maps {
             System.out.println("You can't quite remember your name but you tell the man its: ");
             player1.setName(input.nextLine());
             System.out.println(player1.getName() + " is it? Well its good that you don't have amnesia!");
-            inv.add("rune plate");
+            equippedItems[0] = wepName[0];
+            equippedItems[1] = armName[0];
             setComplete(1);
 
 

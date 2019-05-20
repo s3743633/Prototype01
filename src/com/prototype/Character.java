@@ -15,8 +15,9 @@ public abstract class Character {
     private boolean isAlive;
     public int questID;
     int weaponDmg;
+    public int gp;
 
-    public Character(String name, int health, int defence, int damage, boolean isAlive, int questID,int weaponDmg) {
+    public Character(String name, int health, int defence, int damage, boolean isAlive, int questID,int weaponDmg, int gp) {
         this.name = name;
         this.health = health;
         this.defence = defence;
@@ -24,6 +25,7 @@ public abstract class Character {
         this.isAlive = isAlive;
         this.questID = questID;
         this.weaponDmg= weaponDmg;
+        this.gp = gp;
     }
 
     //getters and setters so that we can change the value of the attributes for things such as healing items, weapons
@@ -46,6 +48,11 @@ public abstract class Character {
 
     public void setWeaponDmg(int weaponDmg){
         this.weaponDmg = weaponDmg;
+    }
+
+    public void setgp(int gp){
+        this.gp = gp;
+
     }
 
     public void setAlive(boolean isAlive){this.isAlive = isAlive; }
@@ -73,6 +80,10 @@ public abstract class Character {
     public int getWeaponDmg(){
         return weaponDmg;
     }
+
+    public int getgp(){
+        return gp;
+    }
 }
 
 //Player class is a subclass of character, inheriting its attributes.
@@ -86,9 +97,9 @@ public abstract class Character {
 
 //constructor used to create enemies, NPCs, and player character.
 
-        public Player(String name, int health, int defence, int damage, boolean isAlive, int questID, int weaponDmg) {
+        public Player(String name, int health, int defence, int damage, boolean isAlive, int questID, int weaponDmg, int gp) {
 
-            super(name, health, defence, damage, isAlive, questID, 0);
+            super(name, health, defence, damage, isAlive, questID, 0,0);
 
         }
 
@@ -230,6 +241,7 @@ public abstract class Character {
                         System.out.println("Damage: " + a.getDamage());
                         System.out.println("Defence: " + a.getDefence());
                         System.out.println("Weapon damage: " + a.getWeaponDmg());
+                        System.out.println("Money: " + a.getgp());
 
                     } else if (menu.equalsIgnoreCase("Exit")) {
                         break;
