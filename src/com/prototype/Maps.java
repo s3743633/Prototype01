@@ -12,6 +12,7 @@ public class Maps {
     private List<String> inv = new ArrayList<String>();
     private List<String> equipped = new ArrayList<String>();
     public String choice;
+    public String equippeditems[] =  new String[2];
 
     public Maps(int isComplete, String name, int questID) {
         this.isComplete = isComplete;
@@ -47,7 +48,7 @@ public class Maps {
         System.out.println("what do you want to equip?");
         System.out.println(inv);
         System.out.println("currently equipped items:");
-        System.out.println(equipped);
+        System.out.println(Arrays.toString(equippeditems));
         System.out.println("Exit");
         choice = input.nextLine();
         int isEquipped = 1;
@@ -60,15 +61,14 @@ public class Maps {
                 System.out.println("Equipped successfully");
                 isEquipped = 2;
                 inv.remove("axe");
-                equipped.clear();
-                equipped.add("axe");
+                inv.add(equippeditems[0]);
+                equippeditems[0] = ("axe");
                 equipItem();
 
             } else if (choice.equalsIgnoreCase("Dragon Longsword") && inv.contains("dragon longsword")) {
                 player1.setWeaponDmg(20);
                 System.out.println("Equipped successfully");
-                equipped.clear();
-                equipped.add("dragon longsword");
+                equippeditems[0] = ("dragon longsword");
                 inv.remove("dragon longsword");
                 isEquipped = 2;
                 equipItem();
@@ -103,11 +103,13 @@ public class Maps {
         }
 
 
+
+
     public void unequipItem() {
 
         int isEquipped = 1;
         System.out.println("what do you want to unequip?");
-        System.out.println(equipped);
+        System.out.println(Arrays.toString(equippeditems));
         choice = input.nextLine();
 
         while (isEquipped == 1) {
