@@ -168,17 +168,13 @@ public class Maps {
         }
         return getComplete();
     }
-
-
-
     public int mapA4() {
         setQuestID(1);
-
+        System.out.println("Shipwreck Cove");
 
         //loop used for unique scenario on first entry.
         while (getComplete() == 0) {
-            player1.setLives(3);
-            System.out.println("Shipwreck Cove");
+
             System.out.println("you awaken, poked by a strangers walking stick.");
             System.out.println("your body aches all over, finally opening your eyes the man says");
             System.out.println("\"You're lucky to be alive friend! Do you remember who you are?\"");
@@ -219,7 +215,7 @@ public class Maps {
 
     }
 
-        public int devMenu(){
+    public int devMenu(){
 
             int x;
             System.out.println("Dev menu entered");

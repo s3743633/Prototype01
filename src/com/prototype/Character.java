@@ -110,7 +110,7 @@ public abstract class Character {
 
         public Player(String name, int health, int defence, int damage, boolean isAlive, int questID, int weaponDmg, int gp, int lives) {
 
-            super(name, health, defence, damage, isAlive, questID, 0,0, 0);
+            super(name, health, defence, damage, isAlive, questID, weaponDmg, gp, lives);
 
         }
 
@@ -135,7 +135,12 @@ public abstract class Character {
                 //100% potion drop chance.
                 numOfPotions ++;
                 System.out.println("Congrats! "+b.getName() + ", dropped a potion, and you picked it up!");
-            } else {
+            }
+            if (!a.isAlive()){
+                a.setAlive(false);
+            }
+
+            else {
                 //the else is to prevent the enemy from dealing damage to the player if it dies in that turn.
                 int yourHP = Math.max(0, a.getHealth() - monsDamage);
                 a.setHealth(yourHP);
@@ -190,88 +195,94 @@ public abstract class Character {
 
             }
             while (a.isAlive() && b.isAlive());
-            if (!a.isAlive() && a.getLives() > 0){
-                    a.setHealth(50);
-                    a.setgp(a.getgp() - 100);
-                    a.setLives(a.getLives() - 1);
+            if (!a.isAlive()) {
+                a.setHealth(50);
+                a.setgp(a.getgp() - 100);
+                a.setLives(a.getLives() - 1);
+
+
+                if (a.getLives() >= 1) {
                     System.out.println("You have " + (a.getLives()) + " lives lefts");
                     System.out.println("your health is now " + a.getHealth());
                     System.out.println("your gp is now " + a.getgp());
                     a.isAlive = true;
-                } else if(a.getLives()==0){
+
+                } else{
                     System.out.println("Find cheats if you want to win, hint ::");
                     System.exit(0);
-
-                }
-            }
-
-
-        public void menu(Player a) {
-            int loop = 0;
-            while (loop == 0) {
-                Scanner input = new Scanner(System.in);
-                System.out.println("Heal");
-                System.out.println("Check Status");
-                System.out.println("Exit");
-                String menu = input.nextLine();
-                loop = 1;
-
-                while (loop == 1) {
-                    if (menu.equalsIgnoreCase("heal")) {
-                        System.out.println("You have " + numOfPotions + " potion(s) left.");
-                        System.out.println("Would you like to use a potion?");
-                        System.out.println("\tYes");
-                        System.out.println("\tNo");
-                        String choice = input.nextLine();
-                        loop = 2;
-
-                        while (loop == 2) {
-                            if (choice.equalsIgnoreCase("Yes")) {
-                                if (numOfPotions >= 1) {
-                                    if (a.getHealth() < 100){
-                                    int yourHP = Math.min(100, a.getHealth() + potHealAmount);
-                                    a.setHealth(yourHP);
-                                    numOfPotions--;
-                                    System.out.println("Your current HP is now: " + a.getHealth());
-                                    loop = 1;
-                                    }
-                                    else {
-                                        System.out.println("Your HP is Full!");
-                                        loop = 0;
-                                    }
-
-                                } else {
-                                    System.out.println("Sorry, you are out of potions!");
-                                    loop = 0;
-
-                                }
-                            } else if (choice.equalsIgnoreCase("No")) {
-                                loop = 0;
-
-                            } else {
-                                System.out.println("Invalid input");
-                                loop = 1;
-                            }
-                        }
-
-                    } else if (menu.equalsIgnoreCase("check status")) {
-                        System.out.println("Your current stats are: ");
-                        System.out.println("Name: " + a.getName());
-                        System.out.println("Health: " + a.getHealth());
-                        System.out.println("Damage: " + a.getDamage());
-                        System.out.println("Defence: " + a.getDefence());
-                        System.out.println("Weapon damage: " + a.getWeaponDmg());
-                        System.out.println("Money: " + a.getgp());
-
-                    } else if (menu.equalsIgnoreCase("Exit")) {
-                        break;
-
-                    } else System.out.println("Invalid input, try again");
-                    loop = 0;
                 }
             }
         }
 
 
-}
+            public void menu (Player a){
+                int loop = 0;
+                while (loop == 0) {
+                    Scanner input = new Scanner(System.in);
+                    System.out.println("Heal");
+                    System.out.println("Check Status");
+                    System.out.println("Exit");
+                    String menu = input.nextLine();
+                    loop = 1;
+
+                    while (loop == 1) {
+                        if (menu.equalsIgnoreCase("heal")) {
+                            System.out.println("You have " + numOfPotions + " potion(s) left.");
+                            System.out.println("Would you like to use a potion?");
+                            System.out.println("\tYes");
+                            System.out.println("\tNo");
+                            String choice = input.nextLine();
+                            loop = 2;
+
+                            while (loop == 2) {
+                                if (choice.equalsIgnoreCase("Yes")) {
+                                    if (numOfPotions >= 1) {
+                                        if (a.getHealth() < 100) {
+                                            int yourHP = Math.min(100, a.getHealth() + potHealAmount);
+                                            a.setHealth(yourHP);
+                                            numOfPotions--;
+                                            System.out.println("Your current HP is now: " + a.getHealth());
+                                            loop = 1;
+                                        } else {
+                                            System.out.println("Your HP is Full!");
+                                            loop = 0;
+                                        }
+
+                                    } else {
+                                        System.out.println("Sorry, you are out of potions!");
+                                        loop = 0;
+
+                                    }
+                                } else if (choice.equalsIgnoreCase("No")) {
+                                    loop = 0;
+
+                                } else {
+                                    System.out.println("Invalid input");
+                                    loop = 1;
+                                }
+                            }
+
+                        } else if (menu.equalsIgnoreCase("check status")) {
+                            System.out.println("Your current stats are: ");
+                            System.out.println("Name: " + a.getName());
+                            System.out.println("Health: " + a.getHealth());
+                            System.out.println("Damage: " + a.getDamage());
+                            System.out.println("Defence: " + a.getDefence());
+                            System.out.println("Weapon damage: " + a.getWeaponDmg());
+                            System.out.println("Money: " + a.getgp());
+
+                        } else if (menu.equalsIgnoreCase("Exit")) {
+                            break;
+
+                        } else {
+                            System.out.println("Invalid input, try again");
+                            loop = 0;
+                        }
+                    }
+                }
+            }
+        }
+
+
+
 
