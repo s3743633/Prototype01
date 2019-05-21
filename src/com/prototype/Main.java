@@ -11,7 +11,7 @@ public class Main {
 
         //loadScreen();
        // System.out.println("Press enter key to start");
-         //   newGame.nextLine();
+           // newGame.nextLine();
            gameStart.mapA4();
 
         }
