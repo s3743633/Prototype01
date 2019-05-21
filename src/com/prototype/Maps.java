@@ -7,6 +7,7 @@ public class Maps {
     private String name;
     private int questID;
     private Scanner input = new Scanner(System.in);
+    private Scanner input2 = new Scanner(System.in);
     private Player player1 = new Player("", 100, 5, 10, true, 0,0, 0,3);
     private List<String> inv = new ArrayList<String>();
     public String choice;
@@ -216,14 +217,13 @@ public class Maps {
 
     public void devMenu() {
 
-        int x;
-        System.out.println("Dev menu entered");
         int lop = 0;
-        while (lop == 1){
-            break;
-        }
+        int x;
+
         while (lop == 0) {
-            choice = input.nextLine();
+        System.out.println("Dev menu entered");
+        choice = input.nextLine();
+
             if (choice.equalsIgnoreCase("::mapA3")) { //teleport to square, you will be able to teleport to any tile, used for testing.
                 mapA3();
             } else if (choice.equalsIgnoreCase("::mapA4")) {
@@ -231,44 +231,36 @@ public class Maps {
                 //add maps here
             } else if (choice.equalsIgnoreCase("::setCom")) { //set stage of map square, useful for testing
                 System.out.println("set complete to?");
-                x = input.nextInt();
+                x = input2.nextInt();
                 setComplete(x);
-                devMenu();
             } else if (choice.equalsIgnoreCase("::setDmg")) { //change damage of player
                 System.out.println("set damage to?");
-                x = input.nextInt();
+                x = input2.nextInt();
                 player1.setDamage(x);
-                break;
             } else if (choice.equalsIgnoreCase("::setWDmg")) { //change weapon damage of player
                 System.out.println("set weapon damage to?");
-                x = input.nextInt();
+                x = input2.nextInt();
                 player1.setWeaponDmg(x);
-                devMenu();
             } else if (choice.equalsIgnoreCase("::setHp")) { //to change health of player
                 System.out.println("set health to?");
-                x = input.nextInt();
+                x = input2.nextInt();
                 player1.setHealth(x);
-                devMenu();
             } else if (choice.equalsIgnoreCase("::setDef")) { //changes player defence
                 System.out.println("set defence to?");
                 x = input.nextInt();
                 player1.setDefence(x);
-                devMenu();
             } else if (choice.equalsIgnoreCase("::setQId")) { //changes questID, useful for testing
                 System.out.println("set questID to?");
                 x = input.nextInt();
                 setQuestID(x);
-                devMenu();
             } else if (choice.equalsIgnoreCase("::resetInv")) { //resets inventory and sets equipped to default gear
                 inv.clear();
                 equippedItems[0] = wepName[0];
                 equippedItems[1] = armName[0];
-                devMenu();
             }else if(choice.equalsIgnoreCase("::exit")){
-                break;
+                lop =1;
             }else {
                 System.out.println("nice try cheater");
-                devMenu();
             }
         }
         //return getComplete();
