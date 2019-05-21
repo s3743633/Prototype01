@@ -16,8 +16,9 @@ public abstract class Character {
     public int questID;
     int weaponDmg;
     public int gp;
+    public int lives;
 
-    public Character(String name, int health, int defence, int damage, boolean isAlive, int questID,int weaponDmg, int gp) {
+    public Character(String name, int health, int defence, int damage, boolean isAlive, int questID,int weaponDmg, int gp, int lives) {
         this.name = name;
         this.health = health;
         this.defence = defence;
@@ -26,6 +27,7 @@ public abstract class Character {
         this.questID = questID;
         this.weaponDmg= weaponDmg;
         this.gp = gp;
+        this.lives = lives;
     }
 
     //getters and setters so that we can change the value of the attributes for things such as healing items, weapons
@@ -53,6 +55,10 @@ public abstract class Character {
     public void setgp(int gp){
         this.gp = gp;
 
+    }
+
+    public void setLives(int lives){
+        this.lives = lives;
     }
 
     public void setAlive(boolean isAlive){this.isAlive = isAlive; }
@@ -84,7 +90,12 @@ public abstract class Character {
     public int getgp(){
         return gp;
     }
+
+    public int getLives(){
+        return lives;
+    }
 }
+
 
 //Player class is a subclass of character, inheriting its attributes.
     class Player extends Character {
@@ -97,9 +108,9 @@ public abstract class Character {
 
 //constructor used to create enemies, NPCs, and player character.
 
-        public Player(String name, int health, int defence, int damage, boolean isAlive, int questID, int weaponDmg, int gp) {
+        public Player(String name, int health, int defence, int damage, boolean isAlive, int questID, int weaponDmg, int gp, int lives) {
 
-            super(name, health, defence, damage, isAlive, questID, 0,0);
+            super(name, health, defence, damage, isAlive, questID, 0,0, 0);
 
         }
 
@@ -120,6 +131,7 @@ public abstract class Character {
             //validation check, to see if the player or enemy dies.
             if (!b.isAlive()) {
                 System.out.println("You killed: " + b.getName());
+                b.setAlive(false);
                 //100% potion drop chance.
                 numOfPotions ++;
                 System.out.println("Congrats! "+b.getName() + ", dropped a potion, and you picked it up!");
@@ -143,49 +155,56 @@ public abstract class Character {
 
                 if (choice.equalsIgnoreCase("attack")) {
                     attack(a, b);
-                }
-                    else if(choice.equalsIgnoreCase("run")){
+                } else if (choice.equalsIgnoreCase("run")) {
                     System.out.println("you resolve yourself to try and beat the foe before you" + (b.getDamage() + 1));
-                }
-                else if (choice.equalsIgnoreCase("heal")){
-                    System.out.println(+ numOfPotions + " potion(s) left.");
+                } else if (choice.equalsIgnoreCase("heal")) {
+                    System.out.println(+numOfPotions + " potion(s) left.");
                     System.out.println("Would you like to use a potion?");
                     System.out.println("\tYes");
                     System.out.println("\tNo");
                     choice = input.nextLine();
-                    int loop =0;
-                        while (loop==0) {
-                            if (choice.equalsIgnoreCase("Yes")) {
-                                if (numOfPotions >= 1) {
-                                    int yourHP = Math.min(100, a.getHealth() + potHealAmount);
-                                    a.setHealth(yourHP);
-                                    numOfPotions--;
-                                    System.out.println("Your HP is now: " + a.getHealth());
-                                    loop = 1;
-
-                                }
-
-                            } else if (numOfPotions == 0) {
-                                System.out.println("Sorry, you are out of potions!");
-                            } else if (choice.equalsIgnoreCase("no")) {
+                    int loop = 0;
+                    while (loop == 0) {
+                        if (choice.equalsIgnoreCase("Yes")) {
+                            if (numOfPotions >= 1) {
+                                int yourHP = Math.min(100, a.getHealth() + potHealAmount);
+                                a.setHealth(yourHP);
+                                numOfPotions--;
+                                System.out.println("Your HP is now: " + a.getHealth());
                                 loop = 1;
 
-                            } else {
-                                System.out.println("Invalid input");
-                                loop = 1;
                             }
+
+                        } else if (numOfPotions == 0) {
+                            System.out.println("Sorry, you are out of potions!");
+                        } else if (choice.equalsIgnoreCase("no")) {
+                            loop = 1;
+
+                        } else {
+                            System.out.println("Invalid input");
+                            loop = 1;
                         }
                     }
+                }
 
+
+            }
+            while (a.isAlive() && b.isAlive());
+            if (!a.isAlive() && a.getLives() > 0){
+                    a.setHealth(50);
+                    a.setgp(a.getgp() - 100);
+                    a.setLives(a.getLives() - 1);
+                    System.out.println("You have " + (a.getLives()) + " lives lefts");
+                    System.out.println("your health is now " + a.getHealth());
+                    System.out.println("your gp is now " + a.getgp());
+                    a.isAlive = true;
+                } else if(a.getLives()==0){
+                    System.out.println("Find cheats if you want to win, hint ::");
+                    System.exit(0);
 
                 }
-             while (a.isAlive() && b.isAlive());
-            if (!a.isAlive()) {
-                System.out.println("RIP Game Over!");
-                System.exit(0);
             }
 
-        }
 
         public void menu(Player a) {
             int loop = 0;
@@ -252,6 +271,7 @@ public abstract class Character {
                 }
             }
         }
+
 
 }
 
