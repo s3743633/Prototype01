@@ -6,6 +6,8 @@ import java.util.*;
 //we can initiate any enemy object for fights or other items.
 //There is a class for player, and utilities such as menus and inventory management.
 
+
+
 public abstract class Character {
 
     public String name;
@@ -208,7 +210,7 @@ public abstract class Character {
                     a.isAlive = true;
 
                 } else{
-                    System.out.println("Find cheats if you want to win, hint ::");
+                    System.out.println("Do you want to buy more lives? Send $1 to HAPPY DUDE");
                     System.exit(0);
                 }
             }
@@ -270,6 +272,7 @@ public abstract class Character {
                             System.out.println("Defence: " + a.getDefence());
                             System.out.println("Weapon damage: " + a.getWeaponDmg());
                             System.out.println("Money: " + a.getgp());
+                            loop = 0;
 
                         } else if (menu.equalsIgnoreCase("Exit")) {
                             break;

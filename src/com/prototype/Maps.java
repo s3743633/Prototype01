@@ -133,7 +133,7 @@ public class Maps {
 
         while (getComplete() == 1) {
             System.out.println("As you explore the area, you are attacked by a shiny blue slime!");
-            Player slime = new Player("slime", 20, 10, 100, true, 0, 0, 0, 0);
+            Player slime = new Player("slime", 20, 10, 10, true, 0, 0, 0, 0);
             player1.fight(player1, slime);
             if(slime.isAlive) {
                 System.out.println("you limp back to safety");
@@ -214,57 +214,67 @@ public class Maps {
 
     }
 
-    public int devMenu(){
+    public void devMenu() {
 
-            int x;
-            System.out.println("Dev menu entered");
-
-
-            choice=input.nextLine();
-            if(choice.equalsIgnoreCase("::mapA3")){ //teleport to square, you will be able to teleport to any tile, used for testing.
+        int x;
+        System.out.println("Dev menu entered");
+        int lop = 0;
+        while (lop == 1){
+            break;
+        }
+        while (lop == 0) {
+            choice = input.nextLine();
+            if (choice.equalsIgnoreCase("::mapA3")) { //teleport to square, you will be able to teleport to any tile, used for testing.
                 mapA3();
-            }else if(choice.equalsIgnoreCase("::mapA4")){
+            } else if (choice.equalsIgnoreCase("::mapA4")) {
                 mapA4();
-            //add maps here
-            }else if (choice.equalsIgnoreCase("::setCom")){ //set stage of map square, useful for testing
+                //add maps here
+            } else if (choice.equalsIgnoreCase("::setCom")) { //set stage of map square, useful for testing
                 System.out.println("set complete to?");
-                x=input.nextInt();
+                x = input.nextInt();
                 setComplete(x);
-            }else if(choice.equalsIgnoreCase("::setDmg")){ //change damage of player
+                devMenu();
+            } else if (choice.equalsIgnoreCase("::setDmg")) { //change damage of player
                 System.out.println("set damage to?");
-                x=input.nextInt();
+                x = input.nextInt();
                 player1.setDamage(x);
-            }else if(choice.equalsIgnoreCase("::setWDmg")){ //change weapon damage of player
+                break;
+            } else if (choice.equalsIgnoreCase("::setWDmg")) { //change weapon damage of player
                 System.out.println("set weapon damage to?");
-                x=input.nextInt();
+                x = input.nextInt();
                 player1.setWeaponDmg(x);
-            }else if(choice.equalsIgnoreCase("::setHp")){ //to change health of player
+                devMenu();
+            } else if (choice.equalsIgnoreCase("::setHp")) { //to change health of player
                 System.out.println("set health to?");
-                x=input.nextInt();
+                x = input.nextInt();
                 player1.setHealth(x);
-            }else if(choice.equalsIgnoreCase("::setDef")){ //changes player defence
+                devMenu();
+            } else if (choice.equalsIgnoreCase("::setDef")) { //changes player defence
                 System.out.println("set defence to?");
-                x=input.nextInt();
+                x = input.nextInt();
                 player1.setDefence(x);
-            }else if(choice.equalsIgnoreCase("::setQId")){ //changes questID, useful for testing
+                devMenu();
+            } else if (choice.equalsIgnoreCase("::setQId")) { //changes questID, useful for testing
                 System.out.println("set questID to?");
-                x=input.nextInt();
+                x = input.nextInt();
                 setQuestID(x);
-            }else if(choice.equalsIgnoreCase("::resetInv")){ //resets inventory and sets equipped to default gear
+                devMenu();
+            } else if (choice.equalsIgnoreCase("::resetInv")) { //resets inventory and sets equipped to default gear
                 inv.clear();
                 equippedItems[0] = wepName[0];
                 equippedItems[1] = armName[0];
-            }else{
+                devMenu();
+            }else if(choice.equalsIgnoreCase("::exit")){
+                break;
+            }else {
                 System.out.println("nice try cheater");
                 devMenu();
             }
-            return getComplete();
         }
+        //return getComplete();
 
 
-        public static void back(){
-
-        }
     }
+}
 
 
