@@ -184,7 +184,6 @@ public class Maps {
             equippedItems[0] = wepName[0];
             equippedItems[1] = armName[0];
             setComplete(1);
-            System.out.println(player1.getLives());
 
 
         }
