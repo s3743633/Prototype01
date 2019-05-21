@@ -132,13 +132,14 @@ public abstract class Character {
             System.out.println(b.getName() + " hp is now:" + health);
             //validation check, to see if the player or enemy dies.
             if (!b.isAlive()) {
-                System.out.println("You killed: " + b.getName());
                 b.setAlive(false);
+                System.out.println("You killed: " + b.getName());
                 //100% potion drop chance.
-                numOfPotions ++;
-                System.out.println("Congrats! "+b.getName() + ", dropped a potion, and you picked it up!");
+               randDrops();
+                //numOfPotions++;
+              // System.out.println("Congrats! "+b.getName() + ", dropped a potion, and you picked it up!");
             }
-            if (!a.isAlive()){
+            else if (!a.isAlive()){
                 a.setAlive(false);
             }
 
@@ -283,6 +284,22 @@ public abstract class Character {
                         }
                     }
                 }
+            }
+
+            public void randDrops(){
+            Random drops = new Random();
+            int x;
+            if(drops.nextInt(1) == 1){
+                numOfPotions++;
+                System.out.println("the enemy dropped a health potion!");
+            }else if(drops.nextInt(1) == 0){
+                x = drops.nextInt(100);
+                System.out.println("the enemy dropped " + x + " coins!");
+                setgp(getgp() + x);
+            }else{
+                System.out.println("the enemy didnt drop anything");
+            }
+
             }
         }
 
