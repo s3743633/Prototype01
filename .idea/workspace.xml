@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e3335d5e-1775-4b57-b8d5-152d8305edf0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Maps.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Maps.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/prototype/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/prototype/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/prototype/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/prototype/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/prototype/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/prototype/Maps.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -35,8 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/prototype/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="771">
-              <caret line="53" column="10" lean-forward="true" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
+            <state relative-caret-position="221">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
@@ -44,8 +41,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/prototype/Maps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="203" column="103" selection-start-line="203" selection-start-column="103" selection-end-line="203" selection-end-column="103" />
+            <state relative-caret-position="374">
+              <caret line="259" lean-forward="true" selection-start-line="259" selection-end-line="259" />
               <folding>
                 <element signature="e#365#373#0" expanded="true" />
                 <element signature="e#961#962#0" expanded="true" />
@@ -60,6 +57,7 @@
                 <element signature="e#1284#1285#0" expanded="true" />
                 <element signature="e#1315#1316#0" expanded="true" />
                 <element signature="e#1342#1343#0" expanded="true" />
+                <element signature="method#mapA4#0;class#Maps#0" />
               </folding>
             </state>
           </provider>
@@ -68,8 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/prototype/Character.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="127" column="69" selection-start-line="127" selection-start-column="69" selection-end-line="127" selection-end-column="69" />
+            <state relative-caret-position="136">
+              <caret line="130" column="28" selection-start-line="130" selection-start-column="28" selection-end-line="130" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -112,8 +110,8 @@
         <option value="$PROJECT_DIR$/src/com/prototype/MapTest.java" />
         <option value="$PROJECT_DIR$/src/com/prototype/Items.java" />
         <option value="$PROJECT_DIR$/src/com/prototype/Inventory.java" />
-        <option value="$PROJECT_DIR$/src/com/prototype/Character.java" />
         <option value="$PROJECT_DIR$/src/com/prototype/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/prototype/Character.java" />
         <option value="$PROJECT_DIR$/src/com/prototype/Maps.java" />
       </list>
     </option>
@@ -165,7 +163,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558931325460" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558936368722" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -235,7 +233,7 @@
       <workItem from="1558310442809" duration="46079000" />
       <workItem from="1558617614888" duration="6000" />
       <workItem from="1558665411136" duration="5390000" />
-      <workItem from="1558920592022" duration="9359000" />
+      <workItem from="1558920592022" duration="14551000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1557722987000</created>
@@ -255,13 +253,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151047000" />
+    <option name="totallyTimeSpent" value="156239000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1513" height="983" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18213059" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.18213059" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -292,7 +290,7 @@
       <window_info anchor="right" id="Ant Build" order="8" weight="0.24948454" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.18006873" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18213059" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -356,24 +354,24 @@
     <entry file="file://$PROJECT_DIR$/src/com/prototype/MapTest.java" />
     <entry file="file://$PROJECT_DIR$/src/com/prototype/Items.java" />
     <entry file="file://$PROJECT_DIR$/src/com/prototype/Inventory.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/prototype/Character.java">
+    <entry file="file://$PROJECT_DIR$/src/com/prototype/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="127" column="69" selection-start-line="127" selection-start-column="69" selection-end-line="127" selection-end-column="69" />
+        <state relative-caret-position="221">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/prototype/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/prototype/Character.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="771">
-          <caret line="53" column="10" lean-forward="true" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
+        <state relative-caret-position="136">
+          <caret line="130" column="28" selection-start-line="130" selection-start-column="28" selection-end-line="130" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/prototype/Maps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="203" column="103" selection-start-line="203" selection-start-column="103" selection-end-line="203" selection-end-column="103" />
+        <state relative-caret-position="374">
+          <caret line="259" lean-forward="true" selection-start-line="259" selection-end-line="259" />
           <folding>
             <element signature="e#365#373#0" expanded="true" />
             <element signature="e#961#962#0" expanded="true" />
@@ -388,6 +386,7 @@
             <element signature="e#1284#1285#0" expanded="true" />
             <element signature="e#1315#1316#0" expanded="true" />
             <element signature="e#1342#1343#0" expanded="true" />
+            <element signature="method#mapA4#0;class#Maps#0" />
           </folding>
         </state>
       </provider>
