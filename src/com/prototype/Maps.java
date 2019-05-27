@@ -147,24 +147,30 @@ public class Maps {
 
         while (getComplete() == 1) {
             line();
-            System.out.println("As you explore the area, you are attacked by a shiny blue slime!");
-            Player slime = new Player("slime", 20, 10, 10, true, 0, 0, 0, 0);
-            player1.fight(player1, slime);
-            if(slime.isAlive) {
-                line();
-                System.out.println("You limp back to safety");
-            mapA4();
-            }
-            else if (!slime.isAlive()){
-                System.out.println("you found a " + wepName[1]);
-                inv.add(wepName[1]);
-                inv.add(wepName[2]);
-                setComplete(2);
+            System.out.println("You see the remnants of your ship, spread out \non the coast. You should search the area");
+            choice = input.nextLine();
+            if (choice.equalsIgnoreCase("search")) {
+                System.out.println("while searching the area, a slime sneaks upon you!");
+                Player slime = new Player("slime", 20, 10, 10, true, 0, 0, 0, 0);
+                player1.fight(player1, slime);
+                if (slime.isAlive) {
+                    line();
+                    System.out.println("You limp back to safety");
+                    mapA4();
+                } else if (!slime.isAlive()) {
+                    System.out.println("Now that the slime is dead, you search the area again.");
+                    System.out.println("After awhile you found what you were looking for, your " + wepName[1] + " and ");
+                    inv.add(wepName[1]);
+                    inv.add(wepName[2]);
+                    setComplete(2);
+                }else{
+                    System.out.println("it'll be better to search the area.");
+                }
             }
         }
-
 //so that it doesnt repeat above sequence
         while (getComplete() >= 2) {
+            System.out.println("The slimes body is still there RIP");
             mapDirection("", "east", "south", "");
             choice = input.nextLine();
             if (choice.equalsIgnoreCase("east") || choice.equalsIgnoreCase("go east") || choice.equalsIgnoreCase("e")) {
@@ -193,6 +199,7 @@ public class Maps {
         //loop used for unique scenario on first entry.
         while (getComplete() == 0) {
             line();
+
             System.out.println("you awaken, poked by a strangers walking stick.");
             System.out.println("your body aches all over, finally opening your eyes the man says");
             convo("Strange Stranger", "Hey friend, you alright? do you remember your name?");
@@ -201,7 +208,7 @@ public class Maps {
             convo("strange stranger", "well, " + player1.getName() + " you're very lucky that your alive. \nSo where did you come from?");
             convo("you", "I come from a land down under, where women glow and men plunder");
             convo("strange stranger", "I see you're a man of culture, I too like to plunder. " +
-                    "\n A part of your ship is up north, you should go check it. Well be seeing you!");
+                    "\nA part of your ship is up north, you should go check it. Well be seeing you!");
             System.out.println("As the strange man leaves, you decide its best to get going");
             equippedItems[0] = wepName[0];
             equippedItems[1] = armName[0];
@@ -233,6 +240,25 @@ public class Maps {
     }
     public int mapB3() {
 
+        while(getComplete() == 2) {
+            System.out.println("After walking for while, you reach the start of a forest.\nIn the distance you see a man farming, as you get closer he notices you" +
+                    "and says: ");
+            convo("Master Farmer", "Oi, don't you go and steal my special herbs! Its critical for the survival of this isle you know!");
+            convo("You", "I wasn't trying to steal your herbs! I'm not even 38 thieving!");
+            pause();
+            convo("Master Farmer", "Well, well, what brings you here then?");
+            convo("You", "Ive just awoken, My ship broke as i was escaping from Karamja \n" +
+                    "I'm not sure if my family are still alive, Do you think you can help me\n");
+            pause();
+            convo("Master Farmer", "There's a port town not far from here, I can take you there.\n you'll find some ships, you might get lucky");
+            convo("you", "Really? That'll be great!");
+            pause();
+            System.out.println("After a short journey, you arrive at the docks of the Port town!");
+            setComplete(3);
+            //map here
+        }
+
+
         return getComplete();
 
     }
@@ -251,6 +277,10 @@ public class Maps {
 
                 if (choice.equalsIgnoreCase("::mapA3")) { //teleport to square, you will be able to teleport to any tile, used for testing.
                     mapA3();
+
+                }else if(choice.equalsIgnoreCase("::mapB3")){
+                    mapB3();
+
                 } else if (choice.equalsIgnoreCase("::mapA4")) {
                     mapA4();
                     //add maps here
@@ -309,16 +339,22 @@ public class Maps {
             System.out.println("\"" + text + "\"");}
             
             public void line(){
-                for (int i = 0; i <40;i++){
+                for (int i = 0; i <40; i++){
                     System.out.print("-");}
                 System.out.println();
             }
             public void star(){
-                for (int i = 0; i <40;i++){
+                for (int i = 0; i <40; i++){
                     System.out.print("*");}
                 System.out.println();
             
     }
+    public void pause(){
+        System.out.print("enter to continue...");
+        input.nextLine();
+    }
+
+
 }
 
 
