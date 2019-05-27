@@ -37,7 +37,6 @@ public abstract class Character {
     public void setDamage(int damage) {
         this.damage = damage;
     }
-
     public void setDefence(int defence) {
         this.defence = defence;
     }
@@ -101,12 +100,8 @@ public abstract class Character {
 
 //Player class is a subclass of character, inheriting its attributes.
     class Player extends Character {
-        int currPos = 2;
         int numOfPotions = 3;
         int potHealAmount = 20;
-        String weapon = "";
-        String armour = "";
-        ArrayList<String> Equipment = new ArrayList<String>();
 
 //constructor used to create enemies, NPCs, and player character.
 
@@ -123,7 +118,7 @@ public abstract class Character {
             Random rand = new Random();
             //generates random damage value for both player and enemy.
             //math max, makes it so the damage cant be below 0, which would be possible since defence lowers damage
-            int damage = Math.max(0, rand.nextInt(a.getDamage() + a.getWeaponDmg()) - rand.nextInt(a.getDefence()));
+            int damage = Math.max(0, rand.nextInt(a.getDamage() + a.getWeaponDmg()) - rand.nextInt(b.getDefence()));
             int monsDamage = Math.max(0, rand.nextInt(b.getDamage() + b.getWeaponDmg()) - rand.nextInt(a.getDefence()));
             //sets it so health cant drop below 0
             int health = Math.max(0, b.getHealth() - damage);
@@ -309,10 +304,10 @@ public abstract class Character {
             public void randDrops(){
             Random drops = new Random();
             int x;
-            if(drops.nextInt(1) == 1){
+            if(drops.nextInt(2) == 1){
                 numOfPotions++;
                 System.out.println("the enemy dropped a health potion!");
-            }else if(drops.nextInt(1) == 0){
+            }else if(drops.nextInt(2) == 0){
                 x = drops.nextInt(100);
                 System.out.println("the enemy dropped " + x + " coins!");
                 setgp(getgp() + x);

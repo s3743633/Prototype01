@@ -8,7 +8,7 @@ public class Maps {
     private int questID;
     private Scanner input = new Scanner(System.in);
     private Scanner input2 = new Scanner(System.in);
-    private Player player1 = new Player("", 100, 5, 20, true, 0,0, 0,3);
+    private Player player1 = new Player("", 100, 5, 10, true, 0,0, 0,3);
     private List<String> inv = new ArrayList<String>();
     public String choice;
 
@@ -51,13 +51,11 @@ public class Maps {
     }
 
     public int equipItem() {
-        System.out.println("-------------------------------------");
-        System.out.println("currently equipped items:");
-        System.out.println(Arrays.toString(equippedItems));
-        System.out.println("-------------------------------------");
         System.out.println("what do you want to equip?");
         System.out.println(inv);
-        System.out.println("\tExit");
+        System.out.println("currently equipped items:");
+        System.out.println(Arrays.toString(equippedItems));
+        System.out.println("Exit");
         choice = input.nextLine();
         int isEquipped = 1;
 
@@ -65,7 +63,6 @@ public class Maps {
 
         while (isEquipped == 1) {
             if (choice.equalsIgnoreCase(wepName[1]) && inv.contains(wepName[1])) {
-                System.out.println("-------------------------------------");
                 System.out.println("Equipped successfully");
                 player1.setWeaponDmg(itemStat[1]);  //sets weapon damage
                 inv.add(equippedItems[0]); //adds current item to inventory
@@ -75,7 +72,6 @@ public class Maps {
                 equipItem();
 
             } else if (choice.equalsIgnoreCase(wepName[2]) && inv.contains(wepName[2])) {
-                System.out.println("-------------------------------------");
                 System.out.println("Equipped successfully");
                 player1.setWeaponDmg(itemStat[2]);
                 inv.add(equippedItems[0]);
@@ -85,7 +81,6 @@ public class Maps {
                 equipItem();
 
             } else if (choice.equalsIgnoreCase(wepName[3]) && inv.contains(wepName[3])) {
-                System.out.println("-------------------------------------");
                 System.out.println("Equipped successfully");
                 player1.setWeaponDmg(itemStat[3]);
                 inv.add(equippedItems[0]);
@@ -94,9 +89,8 @@ public class Maps {
                 equipItem();
 
             } else if (choice.equalsIgnoreCase("exit")) {
-                isEquipped = 2;
+                break;
             } else {
-                System.out.println("-------------------------------------");
                 System.out.println("Invalid input try again");
                 isEquipped = 2;
                 equipItem();
@@ -111,7 +105,7 @@ public class Maps {
 
 
         //designed to stop replicated code, you can set the parameter depending on which directions you want to go
-        System.out.println("-------------------------------------");
+
         System.out.println("where do you want to go?");
         if (north.equalsIgnoreCase("north")) {
             System.out.println("\tGo North (n)");
@@ -128,29 +122,26 @@ public class Maps {
             System.out.println("\tGo South (s)");
 
         }
-        System.out.println("Or access");
+
         System.out.println("\tInventory");
         System.out.println("\tMenu");
-
     }
 
 
     private int mapA3() { //starting square
-        System.out.println("*************************************");
+
         System.out.println("Shipwreck Debris");
 
         while (getComplete() == 1) {
-            System.out.println("-------------------------------------");
             System.out.println("As you explore the area, you are attacked by a shiny blue slime!");
             Player slime = new Player("slime", 20, 10, 10, true, 0, 0, 0, 0);
             player1.fight(player1, slime);
             if(slime.isAlive) {
-                System.out.println("-------------------------------------");
                 System.out.println("you limp back to safety");
             mapA4();
             }
             else if (!slime.isAlive()){
-                System.out.println("you found a " + wepName[1]);
+                System.out.println("you found an " + wepName[1]);
                 inv.add(wepName[1]);
                 inv.add(wepName[2]);
                 setComplete(2);
@@ -172,7 +163,6 @@ public class Maps {
             } else if (choice.equalsIgnoreCase("Inventory")) {
                 equipItem();
             } else {
-                System.out.println("-------------------------------------");
                 System.out.println("Please try again");
             } //validation check
 
@@ -181,19 +171,17 @@ public class Maps {
     }
     public int mapA4() {
         setQuestID(1);
-        System.out.println("*************************************");
         System.out.println("Shipwreck Cove");
 
         //loop used for unique scenario on first entry.
         while (getComplete() == 0) {
-            System.out.println("-------------------------------------");
+
             System.out.println("you awaken, poked by a strangers walking stick.");
             System.out.println("your body aches all over, finally opening your eyes the man says");
-            System.out.println("Strange Stranger: \"You're lucky to be alive friend! Do you remember who you are?\"");
+            System.out.println("\"You're lucky to be alive friend! Do you remember who you are?\"");
             System.out.println("You can't quite remember your name but you tell the man its: ");
             player1.setName(input.nextLine());
-            System.out.println("-------------------------------------");
-            System.out.println("Strange Stranger: "+player1.getName() + " \"is it? Well its good that you don't have amnesia!\"");
+            System.out.println(player1.getName() + " is it? Well its good that you don't have amnesia!");
             equippedItems[0] = wepName[0];
             equippedItems[1] = armName[0];
             setComplete(1);
@@ -214,7 +202,6 @@ public class Maps {
             }else if(choice.equalsIgnoreCase("::dev")){
                 devMenu();
             }else {
-                System.out.println("-------------------------------------");
                 System.out.println("Please try again");
             }
         }
@@ -234,51 +221,57 @@ public class Maps {
         int x;
 
         while (lop == 0) {
-            System.out.println("-------------------------------------");
             System.out.println("Dev menu entered");
             choice = input.nextLine();
 
-            if (choice.equalsIgnoreCase("::mapA3")) { //teleport to square, you will be able to teleport to any tile, used for testing.
-                mapA3();
-            } else if (choice.equalsIgnoreCase("::mapA4")) {
-                mapA4();
-                //add maps here
-            } else if (choice.equalsIgnoreCase("::setCom")) { //set stage of map square, useful for testing
-                System.out.println("set complete to?");
-                x = input2.nextInt();
-                setComplete(x);
-            } else if (choice.equalsIgnoreCase("::setDmg")) { //change damage of player
-                System.out.println("set damage to?");
-                x = input2.nextInt();
-                player1.setDamage(x);
-            } else if (choice.equalsIgnoreCase("::setWDmg")) { //change weapon damage of player
-                System.out.println("set weapon damage to?");
-                x = input2.nextInt();
-                player1.setWeaponDmg(x);
-            } else if (choice.equalsIgnoreCase("::setHp")) { //to change health of player
-                System.out.println("set health to?");
-                x = input2.nextInt();
-                player1.setHealth(x);
-            } else if (choice.equalsIgnoreCase("::setDef")) { //changes player defence
-                System.out.println("set defence to?");
-                x = input.nextInt();
-                player1.setDefence(x);
-            } else if (choice.equalsIgnoreCase("::setQId")) { //changes questID, useful for testing
-                System.out.println("set questID to?");
-                x = input.nextInt();
-                setQuestID(x);
-            } else if (choice.equalsIgnoreCase("::resetInv")) { //resets inventory and sets equipped to default gear
-                inv.clear();
-                equippedItems[0] = wepName[0];
-                equippedItems[1] = armName[0];
-            }else if(choice.equalsIgnoreCase("::exit")){
-                lop =1;
-            }else {
-                System.out.println("\nnice try cheater");
-            }
-        }
-        //return getComplete();
+            try {
 
+                if (choice.equalsIgnoreCase("::mapA3")) { //teleport to square, you will be able to teleport to any tile, used for testing.
+                    mapA3();
+                } else if (choice.equalsIgnoreCase("::mapA4")) {
+                    mapA4();
+                    //add maps here
+                } else if (choice.equalsIgnoreCase("::setCom")) { //set stage of map square, useful for testing
+                    System.out.println("set complete to?");
+                    x = input2.nextInt();
+                    setComplete(x);
+                } else if (choice.equalsIgnoreCase("::setDmg")) { //change damage of player
+                    System.out.println("set damage to?");
+                    x = input2.nextInt();
+                    player1.setDamage(x);
+                } else if (choice.equalsIgnoreCase("::setWDmg")) { //change weapon damage of player
+                    System.out.println("set weapon damage to?");
+                    x = input2.nextInt();
+                    player1.setWeaponDmg(x);
+                } else if (choice.equalsIgnoreCase("::setHp")) { //to change health of player
+                    System.out.println("set health to?");
+                    x = input2.nextInt();
+                    player1.setHealth(x);
+                } else if (choice.equalsIgnoreCase("::setDef")) { //changes player defence
+                    System.out.println("set defence to?");
+                    x = input2.nextInt();
+                    player1.setDefence(x);
+                } else if (choice.equalsIgnoreCase("::setQId")) { //changes questID, useful for testing
+                    System.out.println("set questID to?");
+                    x = input2.nextInt();
+                    setQuestID(x);
+                } else if (choice.equalsIgnoreCase("::resetInv")) { //resets inventory and sets equipped to default gear
+                    inv.clear();
+                    equippedItems[0] = wepName[0];
+                    equippedItems[1] = armName[0];
+                } else if (choice.equalsIgnoreCase("::exit")) {
+                    lop = 1;
+                } else {
+                    System.out.println("nice try cheater");
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("wrong input, try again");
+                input2.next();
+
+            }
+            //return getComplete();
+        }
 
     }
 }
