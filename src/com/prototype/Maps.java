@@ -146,7 +146,7 @@ public class Maps {
             player1.fight(player1, slime);
             if(slime.isAlive) {
                 System.out.println("-------------------------------------");
-                System.out.println("you limp back to safety");
+                System.out.println("You limp back to safety");
             mapA4();
             }
             else if (!slime.isAlive()){
