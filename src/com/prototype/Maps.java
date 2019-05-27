@@ -17,7 +17,7 @@ public class Maps {
 
     public String[] wepName = {"pointy stick", "Bronze sword", "Steel Sword", "Dragon Sword"};
     public String[] armName = {"Tattered Clothes", "Bronze Platebody", "Steel Platebody, Dragon Platebody"};
-    public int[] itemStat = {0,10, 20, 30};
+    public int[] itemStat = {0, 10, 20, 30};
 
 
     public Maps(int isComplete, String name, int questID) {
@@ -64,13 +64,22 @@ public class Maps {
         //ifs are used here instead of a switch because it checks for 2 Strings. the while loop is used here so that the menu returns to the previous menu on return.
 
         while (isEquipped == 2) {
-            if (choice.equalsIgnoreCase(wepName[1]) && inv.contains(wepName[1])) {
+            if (choice.equalsIgnoreCase(wepName[0]) && inv.contains(wepName[0])) {
                 line();
                 System.out.println("Equipped successfully");
-                player1.setWeaponDmg(itemStat[1]);  //sets weapon damage
+                player1.setWeaponDmg(itemStat[0]);  //sets weapon damage
                 inv.add(equippedItems[0]); //adds current item to inventory
-                equippedItems[0] = (wepName[1]); //replaces equipped item 0 index
-                inv.remove(wepName[1]); //removes item from inventory
+                equippedItems[0] = (wepName[0]); //replaces equipped item 0 index
+                inv.remove(wepName[0]); //removes item from inventory
+                isEquipped = 0;
+
+            } else if (choice.equalsIgnoreCase(wepName[1]) && inv.contains(wepName[1])) {
+                line();
+                System.out.println("Equipped successfully");
+                player1.setWeaponDmg(itemStat[1]);
+                inv.add(equippedItems[0]);
+                equippedItems[0] = wepName[1];
+                inv.remove(wepName[1]);
                 isEquipped = 0;
 
             } else if (choice.equalsIgnoreCase(wepName[2]) && inv.contains(wepName[2])) {
@@ -89,6 +98,60 @@ public class Maps {
                 inv.add(equippedItems[0]);
                 inv.remove(wepName[3]);
                 isEquipped = 0;
+
+            } else if (choice.equalsIgnoreCase(wepName[4]) && inv.contains(wepName[4])) {
+                line();
+                System.out.println("Equipped successfully");
+                player1.setWeaponDmg(itemStat[4]);
+                inv.add(equippedItems[0]);
+                equippedItems[0] = wepName[4];
+                inv.remove(wepName[4]);
+                isEquipped = 0;
+
+            } else if (choice.equalsIgnoreCase(armName[0]) && inv.contains(armName[0])) {
+                line();
+                System.out.println("Equipped successfully");
+                player1.setDefence(itemStat[0]);
+                inv.add(equippedItems[1]);
+                equippedItems[1] = armName[0];
+                inv.remove(armName[0]);
+                isEquipped = 1;
+
+            } else if (choice.equalsIgnoreCase(armName[1]) && inv.contains(armName[1])) {
+                line();
+                System.out.println("Equipped successfully");
+                player1.setDefence(itemStat[1]);
+                inv.add(equippedItems[1]);
+                equippedItems[1] = armName[1];
+                inv.remove(armName[1]);
+                isEquipped = 1;
+
+            } else if (choice.equalsIgnoreCase(armName[2]) && inv.contains(armName[2])) {
+                line();
+                System.out.println("Equipped successfully");
+                player1.setDefence(itemStat[2]);
+                inv.add(equippedItems[1]);
+                equippedItems[1] = armName[2];
+                inv.remove(armName[2]);
+                isEquipped = 1;
+
+            } else if (choice.equalsIgnoreCase(armName[3]) && inv.contains(armName[3])) {
+                line();
+                System.out.println("Equipped successfully");
+                player1.setDefence(itemStat[3]);
+                inv.add(equippedItems[1]);
+                equippedItems[1] = armName[3];
+                inv.remove(armName[3]);
+                isEquipped = 1;
+
+            } else if (choice.equalsIgnoreCase(armName[4]) && inv.contains(armName[4])) {
+                line();
+                System.out.println("Equipped successfully");
+                player1.setDefence(itemStat[4]);
+                inv.add(equippedItems[1]);
+                equippedItems[1] = armName[4];
+                inv.remove(armName[4]);
+                isEquipped = 1;
 
             } else if (choice.equalsIgnoreCase("exit")) {
                 break;
