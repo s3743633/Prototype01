@@ -10,6 +10,7 @@ public class Main {
         Scanner newGame = new Scanner(System.in);
 
         //loadScreen();
+        //System.out.println("Check out the readme to know learn how to play the game");
        // System.out.println("Press enter key to start");
            // newGame.nextLine();
            gameStart.mapA4();

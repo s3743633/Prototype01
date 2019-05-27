@@ -118,7 +118,7 @@ public abstract class Character {
             Random rand = new Random();
             //generates random damage value for both player and enemy.
             //math max, makes it so the damage cant be below 0, which would be possible since defence lowers damage
-            int damage = Math.max(0, rand.nextInt(a.getDamage() + a.getWeaponDmg()) - rand.nextInt(b.getDefence()));
+            int damage = Math.max(0, rand.nextInt(a.getDamage() + a.getWeaponDmg()) - (rand.nextInt(b.getDefence())/2));
             int monsDamage = Math.max(0, rand.nextInt(b.getDamage() + b.getWeaponDmg()) - rand.nextInt(a.getDefence()));
             //sets it so health cant drop below 0
             int health = Math.max(0, b.getHealth() - damage);

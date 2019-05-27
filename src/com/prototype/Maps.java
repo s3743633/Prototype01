@@ -195,11 +195,14 @@ public class Maps {
             System.out.println("-------------------------------------");
             System.out.println("you awaken, poked by a strangers walking stick.");
             System.out.println("your body aches all over, finally opening your eyes the man says");
-            System.out.println("Strange Stranger: \"You're lucky to be alive friend! Do you remember who you are?\"");
-            System.out.println("You can't quite remember your name but you tell the man its: ");
+            convo("Strange Stranger", "Hey friend, you alright? do you remember your name?");
+            System.out.println("As you finally awaken enough you remember its:");
             player1.setName(input.nextLine());
-            System.out.println("-------------------------------------");
-            System.out.println("Strange Stranger: "+player1.getName() + " \"is it? Well its good that you don't have amnesia!\"");
+            convo("strange stranger", "well, " + player1.getName() + " you're very lucky that your alive. \nSo where did you come from?");
+            convo("you", "I come from a land down under, where women glow and men plunder");
+            convo("strange stranger", "I see you're a man of culture, I too like to plunder. " +
+                    "\n A part of your ship is up north, you should go check it. Well be seeing you!");
+            System.out.println("As the strange man leaves, you decide its best to get going");
             equippedItems[0] = wepName[0];
             equippedItems[1] = armName[0];
             setComplete(1);
@@ -292,6 +295,18 @@ public class Maps {
             }
             //return getComplete();
         }
+
+
+
+
+        }
+
+        public void convo(String npc, String text){
+
+            System.out.println();
+            System.out.println("-------------------------------------");
+            System.out.print(npc + ": ");
+            System.out.println("\"" + text + "\"");
 
     }
 }
