@@ -8,7 +8,7 @@ public class Maps {
     private int questID;
     private Scanner input = new Scanner(System.in);
     private Scanner input2 = new Scanner(System.in);
-    private Player player1 = new Player("", 100, 5, 10, true, 0,0, 0,3);
+    private Player player1 = new Player("", 100, 5, 40, true, 0,0, 0,3);
     private List<String> inv = new ArrayList<String>();
     public String choice;
 
@@ -59,11 +59,11 @@ public class Maps {
         System.out.println(inv);
         System.out.println("\tExit");
         choice = input.nextLine();
-        int isEquipped = 1;
+        int isEquipped = 2;
 
         //ifs are used here instead of a switch because it checks for 2 Strings. the while loop is used here so that the menu returns to the previous menu on return.
 
-        while (isEquipped == 1) {
+        while (isEquipped == 2) {
             if (choice.equalsIgnoreCase(wepName[1]) && inv.contains(wepName[1])) {
                 System.out.println("-------------------------------------");
                 System.out.println("Equipped successfully");
@@ -71,8 +71,7 @@ public class Maps {
                 inv.add(equippedItems[0]); //adds current item to inventory
                 equippedItems[0] = (wepName[1]); //replaces equipped item 0 index
                 inv.remove(wepName[1]); //removes item from inventory
-                isEquipped = 2;
-                equipItem();
+                isEquipped = 0;
 
             } else if (choice.equalsIgnoreCase(wepName[2]) && inv.contains(wepName[2])) {
                 System.out.println("-------------------------------------");
@@ -81,8 +80,7 @@ public class Maps {
                 inv.add(equippedItems[0]);
                 equippedItems[0] = wepName[2];
                 inv.remove(wepName[2]);
-                isEquipped = 2;
-                equipItem();
+                isEquipped = 0;
 
             } else if (choice.equalsIgnoreCase(wepName[3]) && inv.contains(wepName[3])) {
                 System.out.println("-------------------------------------");
@@ -90,18 +88,26 @@ public class Maps {
                 player1.setWeaponDmg(itemStat[3]);
                 inv.add(equippedItems[0]);
                 inv.remove(wepName[3]);
-                isEquipped = 2;
-                equipItem();
+                isEquipped = 0;
 
             } else if (choice.equalsIgnoreCase("exit")) {
-                isEquipped = 2;
+                break;
             } else {
                 System.out.println("-------------------------------------");
                 System.out.println("Invalid input try again");
-                isEquipped = 2;
                 equipItem();
             }
         }
+
+            while (isEquipped ==0){
+                System.out.println("Your current damage is: "+ (player1.getDamage()+player1.getWeaponDmg()));
+                equipItem();
+        }
+            while (isEquipped == 1){
+                System.out.println("Your current defence is: "+ player1.getDefence());
+                equipItem();
+            }
+
             return getComplete();
     }
 
