@@ -51,10 +51,10 @@ public class Maps {
     }
 
     public int equipItem() {
-        System.out.println("-------------------------------------");
+        line();
         System.out.println("currently equipped items:");
         System.out.println(Arrays.toString(equippedItems));
-        System.out.println("-------------------------------------");
+        line();
         System.out.println("what do you want to equip?");
         System.out.println(inv);
         System.out.println("\tExit");
@@ -65,7 +65,7 @@ public class Maps {
 
         while (isEquipped == 2) {
             if (choice.equalsIgnoreCase(wepName[1]) && inv.contains(wepName[1])) {
-                System.out.println("-------------------------------------");
+                line();
                 System.out.println("Equipped successfully");
                 player1.setWeaponDmg(itemStat[1]);  //sets weapon damage
                 inv.add(equippedItems[0]); //adds current item to inventory
@@ -74,7 +74,7 @@ public class Maps {
                 isEquipped = 0;
 
             } else if (choice.equalsIgnoreCase(wepName[2]) && inv.contains(wepName[2])) {
-                System.out.println("-------------------------------------");
+                line();
                 System.out.println("Equipped successfully");
                 player1.setWeaponDmg(itemStat[2]);
                 inv.add(equippedItems[0]);
@@ -83,7 +83,7 @@ public class Maps {
                 isEquipped = 0;
 
             } else if (choice.equalsIgnoreCase(wepName[3]) && inv.contains(wepName[3])) {
-                System.out.println("-------------------------------------");
+                line();
                 System.out.println("Equipped successfully");
                 player1.setWeaponDmg(itemStat[3]);
                 inv.add(equippedItems[0]);
@@ -93,7 +93,7 @@ public class Maps {
             } else if (choice.equalsIgnoreCase("exit")) {
                 break;
             } else {
-                System.out.println("-------------------------------------");
+                line();
                 System.out.println("Invalid input try again");
                 equipItem();
             }
@@ -117,7 +117,7 @@ public class Maps {
 
 
         //designed to stop replicated code, you can set the parameter depending on which directions you want to go
-        System.out.println("-------------------------------------");
+        line();
         System.out.println("where do you want to go?");
         if (north.equalsIgnoreCase("north")) {
             System.out.println("\tGo North (n)");
@@ -142,16 +142,16 @@ public class Maps {
 
 
     private int mapA3() { //starting square
-        System.out.println("*************************************");
+        star();
         System.out.println("Shipwreck Debris");
 
         while (getComplete() == 1) {
-            System.out.println("-------------------------------------");
+            line();
             System.out.println("As you explore the area, you are attacked by a shiny blue slime!");
             Player slime = new Player("slime", 20, 10, 10, true, 0, 0, 0, 0);
             player1.fight(player1, slime);
             if(slime.isAlive) {
-                System.out.println("-------------------------------------");
+                line();
                 System.out.println("You limp back to safety");
             mapA4();
             }
@@ -178,7 +178,7 @@ public class Maps {
             } else if (choice.equalsIgnoreCase("Inventory")) {
                 equipItem();
             } else {
-                System.out.println("-------------------------------------");
+                line();
                 System.out.println("Please try again");
             } //validation check
 
@@ -187,12 +187,12 @@ public class Maps {
     }
     public int mapA4() {
         setQuestID(1);
-        System.out.println("*************************************");
+        star();
         System.out.println("Shipwreck Cove");
 
         //loop used for unique scenario on first entry.
         while (getComplete() == 0) {
-            System.out.println("-------------------------------------");
+            line();
             System.out.println("you awaken, poked by a strangers walking stick.");
             System.out.println("your body aches all over, finally opening your eyes the man says");
             convo("Strange Stranger", "Hey friend, you alright? do you remember your name?");
@@ -223,7 +223,7 @@ public class Maps {
             }else if(choice.equalsIgnoreCase("::dev")){
                 devMenu();
             }else {
-                System.out.println("-------------------------------------");
+                line();
                 System.out.println("Please try again");
             }
         }
@@ -243,7 +243,7 @@ public class Maps {
         int x;
 
         while (lop == 0) {
-            System.out.println("-------------------------------------");
+            line();
             System.out.println("Dev menu entered");
             choice = input.nextLine();
 
@@ -304,10 +304,20 @@ public class Maps {
         public void convo(String npc, String text){
 
             System.out.println();
-            System.out.println("-------------------------------------");
+            line();
             System.out.print(npc + ": ");
-            System.out.println("\"" + text + "\"");
-
+            System.out.println("\"" + text + "\"");}
+            
+            public void line(){
+                for (int i = 0; i <40;i++){
+                    System.out.print("-");}
+                System.out.println();
+            }
+            public void star(){
+                for (int i = 0; i <40;i++){
+                    System.out.print("*");}
+                System.out.println();
+            
     }
 }
 

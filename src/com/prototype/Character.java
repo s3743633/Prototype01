@@ -102,6 +102,11 @@ public abstract class Character {
     class Player extends Character {
         int numOfPotions = 3;
         int potHealAmount = 20;
+    public void line(){
+        for (int i = 0; i <40;i++){
+            System.out.print("-");}
+        System.out.println();
+    }
 
 //constructor used to create enemies, NPCs, and player character.
 
@@ -123,13 +128,13 @@ public abstract class Character {
             //sets it so health cant drop below 0
             int health = Math.max(0, b.getHealth() - damage);
             b.setHealth(health);
-            System.out.println("-------------------------------------");
+            line();
             System.out.println("you hit a " + damage);
             System.out.println(b.getName() + " hp is now:" + health);
             //validation check, to see if the player or enemy dies.
             if (!b.isAlive()) {
                 b.setAlive(false);
-                System.out.println("-------------------------------------");
+                line();
                 System.out.println("You killed: " + b.getName()+"!");
                 //100% potion drop chance.
                randDrops();
@@ -154,7 +159,7 @@ public abstract class Character {
             Scanner input = new Scanner(System.in);
 
             do {
-                System.out.println("-------------------------------------");
+                line();
                 System.out.println("what do you want to do?");
                 System.out.println("\tattack\n\theal\n\trun");
                 String choice = input.nextLine();
@@ -162,10 +167,10 @@ public abstract class Character {
                 if (choice.equalsIgnoreCase("attack")) {
                     attack(a, b);
                 } else if (choice.equalsIgnoreCase("run")) {
-                    System.out.println("-------------------------------------");
+                    line();
                     System.out.println("you resolve yourself to try and beat the foe before you" + (b.getDamage() + 1));
                 } else if (choice.equalsIgnoreCase("heal")) {
-                    System.out.println("-------------------------------------");
+                    line();
                     System.out.println("You have "+numOfPotions + " potion(s) left.");
                     System.out.println("Would you like to use a potion?");
                     System.out.println("\tYes");
@@ -178,14 +183,14 @@ public abstract class Character {
                                 int yourHP = Math.min(100, a.getHealth() + potHealAmount);
                                 a.setHealth(yourHP);
                                 numOfPotions--;
-                                System.out.println("-------------------------------------");
+                                line();
                                 System.out.println("Your HP is now: " + a.getHealth());
                                 loop = 1;
 
                             }
 
                             else if (numOfPotions == 0) {
-                                System.out.println("-------------------------------------");
+                                line();
                                 System.out.println("Sorry, you are out of potions!");
                                 loop = 1; }
 
@@ -193,14 +198,14 @@ public abstract class Character {
                             loop = 1;
 
                         } else {
-                            System.out.println("-------------------------------------");
+                            line();
                             System.out.println("Invalid input");
                             loop = 1;
                         }
                     }
                 }
                 else {
-                    System.out.println("-------------------------------------");
+                    line();
                     System.out.println("Invalid input");
                 }
 
@@ -213,14 +218,14 @@ public abstract class Character {
 
 
                 if (a.getLives() >= 1) {
-                    System.out.println("-------------------------------------");
+                    line();
                     System.out.println("You have " + (a.getLives()) + " lives lefts");
                     System.out.println("your health is now " + a.getHealth());
                     System.out.println("your gp is now " + a.getgp());
                     a.isAlive = true;
 
                 } else{
-                    System.out.println("-------------------------------------");
+                    line();
                     System.out.println("Do you want to buy more lives? Send $1 to HAPPY DUDE");
                     System.exit(0);
                 }
@@ -232,7 +237,7 @@ public abstract class Character {
                 int loop = 0;
                 while (loop == 0) {
                     Scanner input = new Scanner(System.in);
-                    System.out.println("-------------------------------------");
+                    line();
                     System.out.println("\tHeal");
                     System.out.println("\tCheck Status");
                     System.out.println("\tExit");
@@ -263,7 +268,7 @@ public abstract class Character {
                                         }
 
                                     } else {
-                                        System.out.println("-------------------------------------");
+                                        line();
                                         System.out.println("Sorry, you are out of potions!");
                                         loop = 0;
 
@@ -272,14 +277,14 @@ public abstract class Character {
                                     loop = 0;
 
                                 } else {
-                                    System.out.println("-------------------------------------");
+                                    line();
                                     System.out.println("Invalid input");
                                     loop = 1;
                                 }
                             }
 
                         } else if (menu.equalsIgnoreCase("check status")) {
-                            System.out.println("-------------------------------------");
+                            line();
                             System.out.println("Your current stats are: ");
                             System.out.println("Name: " + a.getName());
                             System.out.println("Health: " + a.getHealth());
@@ -293,7 +298,7 @@ public abstract class Character {
                             break;
 
                         } else {
-                            System.out.println("-------------------------------------");
+                            line();
                             System.out.println("Invalid input, try again");
                             loop = 0;
                         }
