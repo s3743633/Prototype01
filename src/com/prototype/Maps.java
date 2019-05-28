@@ -406,7 +406,21 @@ public class Maps {
                     }
             }
                 while (getComplete() >= 5){
-                player1.portShop();
+                    mapDirection("north", "", "", "west");
+                    System.out.println("\tPort Shop");
+                    choice = input.nextLine();
+
+                    if (choice.equalsIgnoreCase("north") || (choice.equalsIgnoreCase("n") || (choice.equalsIgnoreCase("go west")))) {
+                        //mapD3();
+                    }
+                    else if (choice.equalsIgnoreCase("west") || (choice.equalsIgnoreCase("w") || (choice.equalsIgnoreCase("go north")))) {
+                        mapE3();
+                    }
+                    else if (choice.equalsIgnoreCase("port shop")){
+                        player1.portShop();
+                    }
+                    menu();
+
 
 
             }
@@ -415,10 +429,10 @@ public class Maps {
 
             public void devMenu() {
 
-        int lop = 0;
+        int loop = 0;
         int x;
 
-        while (lop == 0) {
+        while (loop == 0) {
             line();
             System.out.println("Dev menu entered");
             choice = input.nextLine();
@@ -466,7 +480,7 @@ public class Maps {
                     equippedItems[0] = wepName[0];
                     equippedItems[1] = armName[0];
                 } else if (choice.equalsIgnoreCase("::exit")) {
-                    lop = 1;
+                    loop = 1;
                 } else {
                     System.out.println("nice try cheater");
                 }

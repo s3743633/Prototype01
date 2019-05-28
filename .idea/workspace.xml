@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e3335d5e-1775-4b57-b8d5-152d8305edf0" name="Default Changelist" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/production/Prototype01/com/prototype/Maps.class&#10;#&#9;src/com/prototype/Maps.java">
+    <list default="true" id="e3335d5e-1775-4b57-b8d5-152d8305edf0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Character.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Maps.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Maps.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/prototype/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/prototype/Maps.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -42,7 +41,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/prototype/Character.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2420">
+            <state relative-caret-position="-2709">
               <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
               <folding>
                 <element signature="e#1129#1130#0" expanded="true" />
@@ -81,8 +80,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/prototype/Maps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1924">
-              <caret line="357" column="24" selection-start-line="357" selection-start-column="24" selection-end-line="357" selection-end-column="24" />
+            <state relative-caret-position="192">
+              <caret line="419" column="43" selection-start-line="419" selection-start-column="43" selection-end-line="419" selection-end-column="43" />
               <folding>
                 <element signature="e#367#375#0" expanded="true" />
                 <element signature="e#964#965#0" expanded="true" />
@@ -288,11 +287,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558937199003</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="merged">
+      <created>1559013279377</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1559013279377</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154467000" />
+    <option name="totallyTimeSpent" value="155267000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -316,7 +322,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.9054463" visible="true" weight="0.4893617" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.9054463" weight="0.4893617" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -324,9 +330,9 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4977307" weight="0.32405892" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.09455371" side_tool="true" visible="true" weight="0.4893617" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5015129" side_tool="true" visible="true" weight="0.32405892" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49848714" weight="0.38952535" />
-      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49924356" weight="0.32405892" />
+      <window_info active="true" anchor="bottom" id="Messages" order="12" sideWeight="0.49848714" visible="true" weight="0.32405892" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
       <window_info anchor="right" id="Palette" order="2" />
@@ -393,7 +399,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="Lives added" />
     <MESSAGE value="big merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="big merge" />
+    <MESSAGE value="merged" />
+    <option name="LAST_COMMIT_MESSAGE" value="merged" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -410,9 +417,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/Prototype01/com/prototype/Maps.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6885" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/prototype/Character.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2420">
+        <state relative-caret-position="-2709">
           <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
           <folding>
             <element signature="e#1129#1130#0" expanded="true" />
@@ -447,15 +459,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/Prototype01/com/prototype/Maps.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6885" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/prototype/Maps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1924">
-          <caret line="357" column="24" selection-start-line="357" selection-start-column="24" selection-end-line="357" selection-end-column="24" />
+        <state relative-caret-position="192">
+          <caret line="419" column="43" selection-start-line="419" selection-start-column="43" selection-end-line="419" selection-end-column="43" />
           <folding>
             <element signature="e#367#375#0" expanded="true" />
             <element signature="e#964#965#0" expanded="true" />
