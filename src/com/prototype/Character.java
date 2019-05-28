@@ -243,6 +243,7 @@ public abstract class Character {
                     System.out.println("\tHeal");
                     System.out.println("\tCheck Status");
                     System.out.println("\tExit");
+                    System.out.println("\tQuit the game");
                     String menu = input.nextLine();
                     loop = 1;
 
@@ -299,7 +300,9 @@ public abstract class Character {
                         } else if (menu.equalsIgnoreCase("Exit")) {
                             break;
 
-                        } else {
+                        }else if(menu.equalsIgnoreCase("quit") || menu.equalsIgnoreCase("quit the game")) {
+                            System.exit(0);
+                        }else {
                             line();
                             System.out.println("Invalid input, try again");
                             loop = 0;
