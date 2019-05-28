@@ -15,9 +15,9 @@ public class Maps {
     //default items set so you can't equip null
     public String[] equippedItems = new String[2];
 
-    public String[] wepName = {"pointy stick", "Father's Sword", "Steel Sword", "Dragon Sword"};
-    public String[] armName = {"Tattered Clothes", "Father's Tunic", "Steel Platebody, Dragon Platebody"};
-    public int[] itemStat = {0, 10, 20, 30};
+    public String[] wepName = {"pointy stick", "Fathers Sword", "Steel Sword", "Dragon Sword", "Godsword", ""};
+    public String[] armName = {"Tattered Clothes", "Fathers Tunic", "Steel Platebody, Dragon Platebody", "Daedric Platebody", ""};
+    public int[] itemStat = {0, 10, 20, 30, 100, 1000};
 
 
     public Maps(int isComplete, String name, int questID) {
@@ -58,12 +58,12 @@ public class Maps {
         System.out.println("what do you want to equip?");
         System.out.println(inv);
         System.out.println("\tExit");
-        choice = input.nextLine();
         int isEquipped = 2;
+        choice = input.nextLine();
 
         //ifs are used here instead of a switch because it checks for 2 Strings. the while loop is used here so that the menu returns to the previous menu on return.
 
-        try {
+
             while (isEquipped == 2) {
                 if (choice.equalsIgnoreCase(wepName[0]) && inv.contains(wepName[0])) {
                     line();
@@ -163,9 +163,7 @@ public class Maps {
                 }
 
             }
-        }catch(ArrayIndexOutOfBoundsException e){
 
-        }
 
         while (isEquipped == 0) {
             System.out.println("Your current damage is: " + (player1.getDamage() + player1.getWeaponDmg()));
@@ -417,9 +415,11 @@ public class Maps {
                         mapE3();
                     }
                     else if (choice.equalsIgnoreCase("port shop")){
-                        player1.portShop();
+                        player1.portShop(player1);
+                        mapE4();
                     }
                     menu();
+
 
 
 
@@ -525,18 +525,20 @@ public class Maps {
     }
 
     public void menu() {
-        if (choice.equalsIgnoreCase("Menu")) {
-            player1.menu(player1);
-        } else if (choice.equalsIgnoreCase("Inventory")) {
-            equipItem();
-        } else if (choice.equalsIgnoreCase("::dev")) {
-            devMenu();
-        } else {
-            line();
-            System.out.println("Please try again");
+
+            if (choice.equalsIgnoreCase("Menu")) {
+                player1.menu(player1);
+            } else if (choice.equalsIgnoreCase("Inventory")) {
+                equipItem();
+            } else if (choice.equalsIgnoreCase("::dev")) {
+                devMenu();
+            } else {
+                line();
+                System.out.println("Please try again");
+            }
         }
 
-    }
+
 }
 
 
