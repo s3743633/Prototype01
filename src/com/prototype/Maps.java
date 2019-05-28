@@ -239,7 +239,6 @@ public class Maps {
         }
 //so that it doesnt repeat above sequence
         while (getComplete() >= 2) {
-            System.out.println("The slimes body is still there RIP");
             mapDirection("", "east", "south", "");
             choice = input.nextLine();
             if (choice.equalsIgnoreCase("east") || choice.equalsIgnoreCase("go east") || choice.equalsIgnoreCase("e")) {
@@ -355,16 +354,17 @@ public class Maps {
             convo("Captain Bob","Ask the merchant he might be able to help you, good luck!");
             System.out.println("You must reach the lighthouse to the south, so that you can get back home");
             setComplete(4);
+            setQuestID(1);
         }
 
-        while (getComplete() > 4) {
+        while (getComplete() >= 4) {
             System.out.println("Port Town Docks");
 
             mapDirection("", "", "south", "");
             choice = input.nextLine();
 
             if (choice.equalsIgnoreCase("south") || (choice.equalsIgnoreCase("s") || (choice.equalsIgnoreCase("go south")))) {
-                //mapE4();
+                mapE4();
             }
             menu();
 
@@ -379,7 +379,7 @@ public class Maps {
     public int mapE4(){
         star();
         System.out.println("Port Town Market");
-            while(getComplete() == 5 && getQuestID() == 1){
+            while(getComplete() == 4 && getQuestID() == 1){
                 System.out.println("You arrive at the Port Town market and" +
                         "enter the General Store");
                 convo("Trustworthy Merchant", "Hello there!, Welcome to the Port Town General Store!\n" +
@@ -389,14 +389,14 @@ public class Maps {
                 convo("Trustworthy Merchant", "Sure thing! That'll be 10gp");
                 setQuestID(2);
             }
-                while (getComplete() ==  5 && getQuestID() == 2 ){
+                while (getComplete() ==  4 && getQuestID() == 2 ){
                     line();
                 System.out.println("Would you like to buy some flint and steel?\n\tYes\n\tNo");
                 choice = input.nextLine();
                     if (choice.equalsIgnoreCase("Yes")) {
                         player1.setgp(player1.getgp() - 10);
                         System.out.println("You now have " + player1.getgp() + "gp left!");
-                        setComplete(6);
+                        setComplete(5);
                     } else if (choice.equalsIgnoreCase("No")) {
                         System.out.println("It's probably a good idea to buy some flint and steel or I wouldn't" +
                                 "\n be able to light the lighthouse");
@@ -405,7 +405,7 @@ public class Maps {
 
                     }
             }
-                while (getComplete() >= 6){
+                while (getComplete() >= 5){
                 player1.portShop();
 
 
