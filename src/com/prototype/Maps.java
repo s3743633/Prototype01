@@ -502,7 +502,7 @@ public class Maps {
 
     public int mapD5() {
         System.out.println("Lighthouse road");
-        System.out.println("There is only a road leading west towards the lighthouse");
+        System.out.println("There is only a road leading east towards the lighthouse");
 
         mapDirection("north", "east", "", "");
 
