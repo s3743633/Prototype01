@@ -19,6 +19,7 @@ public abstract class Character {
     int weaponDmg;
     public int gp;
     public int lives;
+    Scanner input = new Scanner(System.in);
 
     public Character(String name, int health, int defence, int damage, boolean isAlive, int questID,int weaponDmg, int gp, int lives) {
         this.name = name;
@@ -157,7 +158,7 @@ public abstract class Character {
 
 
         public void fight(Player a, Player b) {
-            Scanner input = new Scanner(System.in);
+
 
             do {
                 line();
@@ -320,6 +321,10 @@ public abstract class Character {
             }else{
                 System.out.println("the enemy didnt drop anything");
             }
+
+            }
+
+            public void portShop(){
 
             }
         }

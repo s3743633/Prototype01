@@ -255,7 +255,7 @@ public class Maps {
         return getComplete();
     }
     public int mapA4() {
-        setQuestID(1);
+        setQuestID(0);
         star();
         System.out.println("Shipwreck Cove");
 
@@ -331,10 +331,35 @@ public class Maps {
     public int mapE4(){
         star();
         System.out.println("Port Town Market");
-            while(getComplete() == 5){
-                System.out.println("You arrive at the Port Town market and");
+            while(getComplete() == 5 && getQuestID() == 1){
+                System.out.println("You arrive at the Port Town market and" +
+                        "enter the General Store");
                 convo("Trustworthy Merchant", "Hello there!, Welcome to the Port Town General Store!\n" +
                         "How may I be of assistance?");
+                convo("You", "Hi! I would like to purchase some flint and steel.");
+                pause();
+                convo("Trustworthy Merchant", "Sure thing! That'll be 10gp");
+                setQuestID(2);
+            }
+                while (getComplete() ==  5 && getQuestID() == 2 ){
+                    line();
+                System.out.println("Would you like to buy some flint and steel?\n\tYes\n\tNo");
+                choice = input.nextLine();
+                    if (choice.equalsIgnoreCase("Yes")) {
+                        player1.setgp(player1.getgp() - 10);
+                        System.out.println("You now have " + player1.getgp() + "gp left!");
+                        setComplete(6);
+                    } else if (choice.equalsIgnoreCase("No")) {
+                        System.out.println("It's probably a good idea to buy some flint and steel or I wouldn't" +
+                                "\n be able to light the lighthouse");
+                    } else {
+                        System.out.println("Invalid input, please try again.");
+
+                    }
+            }
+                while (getComplete() >= 6){
+                player1.portShop();
+
 
             }
         return getComplete();
@@ -360,6 +385,9 @@ public class Maps {
 
                 } else if (choice.equalsIgnoreCase("::mapA4")) {
                     mapA4();
+
+                }else if (choice.equalsIgnoreCase("::mapE4")){
+                    mapE4();
                     //add maps here
                 } else if (choice.equalsIgnoreCase("::setCom")) { //set stage of map square, useful for testing
                     System.out.println("set complete to?");
