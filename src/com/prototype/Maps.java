@@ -8,15 +8,15 @@ public class Maps {
     private int questID;
     private Scanner input = new Scanner(System.in);
     private Scanner input2 = new Scanner(System.in);
-    private Player player1 = new Player("", 100, 5, 40, true, 0,0, 0,3);
+    private Player player1 = new Player("", 100, 5, 40, true, 0, 0, 0, 3);
     private List<String> inv = new ArrayList<String>();
     public String choice;
 
     //default items set so you can't equip null
     public String[] equippedItems = new String[2];
 
-    public String[] wepName = {"pointy stick", "Bronze sword", "Steel Sword", "Dragon Sword"};
-    public String[] armName = {"Tattered Clothes", "Bronze Platebody", "Steel Platebody, Dragon Platebody"};
+    public String[] wepName = {"pointy stick", "Father's Sword", "Steel Sword", "Dragon Sword"};
+    public String[] armName = {"Tattered Clothes", "Father's Tunic", "Steel Platebody, Dragon Platebody"};
     public int[] itemStat = {0, 10, 20, 30};
 
 
@@ -63,117 +63,121 @@ public class Maps {
 
         //ifs are used here instead of a switch because it checks for 2 Strings. the while loop is used here so that the menu returns to the previous menu on return.
 
-        while (isEquipped == 2) {
-            if (choice.equalsIgnoreCase(wepName[0]) && inv.contains(wepName[0])) {
-                line();
-                System.out.println("Equipped successfully");
-                player1.setWeaponDmg(itemStat[0]);  //sets weapon damage
-                inv.add(equippedItems[0]); //adds current item to inventory
-                equippedItems[0] = (wepName[0]); //replaces equipped item 0 index
-                inv.remove(wepName[0]); //removes item from inventory
-                isEquipped = 0;
+        try {
+            while (isEquipped == 2) {
+                if (choice.equalsIgnoreCase(wepName[0]) && inv.contains(wepName[0])) {
+                    line();
+                    System.out.println("Equipped successfully");
+                    player1.setWeaponDmg(itemStat[0]);  //sets weapon damage
+                    inv.add(equippedItems[0]); //adds current item to inventory
+                    equippedItems[0] = (wepName[0]); //replaces equipped item 0 index
+                    inv.remove(wepName[0]); //removes item from inventory
+                    isEquipped = 0;
 
-            } else if (choice.equalsIgnoreCase(wepName[1]) && inv.contains(wepName[1])) {
-                line();
-                System.out.println("Equipped successfully");
-                player1.setWeaponDmg(itemStat[1]);
-                inv.add(equippedItems[0]);
-                equippedItems[0] = wepName[1];
-                inv.remove(wepName[1]);
-                isEquipped = 0;
+                } else if (choice.equalsIgnoreCase(wepName[1]) && inv.contains(wepName[1])) {
+                    line();
+                    System.out.println("Equipped successfully");
+                    player1.setWeaponDmg(itemStat[1]);
+                    inv.add(equippedItems[0]);
+                    equippedItems[0] = wepName[1];
+                    inv.remove(wepName[1]);
+                    isEquipped = 0;
 
-            } else if (choice.equalsIgnoreCase(wepName[2]) && inv.contains(wepName[2])) {
-                line();
-                System.out.println("Equipped successfully");
-                player1.setWeaponDmg(itemStat[2]);
-                inv.add(equippedItems[0]);
-                equippedItems[0] = wepName[2];
-                inv.remove(wepName[2]);
-                isEquipped = 0;
+                } else if (choice.equalsIgnoreCase(wepName[2]) && inv.contains(wepName[2])) {
+                    line();
+                    System.out.println("Equipped successfully");
+                    player1.setWeaponDmg(itemStat[2]);
+                    inv.add(equippedItems[0]);
+                    equippedItems[0] = wepName[2];
+                    inv.remove(wepName[2]);
+                    isEquipped = 0;
 
-            } else if (choice.equalsIgnoreCase(wepName[3]) && inv.contains(wepName[3])) {
-                line();
-                System.out.println("Equipped successfully");
-                player1.setWeaponDmg(itemStat[3]);
-                inv.add(equippedItems[0]);
-                inv.remove(wepName[3]);
-                isEquipped = 0;
+                } else if (choice.equalsIgnoreCase(wepName[3]) && inv.contains(wepName[3])) {
+                    line();
+                    System.out.println("Equipped successfully");
+                    player1.setWeaponDmg(itemStat[3]);
+                    inv.add(equippedItems[0]);
+                    inv.remove(wepName[3]);
+                    isEquipped = 0;
 
-            } else if (choice.equalsIgnoreCase(wepName[4]) && inv.contains(wepName[4])) {
-                line();
-                System.out.println("Equipped successfully");
-                player1.setWeaponDmg(itemStat[4]);
-                inv.add(equippedItems[0]);
-                equippedItems[0] = wepName[4];
-                inv.remove(wepName[4]);
-                isEquipped = 0;
+                } else if (choice.equalsIgnoreCase(wepName[4]) && inv.contains(wepName[4])) {
+                    line();
+                    System.out.println("Equipped successfully");
+                    player1.setWeaponDmg(itemStat[4]);
+                    inv.add(equippedItems[0]);
+                    equippedItems[0] = wepName[4];
+                    inv.remove(wepName[4]);
+                    isEquipped = 0;
 
-            } else if (choice.equalsIgnoreCase(armName[0]) && inv.contains(armName[0])) {
-                line();
-                System.out.println("Equipped successfully");
-                player1.setDefence(itemStat[0]);
-                inv.add(equippedItems[1]);
-                equippedItems[1] = armName[0];
-                inv.remove(armName[0]);
-                isEquipped = 1;
+                } else if (choice.equalsIgnoreCase(armName[0]) && inv.contains(armName[0])) {
+                    line();
+                    System.out.println("Equipped successfully");
+                    player1.setDefence(itemStat[0]);
+                    inv.add(equippedItems[1]);
+                    equippedItems[1] = armName[0];
+                    inv.remove(armName[0]);
+                    isEquipped = 1;
 
-            } else if (choice.equalsIgnoreCase(armName[1]) && inv.contains(armName[1])) {
-                line();
-                System.out.println("Equipped successfully");
-                player1.setDefence(itemStat[1]);
-                inv.add(equippedItems[1]);
-                equippedItems[1] = armName[1];
-                inv.remove(armName[1]);
-                isEquipped = 1;
+                } else if (choice.equalsIgnoreCase(armName[1]) && inv.contains(armName[1])) {
+                    line();
+                    System.out.println("Equipped successfully");
+                    player1.setDefence(itemStat[1]);
+                    inv.add(equippedItems[1]);
+                    equippedItems[1] = armName[1];
+                    inv.remove(armName[1]);
+                    isEquipped = 1;
 
-            } else if (choice.equalsIgnoreCase(armName[2]) && inv.contains(armName[2])) {
-                line();
-                System.out.println("Equipped successfully");
-                player1.setDefence(itemStat[2]);
-                inv.add(equippedItems[1]);
-                equippedItems[1] = armName[2];
-                inv.remove(armName[2]);
-                isEquipped = 1;
+                } else if (choice.equalsIgnoreCase(armName[2]) && inv.contains(armName[2])) {
+                    line();
+                    System.out.println("Equipped successfully");
+                    player1.setDefence(itemStat[2]);
+                    inv.add(equippedItems[1]);
+                    equippedItems[1] = armName[2];
+                    inv.remove(armName[2]);
+                    isEquipped = 1;
 
-            } else if (choice.equalsIgnoreCase(armName[3]) && inv.contains(armName[3])) {
-                line();
-                System.out.println("Equipped successfully");
-                player1.setDefence(itemStat[3]);
-                inv.add(equippedItems[1]);
-                equippedItems[1] = armName[3];
-                inv.remove(armName[3]);
-                isEquipped = 1;
+                } else if (choice.equalsIgnoreCase(armName[3]) && inv.contains(armName[3])) {
+                    line();
+                    System.out.println("Equipped successfully");
+                    player1.setDefence(itemStat[3]);
+                    inv.add(equippedItems[1]);
+                    equippedItems[1] = armName[3];
+                    inv.remove(armName[3]);
+                    isEquipped = 1;
 
-            } else if (choice.equalsIgnoreCase(armName[4]) && inv.contains(armName[4])) {
-                line();
-                System.out.println("Equipped successfully");
-                player1.setDefence(itemStat[4]);
-                inv.add(equippedItems[1]);
-                equippedItems[1] = armName[4];
-                inv.remove(armName[4]);
-                isEquipped = 1;
+                } else if (choice.equalsIgnoreCase(armName[4]) && inv.contains(armName[4])) {
+                    line();
+                    System.out.println("Equipped successfully");
+                    player1.setDefence(itemStat[4]);
+                    inv.add(equippedItems[1]);
+                    equippedItems[1] = armName[4];
+                    inv.remove(armName[4]);
+                    isEquipped = 1;
 
-            } else if (choice.equalsIgnoreCase("exit")) {
-                break;
-            } else {
-                line();
-                System.out.println("Invalid input try again");
-                equipItem();
+                } else if (choice.equalsIgnoreCase("exit")) {
+                    break;
+                } else {
+                    line();
+                    System.out.println("Invalid input try again");
+                    equipItem();
+                }
+
             }
+        }catch(ArrayIndexOutOfBoundsException e){
+
         }
 
-            while (isEquipped ==0){
-                System.out.println("Your current damage is: "+ (player1.getDamage()+player1.getWeaponDmg()));
-                equipItem();
+        while (isEquipped == 0) {
+            System.out.println("Your current damage is: " + (player1.getDamage() + player1.getWeaponDmg()));
+            equipItem();
         }
-            while (isEquipped == 1){
-                System.out.println("Your current defence is: "+ player1.getDefence());
-                equipItem();
-            }
+        while (isEquipped == 1) {
+            System.out.println("Your current defence is: " + player1.getDefence());
+            equipItem();
+        }
 
-            return getComplete();
+        return getComplete();
     }
-
 
 
     public void mapDirection(String north, String east, String south, String west) {
@@ -222,18 +226,19 @@ public class Maps {
                     mapA4();
                 } else if (!slime.isAlive()) {
                     System.out.println("Now that the slime is dead, you search the area again.");
-                    System.out.println("After awhile you found what you were looking for, your " + wepName[1] + " and ");
+                    System.out.println("After awhile you found what you were looking for, your " + wepName[1] + " and " + armName[1]);
+                    System.out.println("Go to inventory to equip the new gear");
+                    pause();
                     inv.add(wepName[1]);
-                    inv.add(wepName[2]);
+                    inv.add(armName[1]);
                     setComplete(2);
-                }else{
+                } else {
                     System.out.println("it'll be better to search the area.");
                 }
             }
         }
 //so that it doesnt repeat above sequence
         while (getComplete() >= 2) {
-            System.out.println("The slimes body is still there RIP");
             mapDirection("", "east", "south", "");
             choice = input.nextLine();
             if (choice.equalsIgnoreCase("east") || choice.equalsIgnoreCase("go east") || choice.equalsIgnoreCase("e")) {
@@ -242,18 +247,13 @@ public class Maps {
             } else if (choice.equalsIgnoreCase("south") || choice.equalsIgnoreCase("go south") || choice.equalsIgnoreCase("s")) {
                 mapA4();
 
-            } else if (choice.equalsIgnoreCase("Menu")) {
-                player1.menu(player1);
-            } else if (choice.equalsIgnoreCase("Inventory")) {
-                equipItem();
-            } else {
-                line();
-                System.out.println("Please try again");
-            } //validation check
+            } else menu();
+
 
         }
         return getComplete();
     }
+
     public int mapA4() {
         setQuestID(1);
         star();
@@ -280,30 +280,23 @@ public class Maps {
 
         }
         //map tile will go here afterwards on entry.
-        while(getComplete() >= 1) {
+        while (getComplete() >= 1) {
             mapDirection("north", "", "", "");
             choice = input.nextLine();
 
             if (choice.equalsIgnoreCase("north") || (choice.equalsIgnoreCase("n") || (choice.equalsIgnoreCase("go north")))) {
                 mapA3();
-            } else if (choice.equalsIgnoreCase("Menu")) {
-                player1.menu(player1);
-            } else if (choice.equalsIgnoreCase("Inventory")) {
-                equipItem();
-            }else if(choice.equalsIgnoreCase("::dev")){
-                devMenu();
-            }else {
-                line();
-                System.out.println("Please try again");
+            } else {
+                menu();
             }
         }
 
-
         return getComplete();
     }
+
     public int mapB3() {
 
-        while(getComplete() == 2) {
+        while (getComplete() == 2) {
             System.out.println("After walking for while, you reach the start of a forest.\nIn the distance you see a man farming, as you get closer he notices you" +
                     "and says: ");
             convo("Master Farmer", "Oi, don't you go and steal my special herbs! Its critical for the survival of this isle you know!");
@@ -318,13 +311,67 @@ public class Maps {
             pause();
             System.out.println("After a short journey, you arrive at the docks of the Port town!");
             setComplete(3);
-            //map here
+            mapE3();
+        }
+
+        while (getComplete() > 3) {
+            mapDirection("", "east", "", "west");
+            choice = input.nextLine();
+
+            if (choice.equalsIgnoreCase("east") || (choice.equalsIgnoreCase("e") || (choice.equalsIgnoreCase("go east")))) {
+                //mapc3();
+            } else if (choice.equalsIgnoreCase("west") || choice.equalsIgnoreCase("w") || (choice.equalsIgnoreCase("go west"))) {
+                mapA3();
+            } menu();
+
+
+        }
+        return getComplete();
+    }
+
+    public int mapE3() {
+
+        while (getComplete() == 3) {
+            System.out.println("As you arrive at the docks, there is only 1 large ship remaining. ");
+            System.out.println("The crew are busy readying the ship, you walk towards it, so you can talk to someone in charge");
+            convo("You", "OOIIII!!!");
+            System.out.print("After yelling for someones attention, you finally get a response");
+            pause();
+            convo("Crew Member", "Ay matey what thee bloody hell do you want?");
+            convo("You", "Tell me, can I board this ship?");
+            pause();
+            convo("Crew Member", "Cant help you but, I'll go get the cap'");
+            pause();
+            System.out.println("you are still waiting");
+            pause();
+            System.out.println("After waiting for what seems like forever, the captain of the ship finally approaches you");
+            convo("Captain Bob", "So you want to board this ship? I can let you, but it depends on where you're going");
+            convo("You", "I need to go back to the isles to the west can you take me?");
+            convo("Captain Bob", "You're in luck then, but i can't set sail til the lighthouse is back on \n its to south of here, if you do that then ill let you board");
+            convo("You","Sure, I can try but i dont have anything to start a fire with");
+            convo("Captain Bob","Ask the merchant he might be able to help you, good luck!");
+            System.out.println("You must reach the lighthouse to the south, so that you can get back home");
+            setComplete(4);
+        }
+
+        while (getComplete() > 4) {
+            System.out.println("Port Town Docks");
+
+            mapDirection("", "", "south", "");
+            choice = input.nextLine();
+
+            if (choice.equalsIgnoreCase("south") || (choice.equalsIgnoreCase("s") || (choice.equalsIgnoreCase("go south")))) {
+                //mapE4();
+            }
+            menu();
+
         }
 
 
-        return getComplete();
 
+        return getComplete();
     }
+
 
     public void devMenu() {
 
@@ -341,7 +388,7 @@ public class Maps {
                 if (choice.equalsIgnoreCase("::mapA3")) { //teleport to square, you will be able to teleport to any tile, used for testing.
                     mapA3();
 
-                }else if(choice.equalsIgnoreCase("::mapB3")){
+                } else if (choice.equalsIgnoreCase("::mapB3")) {
                     mapB3();
 
                 } else if (choice.equalsIgnoreCase("::mapA4")) {
@@ -390,34 +437,49 @@ public class Maps {
         }
 
 
-
-
-        }
-
-        public void convo(String npc, String text){
-
-            System.out.println();
-            line();
-            System.out.print(npc + ": ");
-            System.out.println("\"" + text + "\"");}
-            
-            public void line(){
-                for (int i = 0; i <40; i++){
-                    System.out.print("-");}
-                System.out.println();
-            }
-            public void star(){
-                for (int i = 0; i <40; i++){
-                    System.out.print("*");}
-                System.out.println();
-            
     }
-    public void pause(){
+
+    public void convo(String npc, String text) {
+
+        System.out.println();
+        line();
+        System.out.print(npc + ": ");
+        System.out.println("\"" + text + "\"");
+    }
+
+    public void line() {
+        for (int i = 0; i < 40; i++) {
+            System.out.print("-");
+        }
+        System.out.println();
+    }
+
+    public void star() {
+        for (int i = 0; i < 40; i++) {
+            System.out.print("*");
+        }
+        System.out.println();
+
+    }
+
+    public void pause() {
         System.out.print("enter to continue...");
         input.nextLine();
     }
 
+    public void menu() {
+        if (choice.equalsIgnoreCase("Menu")) {
+            player1.menu(player1);
+        } else if (choice.equalsIgnoreCase("Inventory")) {
+            equipItem();
+        } else if (choice.equalsIgnoreCase("::dev")) {
+            devMenu();
+        } else {
+            line();
+            System.out.println("Please try again");
+        }
 
+    }
 }
 
 
