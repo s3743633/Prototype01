@@ -302,6 +302,8 @@ public class Maps {
         return getComplete();
     }
     public int mapB3() {
+        star();
+        System.out.println("Forest Entrance");
 
         while(getComplete() == 2) {
             System.out.println("After walking for while, you reach the start of a forest.\nIn the distance you see a man farming, as you get closer he notices you" +
@@ -326,7 +328,19 @@ public class Maps {
 
     }
 
-    public void devMenu() {
+    public int mapE4(){
+        star();
+        System.out.println("Port Town Market");
+            while(getComplete() == 5){
+                System.out.println("You arrive at the Port Town market and");
+                convo("Trustworthy Merchant", "Hello there!, Welcome to the Port Town General Store!\n" +
+                        "How may I be of assistance?");
+
+            }
+        return getComplete();
+    }
+
+            public void devMenu() {
 
         int lop = 0;
         int x;
@@ -394,7 +408,7 @@ public class Maps {
 
         }
 
-        public void convo(String npc, String text){
+            public void convo(String npc, String text){
 
             System.out.println();
             line();
@@ -412,7 +426,7 @@ public class Maps {
                 System.out.println();
             
     }
-    public void pause(){
+            public void pause(){
         System.out.print("enter to continue...");
         input.nextLine();
     }
