@@ -736,6 +736,102 @@ public class Maps {
         return getComplete();
     }
 
+    public int mapC2(){
+        star();
+        System.out.println("Bandit Way");
+        while(getComplete() == 15){
+            System.out.println("You walk down the narrow dirt path following the footsteps of the the second thug");
+            convo("You", "Man, I wonder if I'll be able to find this super secret, hidden bandit hideout");
+            pause();
+            System.out.println("You notice a sign post that reads \"Beware! Bandit hideout ahead!\"");
+            convo("You", "Oh.. Nevermind then");
+            pause();
+            setComplete(16);
+
+        }
+        while(getComplete() >= 16){
+            line();
+            System.out.println("Continue North to enter the bandit hideout\n Or Go south to go back");
+            mapDirection("north", "", "south","");
+            choice = input.nextLine();
+
+            if (choice.equalsIgnoreCase("north")|| choice.equalsIgnoreCase("n") || choice.equalsIgnoreCase("go north")){
+                mapC1();
+            }else if(choice.equalsIgnoreCase("south") || choice.equalsIgnoreCase("s") || choice.equalsIgnoreCase("go south")){
+                mapC3();
+            }else{
+                menu();
+            }
+        }
+
+        return getComplete();
+    }
+
+        public int mapC1(){
+        star();
+            System.out.println("Bandit hideout Entrance");
+            while(getComplete() ==16){
+                System.out.println("You brace yourself as you open the creaky door");
+                convo("Thug 1", "Hey! That's the guy I told you about!");
+                convo("Higher ranking Thug","This guy? Doesnt look like much. I dont think we should bother the boss man\n for someone" +
+                        " like this.");
+                pause();
+                convo("You", "Look, I dont want to cause any trouble, I'm just here for the co-captain. \n Just let him go and we'll be on" +
+                        " our way");
+                convo("Higher ranking Thug", "You think you're in a position to be making demands? \n Thug 1! Take care" +
+                        " of him");
+                pause();
+                convo("Thug 1", "For the last time, my name is Tom");
+                pause();
+                setComplete(17);
+            }
+            Player thug1 = new Player("Thug 1 (Tom)", 90, 15, 15, true, 0, 10, 100, 0);
+            while (getComplete() == 17){
+                line();
+                System.out.println("The thug grabs the nearest spear and charges towards you");
+                System.out.println("You realize that there's no escaping this and prepare for battle");
+                    player1.fight(player1, thug1);
+
+                    if(thug1.isAlive){
+                    line();
+                    System.out.println("you limp back to safety");
+                    mapC2();
+                }else{
+
+                    convo("Higher ranking Thug", "NOO! How dare you kill Thug 1!");
+                    convo("Thug 1(final dying breath)", "I....it...it's... Tom....");
+                        System.out.println("Thug 1 collapses");
+                    pause();
+                    convo("Higher ranking Thug","You'll pay for this!");
+                        System.out.println("The thug runs to the next room");
+                    convo("You", "Why do they have to be so difficult");
+                    setComplete(18);
+                    setQuestID(7);
+
+                }
+
+
+            }
+
+            while(getComplete()>=18){
+                line();
+                System.out.println("Go East to enter the next room\nOr go south to go back");
+                mapDirection("", "east", "south","");
+                choice = input.nextLine();
+
+                if (choice.equalsIgnoreCase("east")|| choice.equalsIgnoreCase("e") || choice.equalsIgnoreCase("go east")){
+                    //mapB1();
+                }else if(choice.equalsIgnoreCase("south") || choice.equalsIgnoreCase("s") || choice.equalsIgnoreCase("go south")){
+                    mapC2();
+                }else{
+                    menu();
+                }
+
+            }
+
+        return getComplete();
+        }
+
     public void devMenu() {
 
         int loop = 0;
@@ -762,8 +858,11 @@ public class Maps {
                     mapD4();
                 }else if(choice.equalsIgnoreCase("::mapD5")){
                     mapD5();
-                }else if (choice.equalsIgnoreCase("::mapE5")){
+                }else if (choice.equalsIgnoreCase("::mapE5")) {
                     mapE5();
+
+                }else if (choice.equalsIgnoreCase("::mapC2")){
+                    mapC2();
                     //add maps here
                 }else if (choice.equalsIgnoreCase("::setCom")) { //set stage of map square, useful for testing
                     System.out.println("set complete to?");
