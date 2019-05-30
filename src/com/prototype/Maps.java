@@ -336,29 +336,51 @@ public class Maps {
 
         while (getComplete() == 3) {
             System.out.println("As you arrive at the docks, there is only 1 large ship remaining. ");
-            System.out.println("The crew are busy readying the ship, you walk towards it, so you can talk to someone in charge");
+            System.out.println("The crew are busy readying the ship, you walk towards it, so you can talk to someone in charge.");
             convo("You", "OOIIII!!!");
-            System.out.println("After yelling for someones attention, you finally get a response");
+            System.out.println("After yelling for someones attention, you finally get a response.");
             pause();
             convo("Crew Member", "Ay matey what thee bloody hell do you want?");
             convo("You", "Tell me, can I board this ship?");
             pause();
-            convo("Crew Member", "Cant help you but, wait here I'll go get the cap'");
+            convo("Crew Member", "Cant help you but, wait here I'll go get the cap'.");
             pause();
             System.out.println("you are still waiting...");
             pause();
-            System.out.println("After waiting for what seems like forever, the captain of the ship finally approaches you");
-            convo("Captain Bob", "So you want to board this ship? I can let you, but it depends on where you're going");
+            System.out.println("After waiting for what seems like forever, the captain of the ship finally approaches you.");
+            convo("Captain Bob", "So you want to board this ship? I can let you, but it depends on where you're going.");
             convo("You", "I need to go back to the isles to the west can you take me?");
             pause();
-            convo("Captain Bob", "You're in luck then, but I can't set sail til the lighthouse is back on \n its to south of here, if you do that then ill let you board");
-            convo("You", "Sure, I can try but i dont have anything to start a fire with");
+            convo("Captain Bob", "You're in luck then, but I can't set sail til the lighthouse is back on \n its to south of here, if you do that then ill let you board.");
+            convo("You", "Sure, I can try but i dont have anything that'll start a fire.");
             pause();
             convo("Captain Bob", "Ask the merchant he might be able to help you, good luck!");
-            System.out.println("You must reach the lighthouse to the south, so that you can get back home");
+            System.out.println("You must reach the lighthouse to the south, so that you can get back home.");
             pause();
             setComplete(4);
             setQuestID(1);
+        }
+
+
+        while(getComplete() == 11){
+            System.out.println("You arrive back to the docks, as you walk towards the ship \nyou notice that all the crew members are flustered and panicking.");
+            System.out.println("The Captain, with an frustrated expression \nspots you walking towards the ship.");
+            pause();
+            convo("Captain Bob", "I see the lighthouse is back on. \nSorry for uh..not telling you about the spider. I knew you'll be ok honestly.");
+            convo("You", "Thanks for warning me, no wonder no one wanted to do it. When do we set sail?");
+            pause();
+            convo("Captain Bob", "Well I would love to set sail but you see..\n");
+            pause();
+            convo("Captain Bob", "The Co-Captain has been missing since this mornin'. \nWe don't have enough spare man power to search, could you look for the Co-Captain?");
+            convo("You", "...Fine. As long as there are no gigantic spiders this time. \nDo you know where to start looking?");
+            pause();
+            convo("Captain Bob", "Don't worry there's no spiders this time...\nThere was a bunch of rowdy men in town yesterday they came from the north");
+            convo("You", "Well better then nothing, I'll head north");
+            convo("Captain Bob", "Best of luck to you.");
+            pause();
+            System.out.println("You head back towards the entrance of the docks");
+            setComplete(12);
+            setQuestID(3);
         }
 
         while (getComplete() >= 4) {
@@ -375,7 +397,6 @@ public class Maps {
             }
 
         }
-
 
         return getComplete();
     }
@@ -489,7 +510,7 @@ public class Maps {
             if (choice.equalsIgnoreCase("east") || choice.equalsIgnoreCase("e") || choice.equalsIgnoreCase("go east")) {
                 mapE4();
             } else if (choice.equalsIgnoreCase("west") || choice.equalsIgnoreCase("w") || choice.equalsIgnoreCase("go west")) {
-                //mapC4();
+                mapC4();
             } else if (choice.equalsIgnoreCase("south") || choice.equalsIgnoreCase("s") || choice.equalsIgnoreCase("go south")) {
                 mapD5();
             } else {
@@ -618,9 +639,104 @@ public class Maps {
         return getComplete();
     }
 
+    public int mapC4(){
+
+        while (getComplete() == 12){
+
+            System.out.println("As you walk up the dirt road, a distressed child pleas for your help");
+            convo("Child", "Mister please help, m-my sister is being attack by bad people");
+            pause();
+            convo("You", "That terrible! Where abouts is your sister?");
+            convo("Child", "J-just to the north, hurry mister!");
+            pause();
+            convo("You", "Everything will be ok, go over there and wait, I wont be long trust me!");
+            System.out.println("The young child hides behind a large boulder");
+            pause();
+            System.out.println("You quickly run to the north!");
+            setComplete(13);
+            mapC3();
+        }
+
+        while(getComplete() >= 12){
+            mapDirection("north", "east", "","");
+            choice = input.nextLine();
+
+            if (choice.equalsIgnoreCase("north")|| choice.equalsIgnoreCase("n") || choice.equalsIgnoreCase("go north")){
+                mapC3();
+            }else if(choice.equalsIgnoreCase("east") || choice.equalsIgnoreCase("e") || choice.equalsIgnoreCase("go east")){
+                mapD4();
+            }else{
+                menu();
+            }
+
+        }
+        return getComplete();
+    }
+
+    public int mapC3(){
+
+        while(getComplete() == 13) {
+
+            System.out.println("You see the child's sister being harassed by 2 thugs, as you get closer you hear them talk");
+            pause();
+            convo("Thug 1", "C'mon missy, you havent paid yet..The boss needs the money today");
+            convo("Young lady", "Its only been 1 week since we last paid! You said it was monthly!");
+            pause();
+            convo("Thug 1", "That was then, the deals changed. So pay up!");
+            convo("Young lady", "I wont have enough!");
+            pause();
+            convo("Thug 2", "hehe, you can use something else to pay");
+            System.out.println("The second thug starts to unbuckle his belt");
+            convo("Young lady", "Don't you think about it, you creep!");
+            pause();
+            System.out.println("As your blood starts to boil, the thugs have still yet to notice you");
+            System.out.println("You sneak upon the second thug and tap him on the shoulder");
+            pause();
+            convo("Thug 2", "HUHH?! What do you want boy!");
+            convo("You", "Be quiet and die silently");
+            setComplete(14);
+        }
+
+            Player thug2 = new Player("Thug 2", 80, 10, 10, true, 0, 10, 100, 0);
+        while(getComplete() == 14){
+            System.out.println("Start a fight?");
+            choice = input.nextLine();
+            if(choice.equalsIgnoreCase("yes") || choice.equalsIgnoreCase("y")) {
+                System.out.println("You draw your weapon and a fight starts");
+                player1.fight(player1, thug2);
+            }else{
+                System.out.println("The thug draws his weapon and a fight starts");
+                player1.fight(player1,thug2);
+            }
+
+            if(thug2.isAlive){
+                line();
+                System.out.println("you limp back to safety");
+                mapC4();
+            }else if(!thug2.isAlive()){
+                System.out.println("The first thug panics at the sight of his dead comrade");
+                pause();
+                convo("Thug 1", "You think you won now boy! Wait til boss man hears about you! \nYou're seeking death!!");
+                System.out.println("The thug flees to the north");
+                setComplete(15);
+            }else{
+                System.out.println("invalid input");
+            }
 
 
-            public void devMenu() {
+            while(getComplete() == 15){
+
+
+            }
+
+
+        }
+
+
+        return getComplete();
+    }
+
+    public void devMenu() {
 
         int loop = 0;
         int x;
@@ -634,13 +750,12 @@ public class Maps {
 
                 if (choice.equalsIgnoreCase("::mapA3")) { //teleport to square, you will be able to teleport to any tile, used for testing.
                     mapA3();
-
                 } else if (choice.equalsIgnoreCase("::mapB3")) {
                     mapB3();
-
                 } else if (choice.equalsIgnoreCase("::mapA4")) {
                     mapA4();
-
+                }else if(choice.equalsIgnoreCase("::mapE3")){
+                    mapE3();
                 }else if (choice.equalsIgnoreCase("::mapE4")){
                     mapE4();
                 }else if(choice.equalsIgnoreCase("::mapD4")){
