@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e3335d5e-1775-4b57-b8d5-152d8305edf0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Maps.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Maps.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/prototype/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/prototype/Maps.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -80,8 +80,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/prototype/Maps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12735">
-              <caret line="837" selection-start-line="837" selection-end-line="837" />
+            <state relative-caret-position="229">
+              <caret line="993" column="26" selection-start-line="993" selection-start-column="26" selection-end-line="993" selection-end-column="26" />
               <folding>
                 <element signature="e#367#375#0" expanded="true" />
                 <element signature="e#1011#1012#0" expanded="true" />
@@ -193,7 +193,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559262187135" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559267016575" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -329,11 +329,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559261831715</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="merge number 234567 probably">
+      <created>1559262243410</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1559262243411</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176298000" />
+    <option name="totallyTimeSpent" value="182264000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -346,6 +353,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10892587" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -356,7 +364,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.90468985" visible="true" weight="0.61702126" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.90468985" visible="true" weight="0.3764321" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -364,7 +372,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4977307" weight="0.32405892" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.09531014" side_tool="true" visible="true" weight="0.61702126" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.09531014" side_tool="true" visible="true" weight="0.3764321" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49848714" weight="0.38952535" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49848714" weight="0.32405892" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -438,7 +446,8 @@
     <MESSAGE value="merge completed" />
     <MESSAGE value="c2 and c1 done" />
     <MESSAGE value="shop done, again" />
-    <option name="LAST_COMMIT_MESSAGE" value="shop done, again" />
+    <MESSAGE value="merge number 234567 probably" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge number 234567 probably" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -499,8 +508,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/prototype/Maps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12735">
-          <caret line="837" selection-start-line="837" selection-end-line="837" />
+        <state relative-caret-position="229">
+          <caret line="993" column="26" selection-start-line="993" selection-start-column="26" selection-end-line="993" selection-end-column="26" />
           <folding>
             <element signature="e#367#375#0" expanded="true" />
             <element signature="e#1011#1012#0" expanded="true" />

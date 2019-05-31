@@ -295,11 +295,9 @@ public class Maps {
                 inv.remove("Shovel");
                 inv.add(armName[4]);
                 inv.add(wepName[4]);
-                setComplete(17);
             }else{
                 System.out.println("No thanks, I dont want Game breaking items");
                 inv.remove("Shovel");
-                setComplete(17);
             }
 
 
@@ -797,6 +795,8 @@ public class Maps {
                 System.out.println("you lift it out of the hole and open it");
                 System.out.println("You find a " + armName[3] + " and a " + wepName[3]);
                 System.out.println("You should equip them!");
+                inv.add(armName[3]);
+                inv.add(wepName[3]);
                 setQuestID(7);
             } else if (choice.equalsIgnoreCase("no") || choice.equalsIgnoreCase("n")) {
                 System.out.println("You decided to make fights harder for yourself");
@@ -838,34 +838,21 @@ public class Maps {
 
 
 
-    public int mapB1(){
-
-
-        return getComplete();
-    }
-
-
-
-    public int mapA1(){
-
-
-        return getComplete();
-    }
 
     public int mapC2(){
         star();
         System.out.println("Bandit Way");
-        while(getComplete() == 15){
+        while(getComplete() == 16){
             System.out.println("You walk down the narrow dirt path following the footsteps of the the second thug");
             convo("You", "Man, I wonder if I'll be able to find this super secret, hidden bandit hideout");
             pause();
             System.out.println("You notice a sign post that reads \"Beware! Bandit hideout ahead!\"");
             convo("You", "Oh.. Nevermind then");
             pause();
-            setComplete(16);
+            setComplete(17);
 
         }
-        while(getComplete() >= 16){
+        while(getComplete() >= 17){
             line();
             System.out.println("Continue North to enter the bandit hideout\n Or Go south to go back");
             mapDirection("north", "", "south","");
@@ -885,8 +872,9 @@ public class Maps {
 
         public int mapC1(){
         star();
-            System.out.println("Bandit hideout Entrance");
-            while(getComplete() ==16){
+            System.out.println("Bandit hideout Entrance Room");
+            while(getComplete() ==17){
+                line();
                 System.out.println("You brace yourself as you open the creaky door");
                 convo("Thug 1", "Hey! That's the guy I told you about!");
                 convo("Higher ranking Thug","This guy? Doesnt look like much. I dont think we should bother the boss man\n for someone" +
@@ -899,10 +887,10 @@ public class Maps {
                 pause();
                 convo("Thug 1", "For the last time, my name is Tom");
                 pause();
-                setComplete(17);
+                setComplete(18);
             }
             Player thug1 = new Player("Thug 1 (Tom)", 90, 15, 15, true, 0, 10, 100, 0);
-            while (getComplete() == 17){
+            while (getComplete() == 18){
                 line();
                 System.out.println("The thug grabs the nearest spear and charges towards you");
                 System.out.println("You realize that there's no escaping this and prepare for battle");
@@ -921,22 +909,21 @@ public class Maps {
                     convo("Higher ranking Thug","You'll pay for this!");
                         System.out.println("The thug runs to the next room");
                     convo("You", "Why do they have to be so difficult");
-                    setComplete(18);
-                    setQuestID(7);
+                    setComplete(19);
 
                 }
 
 
             }
 
-            while(getComplete()>=18){
+            while(getComplete()>=19){
                 line();
                 System.out.println("Go East to enter the next room\nOr go south to go back");
                 mapDirection("", "east", "south","");
                 choice = input.nextLine();
 
                 if (choice.equalsIgnoreCase("east")|| choice.equalsIgnoreCase("e") || choice.equalsIgnoreCase("go east")){
-                    //mapB1();
+                    mapB1();
                 }else if(choice.equalsIgnoreCase("south") || choice.equalsIgnoreCase("s") || choice.equalsIgnoreCase("go south")){
                     mapC2();
                 }else{
@@ -947,6 +934,92 @@ public class Maps {
 
         return getComplete();
         }
+
+    public int mapB1(){
+        star();
+        System.out.println("Bandit Hideout Room 1");
+        while(getComplete() == 19){
+            line();
+            System.out.println("You enter the next room slowly.\n The thug from earlier rushes towards you");
+            convo("Higher ranking Thug", "SURPRISE ATTACK!!!!!");
+            pause();
+            System.out.println("You punch him straight in the face\n He collapses instantly.");
+            convo("You","Well that was easy");
+            pause();
+            System.out.println("Another thug approaches you.");
+            convo("You", "So, who might you be? Thug 2.1?");
+            convo("Thug 3.1", "Actually, it's Thug 3.1");
+            pause();
+            convo("Thug 3.1", "Prepare yourself.");
+            System.out.println("You realize that this won't be an easy fight. \n So you draw your weapon");
+            pause();
+            setComplete(20);
+
+        }
+        Player thug3point1 = new Player("Thug 3.1", 95, 15, 20, true, 0, 10, 100, 0);
+
+        while (getComplete() == 20) {
+            line();
+
+            System.out.println("Thug 3.1 Swings his sword at you");
+            player1.fight(player1, thug3point1);
+
+            if(thug3point1.isAlive){
+                line();
+                System.out.println("you limp back to safety");
+                mapC1();
+            }else{
+                System.out.println("Thug 3.1's body lays in a heap");
+                convo("You","Guess it's time I wrap this up");
+                pause();
+
+                setComplete(21);
+
+            }
+        }
+
+        while (getComplete() == 21 && getQuestID() == 6){
+            line();
+            System.out.println("You notice something shiny in the corner of yor eye");
+            convo("You","Ooh, What is this?");
+            pause();
+            System.out.println("You find a half opened chest, with weapons and armour inside");
+            System.out.println("It's a "+armName[2]+ " and a "+wepName[2]+"!");
+            pause();
+            System.out.println("You grab your new equipment");
+            inv.add(armName[2]);
+            inv.add(wepName[2]);
+            System.out.println("I should probably equip these before the final fight");
+            pause();
+            setQuestID(7);
+        }
+
+        while(getComplete()>=21){
+            line();
+            System.out.println("Go East to enter the final boss room\nOr go west to go back");
+            mapDirection("", "east", "","west");
+            choice = input.nextLine();
+
+            if (choice.equalsIgnoreCase("east")|| choice.equalsIgnoreCase("e") || choice.equalsIgnoreCase("go east")){
+                mapA1();
+            }else if(choice.equalsIgnoreCase("west") || choice.equalsIgnoreCase("w") || choice.equalsIgnoreCase("go west")){
+                mapC1();
+            }else{
+                menu();
+            }
+
+        }
+
+        return getComplete();
+    }
+
+
+
+    public int mapA1(){
+
+
+        return getComplete();
+    }
 
     public void devMenu() {
 
