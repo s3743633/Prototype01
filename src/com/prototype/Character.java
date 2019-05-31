@@ -345,34 +345,41 @@ public abstract class Character {
             System.out.println("A potion costs 20gp each, how many potions do you want to buy?");
             System.out.println("\t1\n\t3\n\t5\t\nExit");
             String choice = inpu.nextLine();
-                    if (choice.equalsIgnoreCase("1")) {
+            if (a.getgp() >=19) {
+                if (choice.equalsIgnoreCase("1")) {
                     line();
                     numOfPotions++;
-                    a.setgp(a.getgp() - 20);
+                    a.setgp(Math.max(0, a.getgp() - 20));
                     System.out.println("You now have: " + a.getgp() + "gp left");
                     System.out.println("You now have: " + numOfPotions + " potions.");
                     loop = 0;
                 } else if (choice.equalsIgnoreCase("3")) {
                     line();
                     numOfPotions += 3;
-                    a.setgp(a.getgp() - 20 * 3);
+                    a.setgp(Math.max(0, a.getgp() - 20 * 3));
                     System.out.println("You now have: " + a.getgp() + "gp left");
                     System.out.println("You now have: " + numOfPotions + " potions.");
                     loop = 0;
                 } else if (choice.equalsIgnoreCase("5")) {
                     line();
                     numOfPotions += 5;
-                    a.setgp(a.getgp() - 20 * 5);
+                    a.setgp(Math.max(0, a.getgp() - 20 * 5));
                     System.out.println("You now have: " + a.getgp() + "gp left");
                     System.out.println("You now have: " + numOfPotions + " potions.");
                     loop = 0;
                 } else if (choice.equalsIgnoreCase("exit")) {
                     break;
 
-                }else {
+                } else {
                     System.out.println("Invalid Input");
                     loop = 0;
                 }
+            }
+
+            else {
+                System.out.println("Sorry, you don't have enough gp!");
+                loop = 0;
+            }
                 }
                     }
 

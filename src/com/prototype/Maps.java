@@ -420,7 +420,7 @@ public class Maps {
             System.out.println("Would you like to buy some flint and steel?\n\tYes\n\tNo");
             choice = input.nextLine();
             if (choice.equalsIgnoreCase("Yes")) {
-                player1.setgp(player1.getgp() - 10);
+                player1.setgp(Math.max(0, player1.getgp() - 10));
                 System.out.println("You now have " + player1.getgp() + "gp left!");
                 setComplete(5);
             } else if (choice.equalsIgnoreCase("No")) {
