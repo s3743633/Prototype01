@@ -17,7 +17,7 @@ public class Maps {
     private int questID;
     private Scanner input = new Scanner(System.in);
     private Scanner input2 = new Scanner(System.in);
-    private Player player1 = new Player("", 100, 5, 40, true, 0, 0, 20, 3);
+    private Player player1 = new Player("", 100, 0, 15, true, 0, 0, 20, 3);
     private List<String> inv = new ArrayList<String>();
     public String choice;
 
@@ -27,7 +27,7 @@ public class Maps {
 
     public String[] wepName = {"pointy stick", "Fathers Sword", "Steel Sword", "Dragon Sword", "Godsword", ""};
     public String[] armName = {"Tattered Clothes", "Fathers Tunic", "Steel Platebody", "Dragon Platebody", "Daedric Platebody", ""};
-    public int[] itemStat = {0, 10, 20, 30, 100};
+    public int[] itemStat = {0, 10, 20, 30, 100, 1000};
 
 
     public Maps(int isComplete, String name, int questID) {
@@ -721,7 +721,6 @@ public class Maps {
 
         while (getComplete() == 9) {
             line();
-            Player spider = new Player("Large Spider", 60, 15, 20, true, 0, 5, 0, 0);
             System.out.println("you enter the Lighthouse");
             System.out.println("You start to panic as you notice the area is covered in large cob webs");
             pause();
