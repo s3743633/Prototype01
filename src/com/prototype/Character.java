@@ -175,43 +175,52 @@ public abstract class Character {
                     System.out.println("you resolve yourself to try and beat the foe before you" + (b.getDamage() + 1));
                 } else if (choice.equalsIgnoreCase("heal")) {
                     line();
-                    System.out.println("You have "+numOfPotions + " potion(s) left.");
-                    System.out.println("Would you like to use a potion?");
-                    System.out.println("\tYes");
-                    System.out.println("\tNo");
-                    choice = inpu.nextLine();
                     int loop = 0;
                     while (loop == 0) {
-                        if (choice.equalsIgnoreCase("Yes")) {
-                            if (numOfPotions >= 1) {
-                                int yourHP = Math.min(100, a.getHealth() + potHealAmount);
-                                a.setHealth(yourHP);
-                                numOfPotions--;
+                        System.out.println("You have " + numOfPotions + " potion(s) left.");
+                        System.out.println("Would you like to use a potion?");
+                        System.out.println("\tYes");
+                        System.out.println("\tNo");
+                        choice = inpu.nextLine();
+                        loop = 1;
+                        while (loop == 1) {
+
+                            if (choice.equalsIgnoreCase("Yes")) {
+                                if (numOfPotions >= 1) {
+                                    if (a.getHealth() < 100) {
+                                        int yourHP = Math.min(100, a.getHealth() + potHealAmount);
+                                        a.setHealth(yourHP);
+                                        numOfPotions--;
+                                        line();
+                                        System.out.println("You use a potion,\nYour current HP is now: " + a.getHealth());
+                                        loop = 0;
+                                    } else {
+                                        line();
+                                        System.out.println("Your HP is now Full!");
+                                        loop = 2;
+                                    }
+                                } else {
+                                    line();
+                                    System.out.println("Sorry, you are out of potions!");
+                                    loop = 2;
+
+                                }
+
+                            } else if (choice.equalsIgnoreCase("no")) {
+                                break;
+
+                            } else {
                                 line();
-                                System.out.println("Your HP is now: " + a.getHealth());
+                                System.out.println("Invalid input");
                                 loop = 1;
-
                             }
-
-                            else if (numOfPotions == 0) {
-                                line();
-                                System.out.println("Sorry, you are out of potions!");
-                                loop = 1; }
-
-                    }else if (choice.equalsIgnoreCase("no")) {
-                            loop = 1;
-
-                        } else {
-                            line();
-                            System.out.println("Invalid input");
-                            loop = 1;
                         }
                     }
-                }
-                else {
-                    line();
-                    System.out.println("Invalid input");
-                }
+                    }
+                else{
+                        line();
+                        System.out.println("Invalid input");
+                    }
 
             }
             while (a.isAlive() && b.isAlive());
@@ -251,7 +260,8 @@ public abstract class Character {
 
                     while (loop == 1) {
                         if (menu.equalsIgnoreCase("heal")) {
-                            System.out.println("\nYou have " + numOfPotions + " potion(s) left.");
+                            line();
+                            System.out.println("You have " + numOfPotions + " potion(s) left.");
                             System.out.println("Would you like to use 1 potion?");
                             System.out.println("\tYes");
                             System.out.println("\tNo");
@@ -265,7 +275,8 @@ public abstract class Character {
                                             int yourHP = Math.min(100, a.getHealth() + potHealAmount);
                                             a.setHealth(yourHP);
                                             numOfPotions--;
-                                            System.out.println("\nYour current HP is now: " + a.getHealth());
+                                            line();
+                                            System.out.println("Your current HP is now: " + a.getHealth());
                                             loop = 1;
                                         } else {
                                             System.out.println("\nYour HP is Full!");

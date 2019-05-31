@@ -1122,7 +1122,7 @@ public class Maps {
     }
 
     public void pause() {
-        System.out.print("enter to continue...");
+        System.out.print("\t\t\t\t[.....Press enter to continue...]");
         input.nextLine();
     }
 
