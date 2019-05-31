@@ -356,6 +356,9 @@ public class Maps {
 
     private void mapE3() {
 
+        star();
+        System.out.println("Port Town Docks");
+
         while (getComplete() == 3) {
             System.out.println("As you arrive at the docks, there is only 1 large ship remaining. ");
             System.out.println("The crew are busy readying the ship, you walk towards it, so you can talk to someone in charge.");
