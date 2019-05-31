@@ -8,7 +8,7 @@ public class Maps {
     private int questID;
     private Scanner input = new Scanner(System.in);
     private Scanner input2 = new Scanner(System.in);
-    private Player player1 = new Player("", 100, 5, 40, true, 0, 0, 0, 3);
+    private Player player1 = new Player("", 100, 5, 40, true, 0, 0, 20, 3);
     private List<String> inv = new ArrayList<String>();
     public String choice;
 
@@ -210,7 +210,8 @@ public class Maps {
 
         while (getComplete() == 1) {
             line();
-            System.out.println("You see the remnants of your ship, spread out \non the coast. You should search the area");
+            System.out.println("You see the remnants of your ship, spread out \non the coast. You should search the area" +
+                    "\n[Type Search and press Enter to search]");
             choice = input.nextLine();
             if (choice.equalsIgnoreCase("search")) {
                 System.out.println("while searching the area, a slime sneaks upon you!");
@@ -221,7 +222,9 @@ public class Maps {
                     System.out.println("You limp back to safety");
                     mapA4();
                 } else if (!slime.isAlive()) {
+                    line();
                     System.out.println("Now that the slime is dead, you search the area again.");
+                    line();
                     System.out.println("After awhile you found what you were looking for, your " + wepName[1] + " and " + armName[1]);
                     System.out.println("Go to inventory to equip the new gear");
                     pause();
@@ -229,12 +232,14 @@ public class Maps {
                     inv.add(armName[1]);
                     setComplete(2);
                 } else {
-                    System.out.println("it'll be better to search the area.");
+                    System.out.println("it'll be better to search the area");
                 }
             }
         }
 //so that it doesnt repeat above sequence
         while (getComplete() >= 2) {
+            line();
+            System.out.println("Go east to reach Forest Entrance \nOr south to go back to Shipwreck Cove");
             mapDirection("", "east", "south", "");
             choice = input.nextLine();
             if (choice.equalsIgnoreCase("east") || choice.equalsIgnoreCase("go east") || choice.equalsIgnoreCase("e")) {
@@ -304,6 +309,8 @@ public class Maps {
 
         //map tile will go here afterwards on entry.
         while (getComplete() >= 1) {
+            line();
+            System.out.println("Go north towards Shipwreck Debris");
             mapDirection("north", "", "", "");
             choice = input.nextLine();
 
@@ -322,6 +329,7 @@ public class Maps {
         System.out.println("Forest Entrance");
 
         while (getComplete() == 2) {
+            line();
             System.out.println("After walking for while, you reach the start of a forest.\nIn the distance you see a man farming, as you get closer he notices you" +
                     " and says: ");
             convo("Master Farmer", "Oi, don't you go and steal my special herbs! Its critical for the survival of this isle you know!");
@@ -340,6 +348,8 @@ public class Maps {
         }
 
         while (getComplete() > 3) {
+            line();
+            System.out.println("Go east towards Forest Crossroads\nOr go west towards Forest Entrance");
             mapDirection("", "east", "", "west");
             choice = input.nextLine();
 
@@ -360,6 +370,7 @@ public class Maps {
         System.out.println("Port Town Docks");
 
         while (getComplete() == 3) {
+            line();
             System.out.println("As you arrive at the docks, there is only 1 large ship remaining. ");
             System.out.println("The crew are busy readying the ship, you walk towards it, so you can talk to someone in charge.");
             convo("You", "OOIIII!!!");
@@ -388,6 +399,7 @@ public class Maps {
 
 
         while (getComplete() == 11) {
+            line();
             System.out.println("You arrive back to the docks, as you walk towards the ship \nyou notice that all the crew members are flustered and panicking.");
             System.out.println("The Captain, with an frustrated expression \nspots you walking towards the ship.");
             pause();
@@ -399,8 +411,9 @@ public class Maps {
             convo("Captain Bob", "The Co-Captain has been missing since this mornin'. \nWe don't have enough spare man power to search, could you look for the Co-Captain?");
             convo("You", "...Fine. As long as there are no gigantic spiders this time. \nDo you know where to start looking?");
             pause();
-            convo("Captain Bob", "Don't worry there's no spiders this time...\nThere was a bunch of rowdy men in town yesterday they came from the north");
-            convo("You", "Well better then nothing, I'll head north");
+            convo("Captain Bob", "Don't worry there's no spiders this time...\nThere was a bunch of rowdy men in town yesterday they came from the north-west, somewhere" +
+                    " Around the Wild Plains");
+            convo("You", "Well better than nothing, I'll try my best");
             convo("Captain Bob", "Best of luck to you.");
             pause();
             System.out.println("You head back towards the entrance of the docks");
@@ -414,9 +427,33 @@ public class Maps {
 
         }
 
+        while (getComplete() == 24 && getQuestID() == 11) {
+            line();
+            pause();
+            System.out.println("You arrive at the port town docks, exhausted from your previous fight with a cat on your shoulders.");
+            convo("You", "Oh captain, my captain!");
+            convo("Captain Bob", "What do you wa- OH! Mittens! You've come back to me!");
+            pause();
+            convo("You","You know, I kind of pictured someone a little less... Hairy.");
+            convo("Captain Bob", "Life is often full of disappointments. You'll live.\n " +
+                    "Anyways, with this we're finally ready to set sail! ");
+            pause();
+            convo("You", "Oh okay, maybe I'll go grab some-");
+            convo("Captain Bob", "No, we set sail right this moment");
+            convo("You", "Wait like, right now?!");
+            pause();
+            convo("Captain Bob", "YES! ANCHORS A-WEIGH!");
+            convo("You","AHHHHH");
+            pause();
+            System.out.println("Thanks for playing okDevious");
+            System.exit(0);
+
+        }
+
 
         while (getComplete() >= 4) {
-            System.out.println("Port Town Docks");
+            line();
+            System.out.println("Go south towards Port Town Market");
 
             mapDirection("", "", "south", "");
             choice = input.nextLine();
@@ -436,6 +473,7 @@ public class Maps {
         star();
         System.out.println("Port Town Market");
         while (getComplete() == 4 && getQuestID() == 1) {
+            line();
             System.out.println("You arrive at the Port Town market and" +
                     "enter the General Store");
             convo("Trustworthy Merchant", "Hello there!, Welcome to the Port Town General Store!\n" +
@@ -463,6 +501,7 @@ public class Maps {
         }
 
         while (getComplete() >= 16 && questID == 5) {
+            line();
             System.out.println("You enter the portshop and speak to the merchant");
             convo("Merchant", "ohh its our saviour!, I heard about you from my son");
             pause();
@@ -477,6 +516,8 @@ public class Maps {
         }
 
         while (getComplete() >= 5) {
+            line();
+            System.out.println("Go north towards Port Town Docks\nOr West towards Dirt Road");
             mapDirection("north", "", "", "west");
             System.out.println("\tPort Shop");
             choice = input.nextLine();
@@ -495,10 +536,15 @@ public class Maps {
     }
 
     private void mapD4() {
+        star();
+        System.out.println("Dirt Road");
 
 
         while (getComplete() == 5) {
-            System.out.println("you leave the town, and find yourself on a dirt road.");
+            line();
+            System.out.println("You find yourself on a dirt road.");
+            line();
+            System.out.println("Go south towards Lighthouse Road\nGo west towards Wild Plains\nOr go East towards Port Town Market");
             mapDirection("", "east", "south", "west");
             choice = input.nextLine();
             if (choice.equalsIgnoreCase("west") || choice.equalsIgnoreCase("w") || choice.equalsIgnoreCase("go west")) {
@@ -510,7 +556,7 @@ public class Maps {
             }
 
             while (getComplete() == 6) {
-
+                line();
                 System.out.println("There is a large wolf blocking the way, it notices you before you even realise.");
                 Player wolf = new Player("Wolf", 50, 5, 15, true, 0, 5, 0, 0);
                 player1.fight(player1, wolf);
@@ -520,11 +566,13 @@ public class Maps {
                     System.out.println("You limp back to the market place");
                     mapE4();
                 } else if (!wolf.isAlive()) {
+                    line();
                     System.out.println("Now that the wolf is out of the way, you can continue to the lighthouse");
                     pause();
                     setComplete(7);
                     mapD5();
                 } else {
+                    line();
                     System.out.println("invalid input");
                 }
             }
@@ -532,6 +580,8 @@ public class Maps {
 
 
         while (getComplete() == 7) {
+            line();
+            System.out.println("Go south towards Lighthouse Road\nGo west towards Wild Plains\nOr go East towards Port Town Market");
             mapDirection("", "east", "south", "west");
             choice = input.nextLine();
 
@@ -547,6 +597,8 @@ public class Maps {
         }
 
         while (getComplete() >= 8) {
+            line();
+            System.out.println("Go south towards Lighthouse Road\nGo west towards Wild Plains\nOr go East towards Port Town Market");
             mapDirection("", "east", "south", "west");
             choice = input.nextLine();
 
@@ -564,7 +616,9 @@ public class Maps {
 
 
     private void mapD5() {
+        star();
         System.out.println("Lighthouse road");
+        line();
         System.out.println("There is only a road leading east towards the lighthouse");
 
         mapDirection("north", "east", "", "");
@@ -581,9 +635,11 @@ public class Maps {
 
 
     private void mapE5() {
+        star();
+        System.out.println("Lighthouse");
 
         while (getComplete() == 7) {
-
+            line();
             System.out.println("You've finally reached the lighthouse");
             pause();
             System.out.println("you walk up to the lighthouse, the door is locked");
@@ -599,6 +655,7 @@ public class Maps {
         }
 
         while (getComplete() == 8) {
+            line();
             System.out.println("do you want to open the lighthouse?");
             choice = input.nextLine();
 
@@ -613,6 +670,7 @@ public class Maps {
         }
 
         while (getComplete() == 9) {
+            line();
             Player spider = new Player("Large Spider", 60, 15, 20, true, 0, 5, 0, 0);
             System.out.println("you enter the Lighthouse");
             System.out.println("You start to panic as you notice the area is covered in large cob webs");
@@ -628,19 +686,21 @@ public class Maps {
             }
 
             if (spider.isAlive) {
+                line();
                 System.out.println("You sneak away while the spider wasn't looking");
                 mapD5();
-            } else if (!spider.isAlive()) {
+            } else{
+                line();
                 System.out.println("You feel relieved that you never have to experience that again");
                 setComplete(10);
-            } else {
-                System.out.println("invalid input");
             }
+
 
         }
 
 
         while (getComplete() == 10) {
+            line();
             System.out.println("Do you want to continue up the stairs?");
             choice = input.nextLine();
 
@@ -662,7 +722,10 @@ public class Maps {
         }
 
         while (getComplete() >= 11) {
+            line();
             System.out.println("The Lighthouse");
+            line();
+            System.out.println("Go inside the lighthouse\nOr go west to go back to Road to Lighthouse");
             mapDirection("", "", "", "west");
             System.out.println("\tenter the lighthouse");
             choice = input.nextLine();
@@ -679,9 +742,11 @@ public class Maps {
     }
 
     private void mapC4() {
+        star();
+        System.out.println("Wild Plains");
 
         while (getComplete() == 12) {
-
+            line();
             System.out.println("As you walk up the dirt road, a distressed child pleas for your help");
             convo("Child", "Mister please help, m-my sister is being attack by bad people");
             pause();
@@ -697,6 +762,9 @@ public class Maps {
         }
 
         while (getComplete() >= 13) {
+            line();
+            System.out.println("Go north to reach Forest Crossroads\nOr Go east to reach Dirt Road");
+
             mapDirection("north", "east", "", "");
             choice = input.nextLine();
 
@@ -712,9 +780,11 @@ public class Maps {
     }
 
     private void mapC3() {
+        star();
+        System.out.println("Forest Crossroads");
 
         while (getComplete() == 13) {
-
+            line();
             System.out.println("You see the child's sister being harassed by 2 thugs, as you get closer you hear them talk");
             pause();
             convo("Thug 1", "C'mon missy, you haven't paid yet..The boss needs the money today");
@@ -737,6 +807,7 @@ public class Maps {
 
         Player thug2 = new Player("Thug 2", 80, 10, 10, true, 0, 10, 100, 0);
         while (getComplete() == 14) {
+            line();
             System.out.println("Start a fight?");
             choice = input.nextLine();
             if (choice.equalsIgnoreCase("yes") || choice.equalsIgnoreCase("y")) {
@@ -754,26 +825,29 @@ public class Maps {
                 System.out.println("you limp back to safety");
                 mapC4();
             } else if (!thug2.isAlive()) {
+                line();
                 System.out.println("The first thug panics at the sight of his dead comrade");
                 pause();
                 convo("Thug 1", "You think you won now boy! Wait til boss man hears about you! \nYou're seeking death!!");
                 System.out.println("The thug flees to the north");
                 setComplete(15);
             } else {
+                line();
                 System.out.println("invalid input");
             }
         }
 
         while (getComplete() == 15) {
+            line();
             System.out.println("The young lady looks relieved as the thug runs away \nShe turns to look at you and says");
             convo("Young lady", "Thanks for the help stranger, but you're in great danger now");
             convo("You", "You're welcome miss, but I can take whatever comes at me next");
             pause();
             convo("young lady", "You might need some help then, my father might be able to help\n his the merchant in town.");
-            convo("You", "hmmm, i'll probably take you on that offer");
+            convo("You", "Hmmm, I'll probably take you on that offer");
             pause();
             convo("young lady", "You'll do this isle a great service if you get rid of those men.");
-            convo("You", "Yeah..your brother is to the south, he was worried about you.");
+            convo("You", "Yeah.. your brother is to the south, he was worried about you.");
             pause();
             convo("Young lady", "Thanks, ill go get him. Well be seeing you stranger");
             System.out.println("The lady leaves before you get to ask for her name");
@@ -784,10 +858,12 @@ public class Maps {
 
 
         while (getComplete() == 16 && questID == 6 && inv.contains("Shovel")) {
-            System.out.println("Theres a spot marked with an X, do you want to dig here");
+            line();
+            System.out.println("There's a spot marked with an X, do you want to dig here");
             choice = input.nextLine();
 
             if (choice.equalsIgnoreCase("yes") || choice.equalsIgnoreCase("y")) {
+                line();
                 System.out.println("You dig hear a ding as your shovel hits the top of a chest");
                 System.out.println("you lift it out of the hole and open it");
                 System.out.println("You find a " + armName[3] + " and a " + wepName[3]);
@@ -796,16 +872,19 @@ public class Maps {
                 inv.add(wepName[3]);
                 setQuestID(7);
             } else if (choice.equalsIgnoreCase("no") || choice.equalsIgnoreCase("n")) {
+                line();
                 System.out.println("You decided to make fights harder for yourself");
                 setQuestID(7);
             } else {
+                line();
                 System.out.println("invalid input");
             }
         }
 
 
         while (getComplete() >= 16) {
-            System.out.println("The Cross Road");
+            line();
+            System.out.println("Go north to reach Bandit Way\nGo south to reach Wild Plains\nOr go west to reach Forest Entrance");
             mapDirection("north", "", "south", "west");
             choice = input.nextLine();
 
@@ -827,6 +906,7 @@ public class Maps {
         star();
         System.out.println("Bandit Way");
         while (getComplete() == 16) {
+            line();
             System.out.println("You walk down the narrow dirt path following the footsteps of the the second thug");
             convo("You", "Man, I wonder if I'll be able to find this super secret, hidden bandit hideout");
             pause();
@@ -838,7 +918,7 @@ public class Maps {
         }
         while (getComplete() >= 17) {
             line();
-            System.out.println("Continue North to enter the bandit hideout\n Or Go south to go back");
+            System.out.println("Continue North to enter the bandit hideout\nOr Go south to go back to Forest Crossroads");
             mapDirection("north", "", "south", "");
             choice = input.nextLine();
 
@@ -900,7 +980,7 @@ public class Maps {
 
         while (getComplete() >= 19) {
             line();
-            System.out.println("Go East to enter the next room\nOr go south to go back");
+            System.out.println("Go East to enter the next room\nOr go south to go back to Bandit Way");
             mapDirection("", "east", "south", "");
             choice = input.nextLine();
 
@@ -920,10 +1000,10 @@ public class Maps {
         System.out.println("Bandit Hideout Room 1");
         while (getComplete() == 19) {
             line();
-            System.out.println("You enter the next room slowly.\n The thug from earlier rushes towards you");
+            System.out.println("You enter the next room slowly.\nThe thug from earlier rushes towards you");
             convo("Higher ranking Thug", "SURPRISE ATTACK!!!!!");
             pause();
-            System.out.println("You punch him straight in the face\n He collapses instantly.");
+            System.out.println("You punch him straight in the face\nHe collapses instantly.");
             convo("You", "Well that was easy");
             pause();
             System.out.println("Another thug approaches you.");
@@ -931,7 +1011,7 @@ public class Maps {
             convo("Thug 3.1", "Actually, it's Thug 3.1");
             pause();
             convo("Thug 3.1", "Prepare yourself.");
-            System.out.println("You realize that this won't be an easy fight. \n So you draw your weapon");
+            System.out.println("You realize that this won't be an easy fight. \nSo you draw your weapon");
             pause();
             setComplete(20);
 
@@ -940,7 +1020,6 @@ public class Maps {
 
         while (getComplete() == 20) {
             line();
-
             System.out.println("Thug 3.1 Swings his sword at you");
             player1.fight(player1, thug3point1);
 
@@ -949,6 +1028,7 @@ public class Maps {
                 System.out.println("you limp back to safety");
                 mapC1();
             } else {
+                line();
                 System.out.println("Thug 3.1's body lays in a heap");
                 convo("You", "Guess it's time I wrap this up");
                 pause();
@@ -958,9 +1038,9 @@ public class Maps {
             }
         }
 
-        while (getComplete() == 21 && getQuestID() == 6) {
+        while (getComplete() == 21 && (getQuestID() == 6|| getQuestID() == 5)) {
             line();
-            System.out.println("You notice something shiny in the corner of yor eye");
+            System.out.println("You notice something shiny in the corner of your eye");
             convo("You", "Ooh, What is this?");
             pause();
             System.out.println("You find a half opened chest, with weapons and armour inside");
@@ -996,6 +1076,7 @@ public class Maps {
     private void mapA1(){
 
         while(getComplete() == 21) {
+            line();
             System.out.println("You finally reach the end of the bandits camp, your feet hurt and you want to go home");
             System.out.println("A familiar face and a cat stares at you, as you limp towards them");
             convo("You", "Its...you..from the beach..");
@@ -1023,8 +1104,9 @@ public class Maps {
         }
 
         while(getComplete() == 22){
+            line();
             System.out.println("Do you want to fight or join him?");
-
+            choice=input.nextLine();
             if(choice.equalsIgnoreCase("Join") || choice.equalsIgnoreCase("join him")){
                 System.out.println("You decide to join the Stranger");
                 convo("Strange Stranger", "Good choice, partner! You can call me Mr.Wick");
@@ -1038,9 +1120,13 @@ public class Maps {
                 setComplete(23);
 
             }
+            else {
+                System.out.println("Invalid input");
+            }
         }
 
         while(getComplete() == 23){
+            line();
             System.out.println("You draw your weapon and decide to fight him.");
             Player strangeStranger = new Player("Strange Stranger", 100, 30, 30, false, 0, 5, 100000, 0);
             player1.fight(player1,strangeStranger);
@@ -1050,6 +1136,7 @@ public class Maps {
                 System.out.println("You limp back to safety");
                 mapC2();
             }else{
+                line();
                 System.out.println("You defeated the stranger, without even knowing his real name!");
                 System.out.println("You pick up the Co-Captain and head back towards the docks to get home");
                 setComplete(24);
@@ -1167,7 +1254,7 @@ public class Maps {
     }
 
     private void pause() {
-        System.out.print("enter to continue...");
+        System.out.print("\t\t\t[...Press enter key to continue...]");
         input.nextLine();
     }
 
