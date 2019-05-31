@@ -1010,9 +1010,72 @@ public class Maps {
         return getComplete();
     }
 
-
-
     public int mapA1(){
+
+        while(getComplete() == 21) {
+            System.out.println("You finally reach the end of the bandits camp, your feet hurt and you want to go home");
+            System.out.println("A familiar face and a cat stares at you, as you limp towards them");
+            convo("You", "Its...you..from the beach..");
+            pause();
+            convo("Strange Stranger", "If I had know, that you would bring this much damage \nI would of left you to die on the coast!");
+            convo("You", "I only did so, to get the Co-captain back! Where is he!");
+            pause();
+            convo("Strange Stranger", "The co-captain? Look around you'll see");
+            convo("You", "There's only you and that cat!");
+            pause();
+            System.out.println("The man picks up the cat");
+            convo("Strange Stranger", "That's right, this fine pussy is the co-captain");
+            convo("Cat", "Meeoww!");
+            pause();
+            convo("You", "So are are you going to hand it over or are we gonna fight?");
+            convo("Strange Stranger", "Well, you got this far, why dont you join me?");
+            pause();
+            convo("You", "Join you? How will that benefit me? I just want to get home");
+            convo("Strange Stranger", "Thats all you want? To get home? If you join me, we can go take a ship and get off this isle?");
+            pause();
+            convo("You","Would you help me fight? I may need to rescue my family");
+            convo("Strange Stranger", "Of cause, we could even establish a new crew! So how about it?");
+            pause();
+            setComplete(22);
+        }
+
+        while(getComplete() == 22){
+            System.out.println("Do you want to fight or join him?");
+
+            if(choice.equalsIgnoreCase("Join") || choice.equalsIgnoreCase("join him")){
+                System.out.println("You decide to join the Stranger");
+                convo("Strange Stranger", "Good choice, partner! You can call me Mr.Wick");
+                convo("Mr.Wick", "We're going to have to steal a ship so here's the plan:");
+                pause();
+                System.out.println("After discussing a plan, you head off to the docks.");
+                mapE3();
+                setComplete(24);
+                setQuestID(10);
+            }else if(choice.equalsIgnoreCase("fight") || choice.equalsIgnoreCase("fight him")){
+                setComplete(23);
+
+            }
+        }
+
+        while(getComplete() == 23){
+            System.out.println("You draw your weapon and decide to fight him.");
+            Player strangeStranger = new Player("Strange Stranger", 100, 30, 30, false, 0, 5, 100000, 0);
+            player1.fight(player1,strangeStranger);
+
+            if(strangeStranger.isAlive){
+                line();
+                System.out.println("You limp back to safety");
+                mapC2();
+            }else{
+                System.out.println("You defeated the stranger, without even knowing his real name!");
+                System.out.println("You pick up the Co-Captain and head back towards the docks to get home");
+                setComplete(24);
+                setQuestID(11);
+                mapE3();
+
+            }
+
+        }
 
 
         return getComplete();
