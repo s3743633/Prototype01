@@ -411,6 +411,14 @@ public class Maps {
             setQuestID(3);
         }
 
+        while(getComplete() == 24 && getQuestID() == 10){
+            System.out.println("");
+
+
+        }
+
+
+
         while (getComplete() >= 4) {
             System.out.println("Port Town Docks");
 
@@ -745,6 +753,7 @@ public class Maps {
             choice = input.nextLine();
             if (choice.equalsIgnoreCase("yes") || choice.equalsIgnoreCase("y")) {
                 System.out.println("You draw your weapon and a fight starts");
+                convo("Thug 2", "I see you want a sword fight");
                 player1.fight(player1, thug2);
 
             } else {
@@ -827,18 +836,6 @@ public class Maps {
         return getComplete();
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
     public int mapC2(){
         star();
         System.out.println("Bandit Way");
@@ -870,7 +867,7 @@ public class Maps {
         return getComplete();
     }
 
-        public int mapC1(){
+    public int mapC1(){
         star();
             System.out.println("Bandit hideout Entrance Room");
             while(getComplete() ==17){
@@ -1035,22 +1032,25 @@ public class Maps {
 
                 if (choice.equalsIgnoreCase("::mapA3")) { //teleport to square, you will be able to teleport to any tile, used for testing.
                     mapA3();
-                }else if (choice.equalsIgnoreCase("::mapB3")) {
+                } else if (choice.equalsIgnoreCase("::mapB3")) {
                     mapB3();
-                }else if (choice.equalsIgnoreCase("::mapA4")) {
+                } else if (choice.equalsIgnoreCase("::mapA4")) {
                     mapA4();
-                }else if(choice.equalsIgnoreCase("::mapE3")){
+                } else if (choice.equalsIgnoreCase("::mapE3")) {
                     mapE3();
-                }else if (choice.equalsIgnoreCase("::mapE4")){
+                } else if (choice.equalsIgnoreCase("::mapE4")) {
                     mapE4();
-                }else if(choice.equalsIgnoreCase("::mapD4")){
+                } else if (choice.equalsIgnoreCase("::mapD4")) {
                     mapD4();
-                }else if(choice.equalsIgnoreCase("::mapD5")){
+                } else if (choice.equalsIgnoreCase("::mapD5")) {
                     mapD5();
-                }else if (choice.equalsIgnoreCase("::mapE5")) {
+                } else if (choice.equalsIgnoreCase("::mapE5")) {
                     mapE5();
-
-                }else if (choice.equalsIgnoreCase("::mapC2")){
+                } else if(choice.equalsIgnoreCase("::mapC1")){
+                    mapC1();
+                } else if(choice.equalsIgnoreCase("::mapA1")){
+                    mapA1();
+                } else if(choice.equalsIgnoreCase("::mapC2")){
                     mapC2();
                     //add maps here
                 }else if (choice.equalsIgnoreCase("::setCom")) { //set stage of map square, useful for testing
@@ -1092,7 +1092,6 @@ public class Maps {
                 input2.next();
 
             }
-            //return getComplete();
         }
 
 
