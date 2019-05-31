@@ -4,6 +4,7 @@
     <list default="true" id="e3335d5e-1775-4b57-b8d5-152d8305edf0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Maps.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Prototype01/com/prototype/Maps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/prototype/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/prototype/Character.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/prototype/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/prototype/Maps.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -38,20 +39,22 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/prototype/Maps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="733" lean-forward="true" selection-start-line="733" selection-end-line="733" />
+            <state relative-caret-position="1462">
+              <caret line="292" column="58" lean-forward="true" selection-start-line="292" selection-start-column="58" selection-end-line="292" selection-end-column="58" />
               <folding>
+                <element signature="method#Maps#0;class#Maps#0" />
                 <element signature="method#equipItem#0;class#Maps#0" />
-                <element signature="method#mapA4#0;class#Maps#0" />
-                <element signature="method#mapB3#0;class#Maps#0" />
+                <element signature="method#mapDirection#0;class#Maps#0" />
+                <element signature="method#mapA3#0;class#Maps#0" />
                 <element signature="method#mapE3#0;class#Maps#0" />
                 <element signature="method#mapD4#0;class#Maps#0" />
                 <element signature="method#mapD5#0;class#Maps#0" />
                 <element signature="method#mapE5#0;class#Maps#0" />
                 <element signature="method#mapC4#0;class#Maps#0" />
+                <element signature="method#mapC2#0;class#Maps#0" />
                 <element signature="method#devMenu#0;class#Maps#0" />
                 <element signature="method#convo#0;class#Maps#0" />
                 <element signature="method#line#0;class#Maps#0" />
@@ -63,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/prototype/Character.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5882">
-              <caret line="374" column="17" selection-start-line="374" selection-start-column="17" selection-end-line="374" selection-end-column="17" />
+            <state relative-caret-position="374">
+              <caret line="336" lean-forward="true" selection-start-line="336" selection-end-line="336" />
               <folding>
                 <element signature="e#1172#1173#0" expanded="true" />
                 <element signature="e#1208#1209#0" expanded="true" />
@@ -141,8 +144,8 @@
         <option value="$PROJECT_DIR$/src/com/prototype/Items.java" />
         <option value="$PROJECT_DIR$/src/com/prototype/Inventory.java" />
         <option value="$PROJECT_DIR$/src/com/prototype/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/prototype/Character.java" />
         <option value="$PROJECT_DIR$/src/com/prototype/Maps.java" />
+        <option value="$PROJECT_DIR$/src/com/prototype/Character.java" />
       </list>
     </option>
   </component>
@@ -193,7 +196,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559212704649" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559227504053" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -264,7 +267,8 @@
       <workItem from="1558617614888" duration="6000" />
       <workItem from="1558665411136" duration="5390000" />
       <workItem from="1558920592022" duration="44850000" />
-      <workItem from="1559188892846" duration="4849000" />
+      <workItem from="1559188892846" duration="13032000" />
+      <workItem from="1559256659526" duration="4746000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1557722987000</created>
@@ -284,7 +288,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191387000" />
+    <option name="totallyTimeSpent" value="204316000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1513" height="983" extended-state="6" />
@@ -299,7 +303,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4975945" visible="true" weight="0.4654162" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4969072" visible="true" weight="0.4654162" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -307,7 +311,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49924356" weight="0.32473624" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5024055" side_tool="true" weight="0.3739742" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50309277" side_tool="true" weight="0.4654162" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32942554" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32473624" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -392,10 +396,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/prototype/Maps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1462">
+          <caret line="292" column="58" lean-forward="true" selection-start-line="292" selection-start-column="58" selection-end-line="292" selection-end-column="58" />
+          <folding>
+            <element signature="method#Maps#0;class#Maps#0" />
+            <element signature="method#equipItem#0;class#Maps#0" />
+            <element signature="method#mapDirection#0;class#Maps#0" />
+            <element signature="method#mapA3#0;class#Maps#0" />
+            <element signature="method#mapE3#0;class#Maps#0" />
+            <element signature="method#mapD4#0;class#Maps#0" />
+            <element signature="method#mapD5#0;class#Maps#0" />
+            <element signature="method#mapE5#0;class#Maps#0" />
+            <element signature="method#mapC4#0;class#Maps#0" />
+            <element signature="method#mapC2#0;class#Maps#0" />
+            <element signature="method#devMenu#0;class#Maps#0" />
+            <element signature="method#convo#0;class#Maps#0" />
+            <element signature="method#line#0;class#Maps#0" />
+            <element signature="method#star#0;class#Maps#0" />
+            <element signature="method#pause#0;class#Maps#0" />
+            <element signature="method#menu#0;class#Maps#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/prototype/Character.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5882">
-          <caret line="374" column="17" selection-start-line="374" selection-start-column="17" selection-end-line="374" selection-end-column="17" />
+        <state relative-caret-position="374">
+          <caret line="336" lean-forward="true" selection-start-line="336" selection-end-line="336" />
           <folding>
             <element signature="e#1172#1173#0" expanded="true" />
             <element signature="e#1208#1209#0" expanded="true" />
@@ -425,29 +454,6 @@
             <element signature="e#2143#2144#0" expanded="true" />
             <element signature="e#2171#2172#0" expanded="true" />
             <element signature="e#2199#2200#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/prototype/Maps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="733" lean-forward="true" selection-start-line="733" selection-end-line="733" />
-          <folding>
-            <element signature="method#equipItem#0;class#Maps#0" />
-            <element signature="method#mapA4#0;class#Maps#0" />
-            <element signature="method#mapB3#0;class#Maps#0" />
-            <element signature="method#mapE3#0;class#Maps#0" />
-            <element signature="method#mapD4#0;class#Maps#0" />
-            <element signature="method#mapD5#0;class#Maps#0" />
-            <element signature="method#mapE5#0;class#Maps#0" />
-            <element signature="method#mapC4#0;class#Maps#0" />
-            <element signature="method#devMenu#0;class#Maps#0" />
-            <element signature="method#convo#0;class#Maps#0" />
-            <element signature="method#line#0;class#Maps#0" />
-            <element signature="method#star#0;class#Maps#0" />
-            <element signature="method#pause#0;class#Maps#0" />
-            <element signature="method#menu#0;class#Maps#0" />
           </folding>
         </state>
       </provider>

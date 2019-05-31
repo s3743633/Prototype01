@@ -17,7 +17,7 @@ public class Maps {
 
 
     public String[] wepName = {"pointy stick", "Fathers Sword", "Steel Sword", "Dragon Sword", "Godsword", ""};
-    public String[] armName = {"Tattered Clothes", "Fathers Tunic", "Steel Platebody, Dragon Platebody", "Daedric Platebody", ""};
+    public String[] armName = {"Tattered Clothes", "Fathers Tunic", "Steel Platebody", "Dragon Platebody", "Daedric Platebody", ""};
     public int[] itemStat = {0, 10, 20, 30, 100};
 
 
@@ -51,7 +51,9 @@ public class Maps {
         return name;
     }
 
-    public int equipItem() {
+
+
+    public void equipItem() {
         line();
         System.out.println("currently equipped items:");
         System.out.println(Arrays.toString(equippedItems));
@@ -156,27 +158,22 @@ public class Maps {
                 isEquipped = 1;
 
             } else if (choice.equalsIgnoreCase("exit")) {
-                isEquipped = 3;
                 break;
             } else {
                 line();
                 System.out.println("Invalid input try again");
-                equipItem();
+                break;
             }
 
         }
 
-        while (isEquipped == 0) {
+        if (isEquipped == 0) {
             System.out.println("Your current damage is: " + (player1.getDamage() + player1.getWeaponDmg()));
             equipItem();
-        }
-        while (isEquipped == 1) {
+        }else if(isEquipped == 1) {
             System.out.println("Your current defence is: " + player1.getDefence());
             equipItem();
         }
-
-
-        return getComplete();
     }
 
 
@@ -266,19 +263,50 @@ public class Maps {
             System.out.println("you awaken, poked by a strangers walking stick.");
             System.out.println("your body aches all over, finally opening your eyes the man says");
             convo("Strange Stranger", "Hey friend, you alright? do you remember your name?");
+            pause();
             System.out.println("As you finally awaken enough you remember its:");
             player1.setName(input.nextLine());
             convo("strange stranger", "well, " + player1.getName() + " you're very lucky that your alive. \nSo where did you come from?");
             convo("you", "I come from a land down under, where women glow and men plunder");
+            pause();
             convo("strange stranger", "I see you're a man of culture, I too like to plunder. " +
                     "\nA part of your ship is up north, you should go check it. Well be seeing you!");
+            pause();
             System.out.println("As the strange man leaves, you decide its best to get going");
+            pause();
             equippedItems[0] = wepName[0];
             equippedItems[1] = armName[0];
             setComplete(1);
 
 
         }
+
+
+
+        if(getComplete() >= 16 && inv.contains("Shovel")){
+            System.out.println("Congrats, you found a secret!");
+            System.out.println("There's another spot here for you to dig!");
+            System.out.println("do you want to dig there?");
+            choice = input.nextLine();
+            if(choice.equalsIgnoreCase("yes") || choice.equalsIgnoreCase("y")){
+                System.out.println("You find a golden treasure chest!");
+                System.out.println("Your shovel breaks as you smash it open with it");
+                System.out.println("you find a " + armName[4] +"and a " +  wepName[4] +"!!!");
+                inv.remove("Shovel");
+                inv.add(armName[4]);
+                inv.add(wepName[4]);
+                setComplete(17);
+            }else{
+                System.out.println("No thanks, I dont want Game breaking items");
+                inv.remove("Shovel");
+                setComplete(17);
+            }
+
+
+        }
+
+
+
         //map tile will go here afterwards on entry.
         while (getComplete() >= 1) {
             mapDirection("north", "", "", "");
@@ -289,6 +317,8 @@ public class Maps {
             } else {
                 menu();
             }
+
+
         }
 
         return getComplete();
@@ -321,7 +351,7 @@ public class Maps {
             choice = input.nextLine();
 
             if (choice.equalsIgnoreCase("east") || (choice.equalsIgnoreCase("e") || (choice.equalsIgnoreCase("go east")))) {
-                //mapc3();
+                mapC3();
             } else if (choice.equalsIgnoreCase("west") || choice.equalsIgnoreCase("w") || (choice.equalsIgnoreCase("go west"))) {
                 mapA3();
             }
@@ -362,7 +392,7 @@ public class Maps {
         }
 
 
-        while(getComplete() == 11){
+        while (getComplete() == 11) {
             System.out.println("You arrive back to the docks, as you walk towards the ship \nyou notice that all the crew members are flustered and panicking.");
             System.out.println("The Captain, with an frustrated expression \nspots you walking towards the ship.");
             pause();
@@ -430,6 +460,20 @@ public class Maps {
                 System.out.println("Invalid input, please try again.");
 
             }
+        }
+
+        while (getComplete() >= 16 && questID == 5) {
+            System.out.println("You enter the portshop and speak to the merchant");
+            convo("Merchant", "ohh its our saviour!, I heard about you from my son");
+            pause();
+            convo("You", "wow news sure travels fast here! \nYour daughter said you might be able to help with those bandits?");
+            convo("Merchant", "For you sure! Here take this shovel, Go back to where my daughter was \nI buried a cache there, from when i was an adventure like you!");
+            pause();
+            convo("You", "Thanks, it'll come in handy!");
+            convo("Merchant", "I hope it serves you well");
+            pause();
+            inv.add("Shovel");
+            setQuestID(6);
         }
 
         while (getComplete() >= 5) {
@@ -593,22 +637,22 @@ public class Maps {
             } else if (!spider.isAlive()) {
                 System.out.println("You feel relieved that you never have to experience that again");
                 setComplete(10);
-            }else{
+            } else {
                 System.out.println("invalid input");
             }
 
         }
 
 
-        while(getComplete() == 10){
+        while (getComplete() == 10) {
             System.out.println("Do you want to continue up the stairs?");
             choice = input.nextLine();
 
-            if(choice.equalsIgnoreCase("yes") || choice.equalsIgnoreCase("Go up stairs")) {
+            if (choice.equalsIgnoreCase("yes") || choice.equalsIgnoreCase("Go up stairs")) {
                 System.out.println("You go up the stairs and reach the top of the lighthouse");
                 System.out.println("Do you want to light the fire?");
                 choice = input.nextLine();
-                if (choice.equalsIgnoreCase("yes") || choice.equalsIgnoreCase("light the fire") || choice.equalsIgnoreCase("use flint")){
+                if (choice.equalsIgnoreCase("yes") || choice.equalsIgnoreCase("light the fire") || choice.equalsIgnoreCase("use flint")) {
                     System.out.println("The lighthouse is working again");
                     System.out.println("You head back to the docks");
                     pause();
@@ -621,27 +665,27 @@ public class Maps {
 
         }
 
-        while(getComplete() >= 11){
+        while (getComplete() >= 11) {
             System.out.println("The Lighthouse");
-            mapDirection("","","","west");
+            mapDirection("", "", "", "west");
             System.out.println("\tenter the lighthouse");
             choice = input.nextLine();
 
-            if(choice.equalsIgnoreCase("west") || choice.equalsIgnoreCase("w")|| choice.equalsIgnoreCase("go west")){
+            if (choice.equalsIgnoreCase("west") || choice.equalsIgnoreCase("w") || choice.equalsIgnoreCase("go west")) {
                 mapD5();
-            }else if (choice.equalsIgnoreCase("enter the lighthouse") || choice.equalsIgnoreCase("lighthouse")){
+            } else if (choice.equalsIgnoreCase("enter the lighthouse") || choice.equalsIgnoreCase("lighthouse")) {
                 System.out.println("You try to go inside, but the door is locked shut");
                 pause();
-            }else{
+            } else {
                 menu();
             }
         }
         return getComplete();
     }
 
-    public int mapC4(){
+    public int mapC4() {
 
-        while (getComplete() == 12){
+        while (getComplete() == 12) {
 
             System.out.println("As you walk up the dirt road, a distressed child pleas for your help");
             convo("Child", "Mister please help, m-my sister is being attack by bad people");
@@ -657,15 +701,15 @@ public class Maps {
             mapC3();
         }
 
-        while(getComplete() >= 12){
-            mapDirection("north", "east", "","");
+        while (getComplete() >= 13) {
+            mapDirection("north", "east", "", "");
             choice = input.nextLine();
 
-            if (choice.equalsIgnoreCase("north")|| choice.equalsIgnoreCase("n") || choice.equalsIgnoreCase("go north")){
+            if (choice.equalsIgnoreCase("north") || choice.equalsIgnoreCase("n") || choice.equalsIgnoreCase("go north")) {
                 mapC3();
-            }else if(choice.equalsIgnoreCase("east") || choice.equalsIgnoreCase("e") || choice.equalsIgnoreCase("go east")){
+            } else if (choice.equalsIgnoreCase("east") || choice.equalsIgnoreCase("e") || choice.equalsIgnoreCase("go east")) {
                 mapD4();
-            }else{
+            } else {
                 menu();
             }
 
@@ -673,9 +717,9 @@ public class Maps {
         return getComplete();
     }
 
-    public int mapC3(){
+    public int mapC3() {
 
-        while(getComplete() == 13) {
+        while (getComplete() == 13) {
 
             System.out.println("You see the child's sister being harassed by 2 thugs, as you get closer you hear them talk");
             pause();
@@ -697,40 +741,117 @@ public class Maps {
             setComplete(14);
         }
 
-            Player thug2 = new Player("Thug 2", 80, 10, 10, true, 0, 10, 100, 0);
-        while(getComplete() == 14){
+        Player thug2 = new Player("Thug 2", 80, 10, 10, true, 0, 10, 100, 0);
+        while (getComplete() == 14) {
             System.out.println("Start a fight?");
             choice = input.nextLine();
-            if(choice.equalsIgnoreCase("yes") || choice.equalsIgnoreCase("y")) {
+            if (choice.equalsIgnoreCase("yes") || choice.equalsIgnoreCase("y")) {
                 System.out.println("You draw your weapon and a fight starts");
                 player1.fight(player1, thug2);
-            }else{
+
+            } else {
                 System.out.println("The thug draws his weapon and a fight starts");
-                player1.fight(player1,thug2);
+                player1.fight(player1, thug2);
             }
 
-            if(thug2.isAlive){
+            if (thug2.isAlive) {
                 line();
                 System.out.println("you limp back to safety");
                 mapC4();
-            }else if(!thug2.isAlive()){
+            } else if (!thug2.isAlive()) {
                 System.out.println("The first thug panics at the sight of his dead comrade");
                 pause();
                 convo("Thug 1", "You think you won now boy! Wait til boss man hears about you! \nYou're seeking death!!");
                 System.out.println("The thug flees to the north");
                 setComplete(15);
-            }else{
+            } else {
                 System.out.println("invalid input");
             }
+        }
+
+        while (getComplete() == 15) {
+            System.out.println("The young lady looks relieved as the thug runs away \nShe turns to look at you and says");
+            convo("Young lady", "Thanks for the help stranger, but you're in great danger now");
+            convo("You", "You're welcome miss, but I can take whatever comes at me next");
+            pause();
+            convo("young lady", "You might need some help then, my father might be able to help\n his the merchant in town.");
+            convo("You", "hmmm, i'll probably take you on that offer");
+            pause();
+            convo("young lady", "You'll do this isle a great service if you get rid of those men.");
+            convo("You", "Yeah..your brother is to the south, he was worried about you.");
+            pause();
+            convo("Young lady", "Thanks, ill go get him. Well be seeing you stranger");
+            System.out.println("The lady leaves before you get to ask for her name");
+            pause();
+            setComplete(16);
+            setQuestID(5);
+        }
 
 
-            while(getComplete() == 15){
+        while (getComplete() == 16 && questID == 6 && inv.contains("Shovel")) {
+            System.out.println("Theres a spot marked with an X, do you want to dig here");
+            choice = input.nextLine();
+
+            if (choice.equalsIgnoreCase("yes") || choice.equalsIgnoreCase("y")) {
+                System.out.println("You dig hear a ding as your shovel hits the top of a chest");
+                System.out.println("you lift it out of the hole and open it");
+                System.out.println("You find a " + armName[3] + " and a " + wepName[3]);
+                System.out.println("You should equip them!");
+                setQuestID(7);
+            } else if (choice.equalsIgnoreCase("no") || choice.equalsIgnoreCase("n")) {
+                System.out.println("You decided to make fights harder for yourself");
+                setQuestID(7);
+            } else {
+                System.out.println("invalid input");
+            }
+        }
 
 
+        while (getComplete() >= 16) {
+            System.out.println("The Cross Road");
+            mapDirection("north", "", "south", "west");
+            choice = input.nextLine();
+
+            if (choice.equalsIgnoreCase("north") || choice.equalsIgnoreCase("n") || choice.equalsIgnoreCase("go north")) {
+                mapC2();
+            } else if (choice.equalsIgnoreCase("south") || choice.equalsIgnoreCase("s") || choice.equalsIgnoreCase("go south")) {
+                mapC4();
+            } else if (choice.equalsIgnoreCase("west") || choice.equalsIgnoreCase("w") || choice.equalsIgnoreCase("go west")) {
+                mapB3();
+            } else {
+                menu();
             }
 
-
         }
+
+        return getComplete();
+    }
+
+    public int mapC2(){
+        System.out.println("hello");
+
+        return getComplete();
+    }
+
+
+    public int mapC1(){
+
+
+
+
+     return getComplete();
+    }
+
+
+    public int mapB1(){
+
+
+        return getComplete();
+    }
+
+
+
+    public int mapA1(){
 
 
         return getComplete();
@@ -750,9 +871,9 @@ public class Maps {
 
                 if (choice.equalsIgnoreCase("::mapA3")) { //teleport to square, you will be able to teleport to any tile, used for testing.
                     mapA3();
-                } else if (choice.equalsIgnoreCase("::mapB3")) {
+                }else if (choice.equalsIgnoreCase("::mapB3")) {
                     mapB3();
-                } else if (choice.equalsIgnoreCase("::mapA4")) {
+                }else if (choice.equalsIgnoreCase("::mapA4")) {
                     mapA4();
                 }else if(choice.equalsIgnoreCase("::mapE3")){
                     mapE3();
