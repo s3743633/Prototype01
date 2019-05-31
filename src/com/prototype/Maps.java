@@ -17,7 +17,7 @@ public class Maps {
     private int questID;
     private Scanner input = new Scanner(System.in);
     private Scanner input2 = new Scanner(System.in);
-    private Player player1 = new Player("", 100, 1, 15, true, 0, 0, 20, 3);
+    private Player player1 = new Player("", 100, 1, 15, true, 0, 0, 0, 3);
     private List<String> inv = new ArrayList<String>();
     public String choice;
 
@@ -225,7 +225,7 @@ public class Maps {
             choice = input.nextLine();
             if (choice.equalsIgnoreCase("search")) {
                 System.out.println("while searching the area, a slime sneaks upon you!");
-                Player slime = new Player("slime", 20, 10, 10, true, 0, 0, 0, 0);
+                Player slime = new Player("slime", 20, 1, 5, true, 0, 0, 0, 0);
                 player1.fight(player1, slime);
                 if (slime.isAlive) {
                     line();
@@ -235,7 +235,8 @@ public class Maps {
                     line();
                     System.out.println("Now that the slime is dead, you search the area again.");
                     line();
-                    System.out.println("After awhile you found what you were looking for, your " + wepName[1] + " and " + armName[1]);
+                    System.out.println("After awhile you found what you were looking for, your " + wepName[1] + " and " + armName[1] + " 100 coins!");
+                    player1.setgp(player1.getgp() + 100);
                     System.out.println("Go to inventory to equip the new gear");
                     pause();
                     inv.add(wepName[1]);
@@ -448,7 +449,7 @@ public class Maps {
 
         while(getComplete() ==  420){
             System.out.println("You both draw your weapons");
-            Player bob = new Player("Captain Bob", 100, 40, 30, true, 0, 20, 10000, 0);
+            Player bob = new Player("Captain Bob", 100, 20, 20, true, 0, 15, 10000, 0);
             player1.fight(player1, bob);
 
             if(bob.isAlive){
@@ -611,7 +612,7 @@ public class Maps {
             while (getComplete() == 6) {
                 line();
                 System.out.println("There is a large wolf blocking the way, it notices you before you even realise.");
-                Player wolf = new Player("Wolf", 50, 5, 15, true, 0, 5, 0, 0);
+                Player wolf = new Player("Wolf", 50, 10, 10, true, 0, 5, 0, 0);
                 player1.fight(player1, wolf);
 
                 if (wolf.isAlive) {
@@ -671,18 +672,21 @@ public class Maps {
     private void mapD5() {
         star();
         System.out.println("Lighthouse road");
-        line();
-        System.out.println("There is only a road leading east towards the lighthouse");
 
-        mapDirection("north", "east", "", "");
+        while (getComplete() >= 7) {
+            line();
+            System.out.println("There is only a road leading east towards the lighthouse");
 
-        choice = input.nextLine();
-        if (choice.equalsIgnoreCase("north") || choice.equalsIgnoreCase("n") || choice.equalsIgnoreCase("go north")) {
-            mapD4();
-        } else if (choice.equalsIgnoreCase("east") || choice.equalsIgnoreCase("e") || choice.equalsIgnoreCase("go east")) {
-            mapE5();
-        } else {
-            menu();
+            mapDirection("north", "east", "", "");
+
+            choice = input.nextLine();
+            if (choice.equalsIgnoreCase("north") || choice.equalsIgnoreCase("n") || choice.equalsIgnoreCase("go north")) {
+                mapD4();
+            } else if (choice.equalsIgnoreCase("east") || choice.equalsIgnoreCase("e") || choice.equalsIgnoreCase("go east")) {
+                mapE5();
+            } else {
+                menu();
+            }
         }
     }
 
@@ -730,7 +734,7 @@ public class Maps {
             System.out.println("You walk up the stairs, your heart rate increases as you notice");
             System.out.println("8 large beaded eyes staring at you from the ceiling");
 
-            Player spider = new Player("Large Spider", 60, 15, 20, true, 0, 5, 0, 0);
+            Player spider = new Player("Large Spider", 60, 10, 10, true, 0, 5, 0, 0);
             player1.fight(player1, spider);
 
             if (spider.isAlive) {
@@ -1000,7 +1004,8 @@ public class Maps {
             pause();
             setComplete(18);
         }
-        Player thug1 = new Player("Thug 1 (Tom)", 90, 15, 15, true, 0, 10, 100, 0);
+        Player thug1 = new Player("Thug 1 (Tom)", 75, 15, 10, true, 0, 10, 100, 0);
+
         while (getComplete() == 18) {
             line();
             System.out.println("The thug grabs the nearest spear and charges towards you");
@@ -1011,7 +1016,7 @@ public class Maps {
                 line();
                 System.out.println("you limp back to safety");
                 mapC2();
-            }else if(thug1.isAlive()) {
+            }else if(!thug1.isAlive()) {
 
                 convo("Higher ranking Thug", "NOO! How dare you kill Thug 1!");
                 convo("Thug 1(final dying breath)", "I....it...it's... Tom....");
@@ -1029,7 +1034,7 @@ public class Maps {
 
         while (getComplete() >= 19) {
             line();
-            System.out.println("Go East to enter the next room\nOr go south to go back to Bandit Way");
+            System.out.println("Go west to enter the next room\nOr go south to go back to Bandit Way");
             mapDirection("", "", "south", "west");
             choice = input.nextLine();
 
@@ -1065,7 +1070,7 @@ public class Maps {
             setComplete(20);
 
         }
-        Player thug3point1 = new Player("Thug 3.1", 95, 15, 20, true, 0, 10, 100, 0);
+        Player thug3point1 = new Player("Thug 3.1", 80, 15, 15, true, 0, 10, 100, 0);
 
         while (getComplete() == 20) {
             line();
@@ -1105,7 +1110,7 @@ public class Maps {
 
         while (getComplete() >= 21) {
             line();
-            System.out.println("Go East to enter the final boss room\nOr go west to go back");
+            System.out.println("Go west to enter the final boss room\nOr go east to go back");
             mapDirection("", "east", "", "west");
             choice = input.nextLine();
 
@@ -1175,7 +1180,7 @@ public class Maps {
                 System.out.println("Invalid input");
             }
         }
-            Player strangeStranger = new Player("Strange Stranger", 100, 30, 30, false, 0, 5, 100000, 0);
+            Player strangeStranger = new Player("Strange Stranger", 100, 20, 30, false, 0, 5, 100000, 0);
 
         while(getComplete() == 23){
             line();
@@ -1236,7 +1241,11 @@ public class Maps {
                 } else if(choice.equalsIgnoreCase("::mapC2")){
                     mapC2();
                     //add maps here
-                }else if (choice.equalsIgnoreCase("::setCom")) { //set stage of map square, useful for testing
+                } else if(choice.equalsIgnoreCase("::setgp")){
+                    System.out.println("set gp to?");
+                    x = input2.nextInt();
+                    player1.setgp(x);
+                } else if (choice.equalsIgnoreCase("::setCom")) { //set stage of map square, useful for testing
                     System.out.println("set complete to?");
                     x = input2.nextInt();
                     setComplete(x);

@@ -8,7 +8,7 @@ How to player okDevious
 
 * In the menu, you can heal, check status, and quit the game. To enter them type, 'heal', 'check status', 'quit the game' or 'exit' to leave 
 
-* On the navigation menu, you can enter the equipment menu. Type 'equipment' to enter.
+* On the navigation menu, you can enter the inventory menu. Type 'inventory' to enter.
 
 * From here, you can equip items. Type the name of the item you want to equip. eg 'pointy stick'
 

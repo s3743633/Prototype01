@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3335d5e-1775-4b57-b8d5-152d8305edf0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/prototype/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/prototype/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/prototype/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/prototype/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/prototype/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/prototype/Maps.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -30,20 +28,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/prototype/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+            <state relative-caret-position="426">
+              <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
+              <folding>
+                <element signature="e#0#2221#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/prototype/Maps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1190">
-              <caret line="1243" column="42" selection-start-line="1243" selection-start-column="42" selection-end-line="1243" selection-end-column="42" />
+            <state relative-caret-position="1802">
+              <caret line="253" column="50" lean-forward="true" selection-start-line="253" selection-start-column="50" selection-end-line="253" selection-end-column="50" />
               <folding>
                 <element signature="e#0#51701#0" expanded="true" />
                 <element signature="e#490#498#0" expanded="true" />
@@ -61,10 +62,9 @@
                 <element signature="e#1521#1522#0" expanded="true" />
                 <element signature="method#equipItem#0;class#Maps#0" />
                 <element signature="method#mapDirection#0;class#Maps#0" />
+                <element signature="method#mapA4#0;class#Maps#0" />
                 <element signature="method#mapB3#0;class#Maps#0" />
                 <element signature="method#mapE4#0;class#Maps#0" />
-                <element signature="method#mapD4#0;class#Maps#0" />
-                <element signature="method#mapD5#0;class#Maps#0" />
                 <element signature="method#menu#0;class#Maps#0" />
               </folding>
             </state>
@@ -155,9 +155,9 @@
         <option value="$PROJECT_DIR$/src/com/prototype/MapTest.java" />
         <option value="$PROJECT_DIR$/src/com/prototype/Items.java" />
         <option value="$PROJECT_DIR$/src/com/prototype/Inventory.java" />
-        <option value="$PROJECT_DIR$/src/com/prototype/Main.java" />
         <option value="$PROJECT_DIR$/src/com/prototype/Character.java" />
         <option value="$PROJECT_DIR$/src/com/prototype/Maps.java" />
+        <option value="$PROJECT_DIR$/src/com/prototype/Main.java" />
       </list>
     </option>
   </component>
@@ -183,7 +183,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559301309288" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559307791382" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -255,7 +255,7 @@
       <workItem from="1558665411136" duration="5390000" />
       <workItem from="1558920592022" duration="44850000" />
       <workItem from="1559188892846" duration="13032000" />
-      <workItem from="1559256659526" duration="29457000" />
+      <workItem from="1559256659526" duration="34622000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1557722987000</created>
@@ -275,7 +275,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229027000" />
+    <option name="totallyTimeSpent" value="234192000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -288,7 +288,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1513" height="983" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.18213059" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -299,14 +298,14 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4969072" visible="true" weight="0.4654162" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4969072" weight="0.4654162" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39976552" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32942554" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49924356" weight="0.32473624" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49924356" visible="true" weight="0.32473624" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50309277" side_tool="true" weight="0.4654162" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32942554" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32473624" />
@@ -385,13 +384,6 @@
     <entry file="file://$PROJECT_DIR$/src/com/prototype/MapTest.java" />
     <entry file="file://$PROJECT_DIR$/src/com/prototype/Items.java" />
     <entry file="file://$PROJECT_DIR$/src/com/prototype/Inventory.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/prototype/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/prototype/Character.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -434,8 +426,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/prototype/Maps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="1243" column="42" selection-start-line="1243" selection-start-column="42" selection-end-line="1243" selection-end-column="42" />
+        <state relative-caret-position="1802">
+          <caret line="253" column="50" lean-forward="true" selection-start-line="253" selection-start-column="50" selection-end-line="253" selection-end-column="50" />
           <folding>
             <element signature="e#0#51701#0" expanded="true" />
             <element signature="e#490#498#0" expanded="true" />
@@ -453,11 +445,20 @@
             <element signature="e#1521#1522#0" expanded="true" />
             <element signature="method#equipItem#0;class#Maps#0" />
             <element signature="method#mapDirection#0;class#Maps#0" />
+            <element signature="method#mapA4#0;class#Maps#0" />
             <element signature="method#mapB3#0;class#Maps#0" />
             <element signature="method#mapE4#0;class#Maps#0" />
-            <element signature="method#mapD4#0;class#Maps#0" />
-            <element signature="method#mapD5#0;class#Maps#0" />
             <element signature="method#menu#0;class#Maps#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/prototype/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
+          <folding>
+            <element signature="e#0#2221#0" expanded="true" />
           </folding>
         </state>
       </provider>
