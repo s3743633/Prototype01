@@ -1,3 +1,12 @@
+/*
+Intro to programming - Final Project
+Created by Chris Jayawardena & Grant Cavanagh
+RMIT semester 1 - June 2019
+
+ */
+
+
+
 package com.prototype;
 
 import java.util.*;
@@ -9,10 +18,11 @@ public class Main {
         Maps gameStart = new Maps(0, "okDevious", 0);
         Scanner newGame = new Scanner(System.in);
 
-        //loadScreen();
-        //System.out.println("Check out the readme to know learn how to play the game");
-       // System.out.println("Press enter key to start");
-           // newGame.nextLine();
+
+         //  loadScreen();
+           System.out.println("Check out the readme to know learn how to play the game");
+           System.out.println("Press enter key to start");
+           newGame.nextLine();
            gameStart.mapA4();
 
         }
