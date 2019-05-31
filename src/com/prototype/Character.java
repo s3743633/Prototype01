@@ -315,18 +315,25 @@ public abstract class Character {
 
             public void randDrops(){
             Random drops = new Random();
-            int x;
+            int [] money = {10,20,40,60,80,100,150,200};
             if(drops.nextInt(2) == 1){
                 numOfPotions++;
                 System.out.println("the enemy dropped a health potion!");
             }else if(drops.nextInt(2) == 0){
-                x = drops.nextInt(100);
+                //selects a random element to determine amount of money dropped. This is so the value of money is set and you wont get drops of 0 or 1
+                int x = randomElement(money);
                 System.out.println("the enemy dropped " + x + " coins!");
                 setgp(getgp() + x);
             }else{
                 System.out.println("the enemy didnt drop anything");
             }
 
+            }
+
+            public static int randomElement(int[] array){
+        //generate a random element in an array
+                int rnd = new Random().nextInt(array.length);
+                return array[rnd];
             }
 
             public void portShop(Player a){
