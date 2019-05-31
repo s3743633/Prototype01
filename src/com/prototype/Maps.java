@@ -162,7 +162,7 @@ public class Maps {
             } else {
                 line();
                 System.out.println("Invalid input try again");
-                break;
+                equipItem();
             }
 
         }
@@ -827,20 +827,15 @@ public class Maps {
         return getComplete();
     }
 
-    public int mapC2(){
-        System.out.println("hello");
-
-        return getComplete();
-    }
-
-
-    public int mapC1(){
 
 
 
 
-     return getComplete();
-    }
+
+
+
+
+
 
 
     public int mapB1(){
