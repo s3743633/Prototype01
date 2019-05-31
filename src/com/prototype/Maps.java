@@ -1,3 +1,12 @@
+/*
+Intro to programming - Final Project
+Created by Chris Jayawardena & Grant Cavanagh
+RMIT semester 1 - June 2019
+
+ */
+
+
+
 package com.prototype;
 
 import java.util.*;
@@ -211,7 +220,7 @@ public class Maps {
         while (getComplete() == 1) {
             line();
             System.out.println("You see the remnants of your ship, spread out \non the coast. You should search the area" +
-                    "\n[Type Search and press Enter to search]");
+                    "\n[...Type Search and press Enter to search...]");
             choice = input.nextLine();
             if (choice.equalsIgnoreCase("search")) {
                 System.out.println("while searching the area, a slime sneaks upon you!");
@@ -268,7 +277,7 @@ public class Maps {
             System.out.println("your body aches all over, finally opening your eyes the man says");
             convo("Strange Stranger", "Hey friend, you alright? do you remember your name?");
             pause();
-            System.out.println("As you finally awaken enough you remember its:");
+            System.out.println("As you finally awaken enough you remember its: \nENTER YOUR NAME HERE: ");
             player1.setName(input.nextLine());
             convo("strange stranger", "well, " + player1.getName() + " you're very lucky that your alive. \nSo where did you come from?");
             convo("you", "I come from a land down under, where women glow and men plunder");
@@ -422,8 +431,49 @@ public class Maps {
         }
 
         while (getComplete() == 24 && getQuestID() == 10) {
-            System.out.println("");
+            System.out.println("You arrive at the docks with Mr. Wick and the Co-Captain");
+            convo("Mr.Wick", "This would be a lot easier if you had a pencil");
+            convo("You", "I know it would help but I really don't have one!");
+            pause();
+            convo("Mr.Wick", "Now remember the plan " + player1.getName());
+            System.out.println("Mr. Wick hides while you go and confront the Captain");
+            pause();
+            convo("Captain Bob","Soo? Wheres mittens the Co-Captain?");
+            convo("You", "I've decided that mittens will be my Co-Captain now, and so will this ship!");
+            pause();
+            convo("Captain Bob", "You wot m8? So its gonna be like that eh well lets do this");
+            setComplete(420);
+        }
 
+        while(getComplete() ==  420){
+            System.out.println("You both draw your weapons");
+            Player bob = new Player("Captain Bob", 100, 40, 30, true, 0, 20, 10000, 0);
+            player1.fight(player1, bob);
+
+            if(bob.isAlive){
+                line();
+                System.out.println("You limp back to safety");
+                mapE3();
+            }else{
+                System.out.println("After the death of the Captain, you quickly take control of the ship!");
+                System.out.println("Mr.wick boards the ship and addresses the crew before they get angry");
+                pause();
+                System.out.println("While shaking a bag full of the coins he says:");
+                convo("Mr.Wick", "Alright listen up, you lot! This ship is ours now! \nIf you want to join then some of this can be yours!");
+                System.out.println("Mr.Wick raises the bag into the air and shakes it");
+                pause();
+                convo("Crew","OH CAPTAIN MY CAPTAIN! OH CAPTAIN MY CAPTAIN");
+                convo("You", "Well, that was certainly easy");
+                convo("Mr.Wick", "See? All part of the plan. We should set sail, quickly before more people come!");
+                pause();
+                System.out.println("After a long journey, you prepare yourself to reunite with your family");
+                System.out.println("The Ship leaves the port and sails off to towards the west");
+                pause();
+                System.out.println("****************************************************************");
+                System.out.println("\tWe hope you enjoyed the game, thank you for playing!!");
+                System.out.println("****************************************************************");
+                System.exit(0);
+            }
 
         }
 
@@ -676,14 +726,11 @@ public class Maps {
             System.out.println("You start to panic as you notice the area is covered in large cob webs");
             pause();
             System.out.println("After taking a big breath in you steele yourself to continue");
-            System.out.println("Do you want to go up the spiral staircase?");
-            choice = input.nextLine();
+            System.out.println("You walk up the stairs, your heart rate increases as you notice");
+            System.out.println("8 large beaded eyes starting at you from the ceiling");
 
-            if (choice.equalsIgnoreCase("go up stairs") || choice.equalsIgnoreCase("yes") || choice.equalsIgnoreCase("y")) {
-                System.out.println("you walk up the stairs, your heart rate increases as you notice \n8 large beaded eyes staring at you from the ceiling");
-                pause();
-                player1.fight(player1, spider);
-            }
+            Player spider = new Player("Large Spider", 60, 15, 20, true, 0, 5, 0, 0);
+            player1.fight(player1, spider);
 
             if (spider.isAlive) {
                 line();
@@ -1106,7 +1153,9 @@ public class Maps {
         while(getComplete() == 22){
             line();
             System.out.println("Do you want to fight or join him?");
-            choice=input.nextLine();
+
+            choice = input.nextLine();
+
             if(choice.equalsIgnoreCase("Join") || choice.equalsIgnoreCase("join him")){
                 System.out.println("You decide to join the Stranger");
                 convo("Strange Stranger", "Good choice, partner! You can call me Mr.Wick");
@@ -1254,7 +1303,8 @@ public class Maps {
     }
 
     private void pause() {
-        System.out.print("\t\t\t[...Press enter key to continue...]");
+
+        System.out.print("\t\t\t\t[...Press enter key to continue...]");
         input.nextLine();
     }
 

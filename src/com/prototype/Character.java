@@ -1,3 +1,12 @@
+/*
+Intro to programming - Final Project
+Created by Chris Jayawardena & Grant Cavanagh
+RMIT semester 1 - June 2019
+
+ */
+
+
+
 package com.prototype;
 
 import java.util.*;
@@ -327,10 +336,10 @@ public abstract class Character {
             public void randDrops(){
             Random drops = new Random();
             int [] money = {10,20,40,60,80,100,150,200};
-            if(drops.nextInt(2) == 1){
+            if(drops.nextInt(100) > 70){
                 numOfPotions++;
                 System.out.println("the enemy dropped a health potion!");
-            }else if(drops.nextInt(2) == 0){
+            }else if(drops.nextInt(100) < 70){
                 //selects a random element to determine amount of money dropped. This is so the value of money is set and you wont get drops of 0 or 1
                 int x = randomElement(money);
                 System.out.println("the enemy dropped " + x + " coins!");
