@@ -235,7 +235,7 @@ public abstract class Character {
             while (a.isAlive() && b.isAlive());
             if (!a.isAlive()) {
                 a.setHealth(50);
-                a.setgp(a.getgp() - 100);
+                a.setgp(a.getgp() - 10);
                 a.setLives(a.getLives() - 1);
 
 
@@ -336,16 +336,14 @@ public abstract class Character {
             public void randDrops(){
             Random drops = new Random();
             int [] money = {10,20,40,60,80,100,150,200};
-            if(drops.nextInt(100) > 70){
+            if (drops.nextInt(100) > 70){
                 numOfPotions++;
                 System.out.println("the enemy dropped a health potion!");
-            }else if(drops.nextInt(100) < 70){
+            }else{
                 //selects a random element to determine amount of money dropped. This is so the value of money is set and you wont get drops of 0 or 1
                 int x = randomElement(money);
                 System.out.println("the enemy dropped " + x + " coins!");
                 setgp(getgp() + x);
-            }else{
-                System.out.println("the enemy didnt drop anything");
             }
 
             }
