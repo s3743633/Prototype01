@@ -1169,9 +1169,9 @@ public class Maps {
                 convo("Mr.Wick", "We're going to have to steal a ship so here's the plan:");
                 pause();
                 System.out.println("After discussing a plan, you head off to the docks.");
-                mapE3();
                 setComplete(24);
                 setQuestID(10);
+                mapE3();
             }else if(choice.equalsIgnoreCase("fight") || choice.equalsIgnoreCase("fight him")){
                 setComplete(23);
 
